@@ -10,10 +10,10 @@ const Routes = () => {
   return (
     <div>
       <Route exact path='/' component={LandingPage} />
-      <Route path='/about' componet={About} />
-      <Route path='/links' componet={Links} />
-      <Route path='/projects' componet={Projects} />
-      <Route path='/blogs' componet={Blogs} />
+      <Route path='/about' render={() => <About />} />
+      <Route path='/links' render={() => <Links />} />
+      <Route path='/projects' render={() => <Projects />} />
+      <Route path='/blogs' render={() => <Blogs />} />
     </div>
   );
 };
