@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
-import App from './App';
+import App from './Components/App/App';
 import './index.css';
 
 const router = (
