@@ -8,12 +8,12 @@ import Blogs from '../Blogs/Blogs';
 
 const Routes = () => {
   return (
-    <div className="Routes">
-      <Route exact to='/' component={App} />
-      <Route to='/about' componet={About} />
-      <Route to='/links' componet={Links} />
-      <Route to='/projects' componet={Projects} />
-      <Route to='/blogs' componet={Blogs} />
+    <div>
+      <Route exact path='/' component={App} />
+      <Route path='/about' componet={About} />
+      <Route path='/links' componet={Links} />
+      <Route path='/projects' componet={Projects} />
+      <Route path='/blogs' componet={Blogs} />
     </div>
   );
 };
