@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './Links.css';
+import './Projects.css';
 
-class Links extends Component {
+class Projects extends Component {
   render() {
     return (
-      <div className="Links">
-        I am an Links
+      <div className="Projects">
+        I am an Projects
       </div>
     );
   }
 }
 
-export default Links;
+export default Projects;
