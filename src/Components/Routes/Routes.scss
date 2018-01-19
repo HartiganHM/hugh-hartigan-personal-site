@@ -1,0 +1,25 @@
+@import '../../Styles/mixins.scss';
+
+.switch-wrapper {
+  @include component-transition;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.switch-wrapper.fade-enter {
+  @include component-entering;
+}
+
+.switch-wrapper.fade-enter.fade-enter-active {
+  @include component-enter-active;
+}
+
+.switch-wrapper.fade-exit {
+  @include component-exiting;
+}
+
+.switch-wrapper.fade-exit.fade-exit-active {
+  @include component-exit-active;
+}
