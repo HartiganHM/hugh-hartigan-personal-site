@@ -1,12 +1,15 @@
+//Layout, Box, Visual, Typography, Misc
 @import '../../Styles/variables.scss';
 
 .App {
-  height: 100vh;
-  margin: auto;
+  position: relative;
   display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   top: 0;
+  height: 100vh;
+  margin: auto;
   background-color: $accent-color-light;
   color: $snow;
 }
