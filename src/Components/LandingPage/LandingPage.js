@@ -8,7 +8,7 @@ const LandingPage = () => {
       <Link className='top nav-link' to="/about">About</Link>
       <div className='middle'>
         <Link className='nav-link' to="/projects">Projects</Link>
-        <h1>HMH</h1>
+        <span className='wordmark'>HMH</span>
         <Link className='nav-link' to="/blogs">Blogs</Link>
       </div>
       <Link className='bottom nav-link' to="/links">Links</Link>
