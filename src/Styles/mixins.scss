@@ -96,22 +96,21 @@
 @mixin component-entering {
   opacity: 0;
   transform: translate(0, -100%);
-  // top: -150px;
 }
 
 @mixin component-enter-active {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate(0, 50%);
 }
 
 @mixin component-exiting {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate(0, -50%);
 }
 
 @mixin component-exit-active {
   opacity: 0;
-  transform: translate(0, 100%);
+  transform: translate(0, 500%);
 }
 
 @mixin component-transition {
