@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+.Links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .Links .nav-link {
+    width: 3.125rem;
+    padding: 0.625rem;
+    border: 1px solid #319fd9;
+    color: #f9f9f9;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s ease-in-out; }
+    .Links .nav-link:hover {
+      border: 1px solid #f9f9f9;
+      background-color: #f9f9f9;
+      color: #319fd9;
+      transition: 0.5s ease-in-out; }
+  .Links .nav-link-top:hover {
+    transform: translate(0, -3px); }
+  .Links .link-wrapper {
+    display: flex;
+    padding: 3.125rem; }
+    .Links .link-wrapper .icon {
+      width: 6.25rem;
+      padding: 0.625rem;
+      fill: #3c4042;
+      transition: 0.5s ease-in-out; }
+      .Links .link-wrapper .icon:hover {
+        fill: #f9f9f9;
+        transform: translate(0, -3px);
+        transition: 0.5s ease-in-out; }
