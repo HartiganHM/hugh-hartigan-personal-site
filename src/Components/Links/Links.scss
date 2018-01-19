@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+.Links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .nav-link {
+    @include button;
+    &:hover {
+      @include buttonHover;
+    }
+  }
+  .nav-link-top:hover {
+    transform: translate(0, -3px);
+  }
+  .link-wrapper {
+    display: flex;
+    @include padding(5);
+    .icon {
+      @include width(10);
+      @include padding(1);
+      fill: $neutral-dark;
+      transition: 0.5s ease-in-out;
+      &:hover{
+        fill: $snow;
+        transform: translate(0, -3px);
+        transition: 0.5s ease-in-out;
+      }
+    }
+  }
+}
