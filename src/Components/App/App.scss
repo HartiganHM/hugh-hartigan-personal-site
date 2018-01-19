@@ -1,9 +1,12 @@
+@import '../../Styles/variables.scss';
+
 .App {
   height: 100vh;
   margin: auto;
   display: flex;
   justify-content: center;
   top: 0;
-  background-color: #319FD9;
-  color: #F9F9F9;
+  background-color: $accent-color-light;
+  color: $snow;
+  font-family: $main-font;
 }
