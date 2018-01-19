@@ -5,11 +5,13 @@ import './LandingPage.css';
 const LandingPage = () => {
   return (
     <div className="LandingPage">
-      <Link className='nav-link' to="/about">About</Link>
-      <Link className='nav-link' to="/projects">Projects</Link>
-      <h1>HMH</h1>
-      <Link className='nav-link' to="/links">Links</Link>
-      <Link className='nav-link' to="/blogs">Blogs</Link>
+      <Link className='top nav-link' to="/about">About</Link>
+      <div className='middle'>
+        <Link className='nav-link' to="/projects">Projects</Link>
+        <h1>HMH</h1>
+        <Link className='nav-link' to="/blogs">Blogs</Link>
+      </div>
+      <Link className='bottom nav-link' to="/links">Links</Link>
     </div>
   );
 };
