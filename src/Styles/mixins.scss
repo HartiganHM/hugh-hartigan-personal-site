@@ -47,10 +47,20 @@
 
 //Button Styling
 @mixin button() {
-  @include padding(0.5);
+  @include width(5);
+  @include padding(1);
+  border: 1px solid $accent-color-light;
+  color: $snow;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
 }
 
 @mixin buttonHover () {
+  border: 1px solid $snow;
+  background-color: $snow;
+  color: $accent-color-light;
+  transition: 0.5s ease-in-out;
 }
 
 @mixin activeButton() {
