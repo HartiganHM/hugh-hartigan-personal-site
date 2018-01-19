@@ -1,3 +1,6 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
 .LandingPage {
   flex: 1;
   display: flex;
@@ -8,10 +11,40 @@
     align-items: center;
   }
   .wordmark {
-    font-size: 2.4rem;
+    @include width(30);
+    @include height(30);
+    margin: 0 75px;
+    background: {
+      image: url('../../images/Wordmark.png');
+      size: contain;
+      repeat: no-repeat;
+    }
   }
   .nav-link {
-    color: #f9f9f9;
+    @include width(5);
+    @include padding(1);
+    border: 1px solid $accent-color-light;
+    color: $snow;
+    text-align: center;
     text-decoration: none;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      border: 1px solid $snow;
+      background-color: $snow;
+      color: $accent-color-light;
+      transition: 0.5s ease-in-out;
+    }
+  }
+  .nav-link-top:hover {
+    transform: translate(0, -3px);
+  }
+  .nav-link-right:hover {
+    transform: translate(3px);
+  }
+  .nav-link-bottom:hover {
+    transform: translate(0, 3px);
+  }
+  .nav-link-left:hover {
+    transform: translate(-3px);
   }
 }
