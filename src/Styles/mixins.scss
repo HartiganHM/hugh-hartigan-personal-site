@@ -81,7 +81,6 @@
 }
 
 @mixin largeWordmarkLogo() {
-
 }
 
 @mixin icon() {
@@ -91,4 +90,30 @@
     repeat: no-repeat;
     size: contain;
   }
+}
+
+// Transitions
+@mixin component-entering {
+  opacity: 0;
+  transform: translate(0, -100%);
+  // top: -150px;
+}
+
+@mixin component-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@mixin component-exiting {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@mixin component-exit-active {
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+@mixin component-transition {
+  transition: 1s cubic-bezier(0.78, 0.07, 0.35, 1);
 }
