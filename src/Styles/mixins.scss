@@ -1,0 +1,119 @@
+@import './variables.scss';
+@mixin height($height) {
+  height: convertRem($height);
+}
+
+// Boxsizing to REMs
+@mixin maxHeight($maxHeight) {
+  max-height: convertRem($maxHeight);
+}
+
+@mixin maxWidth($maxWidth) {
+  max-width: convertRem($maxWidth);
+}
+
+@mixin width($width) {
+  width: convertRem($width);
+}
+
+@mixin margin($margin) {
+  margin: convertRem($margin);
+}
+
+@mixin padding($padding) {
+  padding: convertRem($padding);
+}
+
+@mixin top($top) {
+  top: convertRem($top);
+}
+
+@mixin right($right) {
+  right: convertRem($right);
+}
+
+@mixin bottom($bottom) {
+  bottom: convertRem($bottom);
+}
+
+@mixin left($left) {
+  left: convertRem($left);
+}
+
+@function convertRem($size) {
+  $remSize: $size * 0.625;
+  @return #{$remSize}rem;
+}
+
+//Button Styling
+@mixin button() {
+  @include padding(0.5);
+}
+
+@mixin buttonHover () {
+}
+
+@mixin activeButton() {
+  cursor: default;
+}
+
+// Content Page Styling
+@mixin contentHeader() {
+}
+
+@mixin contentImage() {
+}
+
+@mixin contentDetailTitle() {
+}
+
+@mixin contentDetailBody() {
+}
+
+// Image Styling
+@mixin parallaxImage() {
+  background: {
+    attachment: fixed;
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
+@mixin largeWordmarkLogo() {
+}
+
+@mixin icon() {
+  @include width(3);
+  @include height(3);
+  background: {
+    repeat: no-repeat;
+    size: contain;
+  }
+}
+
+// Transitions
+@mixin component-entering {
+  opacity: 0;
+  transform: translate(0, -100%);
+  // top: -150px;
+}
+
+@mixin component-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@mixin component-exiting {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@mixin component-exit-active {
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+@mixin component-transition {
+  transition: 1s cubic-bezier(0.78, 0.07, 0.35, 1);
+}

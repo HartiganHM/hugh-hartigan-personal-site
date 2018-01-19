@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+.App {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  background-color: #319fd9;
+  color: #f9f9f9;
+  overflow: hidden; }
