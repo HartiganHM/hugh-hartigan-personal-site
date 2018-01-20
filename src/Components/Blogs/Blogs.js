@@ -9,6 +9,9 @@ class Blogs extends Component {
     const blogPosts = blogsData.map(blog => <Card data={blog}/>)
     return (
       <div className="Blogs">
+        <div className='card-container'>
+          {blogPosts}
+        </div>
         <Link className="nav-link nav-link-right" to="/">
           Home
         </Link>
