@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.Blogs {
+  .nav-link {
+    @include button;
+    &:hover {
+      @include buttonHover;
+    }
+  }
+  .nav-link-right:hover {
+    transform: translate(3px);
+  }
+}
