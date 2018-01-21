@@ -4,7 +4,8 @@
   flex: 1;
   display: flex;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 100rem; }
   .LandingPage .middle {
     display: flex;
     align-items: center; }
@@ -36,3 +37,28 @@
     transform: translate(0, 3px); }
   .LandingPage .nav-link-left:hover {
     transform: translate(-3px); }
+
+@media screen and (max-width: 1634px) {
+  .LandingPage {
+    width: 80rem; } }
+
+@media screen and (max-width: 1334px) {
+  .LandingPage {
+    width: 60rem; } }
+
+@media screen and (max-width: 1014px) {
+  .LandingPage {
+    width: 40rem; } }
+
+@media screen and (max-width: 694px) {
+  .LandingPage {
+    width: 20rem; }
+    .LandingPage .middle {
+      order: -1;
+      flex-direction: column; }
+      .LandingPage .middle .wordmark {
+        order: -2; }
+      .LandingPage .middle .nav-link-right {
+        order: -1; }
+    .LandingPage .nav-link-top {
+      order: 1; } }

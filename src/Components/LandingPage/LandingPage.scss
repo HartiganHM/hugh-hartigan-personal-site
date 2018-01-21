@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  @include width(160);
   .middle {
     display: flex;
     align-items: center;
@@ -37,5 +38,42 @@
   }
   .nav-link-left:hover {
     transform: translate(-3px);
+  }
+}
+
+@media screen and (max-width: 1634px) {
+  .LandingPage {
+    @include width(128);
+  }
+}
+
+@media screen and (max-width: 1334px) {
+  .LandingPage {
+    @include width(96);
+  }
+}
+
+@media screen and (max-width: 1014px) {
+  .LandingPage {
+    @include width(64);
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .LandingPage {
+    @include width(32);
+    .middle {
+      order: -1;
+      flex-direction: column;
+      .wordmark {
+        order: -2;
+      }
+      .nav-link-right {
+        order: -1;
+      }
+    }
+    .nav-link-top {
+      order: 1;
+    }
   }
 }
