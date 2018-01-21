@@ -7,14 +7,8 @@
   .wrapper {
     display: flex;
     .header-wordmark {
-      @include height(5);
-      @include width(35.7);
-      @include margin(1);
-      background: {
-        image: url('../../images/Wordmark-horizontal.png');
-        size: contain;
-        repeat: no-repeat;
-      }
+      @include horizontalWordmarkLogo;
+      background-image: url('../../images/Wordmark-horizontal.png');
     }
     .nav-link {
       align-self: baseline;

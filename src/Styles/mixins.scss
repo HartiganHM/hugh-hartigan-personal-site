@@ -93,6 +93,16 @@
 @mixin largeWordmarkLogo() {
 }
 
+@mixin horizontalWordmarkLogo() {
+  @include height(5);
+  @include width(35.7);
+  @include margin(1);
+  background: {
+    size: contain;
+    repeat: no-repeat;
+  }
+}
+
 @mixin icon() {
   @include width(3);
   @include height(3);

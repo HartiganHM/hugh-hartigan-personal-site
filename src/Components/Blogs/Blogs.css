@@ -9,9 +9,9 @@
       height: 3.125rem;
       width: 22.3125rem;
       margin: 0.625rem;
-      background-image: url("../../images/Wordmark-horizontal.png");
       background-size: contain;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      background-image: url("../../images/Wordmark-horizontal.png"); }
     .Blogs .wrapper .nav-link {
       align-self: baseline;
       width: 5rem;
