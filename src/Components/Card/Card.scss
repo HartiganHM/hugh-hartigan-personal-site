@@ -1,27 +1,48 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 .Card {
-  @include padding(1);
+  display: flex;
+  flex-direction: column;
+  .image {
+    @include minHeight(40);
+  }
+  .content-container {
+    @include padding(1);
+    .description-box, .tech-stack-box {
+      display: flex;
+      flex-direction: column;
+      .description-header, .tech-stack-header {
+        font-size: 1.2rem;
+        text-decoration: underline;
+      }
+      .description, .tech-stack {
+        @include padding(1);
+      }
+    }
+    .button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      @include padding(1);
+      .button {
+        @include button;
+        &:hover {
+          @include buttonHover;
+        }
+      }
+    }
+  }
   .url {
     display: flex;
     flex-direction: column;
     color: $snow;
     text-decoration: none;
   }
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    .description {
-
-    }
-    .button {
-      @include button;
-      &:hover {
-        @include buttonHover;
-      }
-    }
-  }
   .title {
     font-size: 1.8rem;
+  }
+  .our-planet-screen-shot {
+    background-image: url('../../images/our-planet-screen-shot');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
