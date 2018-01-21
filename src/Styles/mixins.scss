@@ -47,7 +47,7 @@
 
 //Button Styling
 @mixin button() {
-  @include width(5);
+  @include width(8);
   @include padding(1);
   border: 1px solid $accent-color-light;
   color: $snow;

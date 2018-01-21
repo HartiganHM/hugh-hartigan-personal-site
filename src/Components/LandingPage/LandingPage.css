@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+.LandingPage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .LandingPage .middle {
+    display: flex;
+    align-items: center; }
+  .LandingPage .wordmark {
+    width: 18.75rem;
+    height: 18.75rem;
+    margin: 0 75px;
+    background-image: url("../../images/Wordmark.png");
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .LandingPage .nav-link {
+    width: 5rem;
+    padding: 0.625rem;
+    border: 1px solid #319fd9;
+    color: #f9f9f9;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s ease-in-out; }
+    .LandingPage .nav-link:hover {
+      border: 1px solid #f9f9f9;
+      background-color: #f9f9f9;
+      color: #319fd9;
+      transition: 0.5s ease-in-out; }
+  .LandingPage .nav-link-top:hover {
+    transform: translate(0, -3px); }
+  .LandingPage .nav-link-right:hover {
+    transform: translate(3px); }
+  .LandingPage .nav-link-bottom:hover {
+    transform: translate(0, 3px); }
+  .LandingPage .nav-link-left:hover {
+    transform: translate(-3px); }
