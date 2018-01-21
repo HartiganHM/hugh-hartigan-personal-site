@@ -4,14 +4,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  .nav-link {
-    @include button;
-    &:hover {
-      @include buttonHover;
+  .wrapper {
+    display: flex;
+    .header-wordmark {
+      @include horizontalWordmarkLogo;
+      background-image: url('../../images/Wordmark-horizontal.png');
     }
-  }
-  .nav-link-top:hover {
-    transform: translate(0, -3px);
+    .nav-link {
+      align-self: baseline;
+      @include button;
+      &:hover {
+        @include buttonHover;
+      }
+    }
+    .nav-link-top:hover {
+      transform: translate(0, -3px);
+    }
   }
   .link-wrapper {
     display: flex;
@@ -27,5 +35,8 @@
         transition: 0.5s ease-in-out;
       }
     }
+  }
+  .page-description {
+    @include maxWidth(55);
   }
 }
