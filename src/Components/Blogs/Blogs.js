@@ -6,15 +6,16 @@ import './Blogs.css';
 
 class Blogs extends Component {
   render() {
-    const blogPosts = blogsData.map(blog => <Card data={blog}/>)
+    const blogPosts = blogsData.map(blog => <Card data={blog} />);
     return (
       <div className="Blogs">
-        <div className='card-container'>
-          {blogPosts}
+        <div className="wrapper">
+          <span className="header-wordmark" />
+          <Link className="nav-link nav-link-right" to="/">
+            Home
+          </Link>
         </div>
-        <Link className="nav-link nav-link-right" to="/">
-          Home
-        </Link>
+        <div className="card-container">{blogPosts}</div>
       </div>
     );
   }

@@ -1,18 +1,34 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-.Blogs .nav-link {
-  width: 3.125rem;
-  padding: 0.625rem;
-  border: 1px solid #319fd9;
-  color: #f9f9f9;
-  text-align: center;
-  text-decoration: none;
-  transition: 0.5s ease-in-out; }
-  .Blogs .nav-link:hover {
-    border: 1px solid #f9f9f9;
-    background-color: #f9f9f9;
-    color: #319fd9;
-    transition: 0.5s ease-in-out; }
-
-.Blogs .nav-link-right:hover {
-  transform: translate(3px); }
+.Blogs {
+  display: flex;
+  flex-direction: column; }
+  .Blogs .wrapper {
+    display: flex; }
+    .Blogs .wrapper .header-wordmark {
+      height: 3.125rem;
+      width: 22.3125rem;
+      margin: 0.625rem;
+      background-image: url("../../images/Wordmark-horizontal.png");
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .Blogs .wrapper .nav-link {
+      align-self: baseline;
+      width: 5rem;
+      padding: 0.625rem;
+      border: 1px solid #319fd9;
+      color: #f9f9f9;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.5s ease-in-out; }
+      .Blogs .wrapper .nav-link:hover {
+        border: 1px solid #f9f9f9;
+        background-color: #f9f9f9;
+        color: #319fd9;
+        transition: 0.5s ease-in-out; }
+    .Blogs .wrapper .nav-link-right:hover {
+      transform: translate(3px); }
+  .Blogs .card-container {
+    padding: 0.625rem;
+    margin: 0 10px;
+    border: 1px solid #f9f9f9; }

@@ -2,13 +2,34 @@
 @import '../../styles/mixins.scss';
 
 .Blogs {
-  .nav-link {
-    @include button;
-    &:hover {
-      @include buttonHover;
+  display: flex;
+  flex-direction: column;
+  .wrapper {
+    display: flex;
+    .header-wordmark {
+      @include height(5);
+      @include width(35.7);
+      @include margin(1);
+      background: {
+        image: url('../../images/Wordmark-horizontal.png');
+        size: contain;
+        repeat: no-repeat;
+      }
+    }
+    .nav-link {
+      align-self: baseline;
+      @include button;
+      &:hover {
+        @include buttonHover;
+      }
+    }
+    .nav-link-right:hover {
+      transform: translate(3px);
     }
   }
-  .nav-link-right:hover {
-    transform: translate(3px);
+  .card-container {
+    @include padding(1);
+    margin: 0 10px;
+    border: 1px solid $snow;
   }
 }
