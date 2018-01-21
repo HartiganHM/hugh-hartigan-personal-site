@@ -2,9 +2,12 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 .Blogs {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 100rem; }
   .Blogs .wrapper {
-    display: flex; }
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between; }
     .Blogs .wrapper .header-wordmark {
       height: 3.125rem;
       width: 22.3125rem;
@@ -32,3 +35,19 @@
     padding: 0.625rem;
     margin: 0 10px;
     border: 1px solid #f9f9f9; }
+
+@media screen and (max-width: 1634px) {
+  .Blogs {
+    width: 80rem; } }
+
+@media screen and (max-width: 1334px) {
+  .Blogs {
+    width: 60rem; } }
+
+@media screen and (max-width: 1014px) {
+  .Blogs {
+    width: 40rem; } }
+
+@media screen and (max-width: 694px) {
+  .Blogs {
+    width: 20rem; } }
