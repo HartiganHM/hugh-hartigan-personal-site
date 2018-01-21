@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+.Projects {
+  display: flex;
+  flex-direction: column;
+  width: 100rem; }
+  .Projects .wrapper {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between; }
+    .Projects .wrapper .header-wordmark {
+      height: 3.125rem;
+      width: 22.3125rem;
+      margin: 0.625rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("../../images/Wordmark-horizontal.png"); }
+    .Projects .wrapper .nav-link {
+      align-self: baseline;
+      width: 5rem;
+      padding: 0.625rem;
+      border: 1px solid #319fd9;
+      color: #f9f9f9;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.5s ease-in-out; }
+      .Projects .wrapper .nav-link:hover {
+        border: 1px solid #f9f9f9;
+        background-color: #f9f9f9;
+        color: #319fd9;
+        transition: 0.5s ease-in-out; }
+    .Projects .wrapper .nav-link-left:hover {
+      transform: translate(-3px); }
+
+@media screen and (max-width: 1634px) {
+  .Projects {
+    width: 80rem; } }
+
+@media screen and (max-width: 1334px) {
+  .Projects {
+    width: 60rem; } }
+
+@media screen and (max-width: 1014px) {
+  .Projects {
+    width: 40rem; } }
+
+@media screen and (max-width: 694px) {
+  .Projects {
+    width: 20rem; } }
