@@ -7,11 +7,21 @@
     flex-direction: column;
     color: $snow;
     text-decoration: none;
-    .title {
-      font-size: 1.8rem;
-    }
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
     .description {
 
     }
+    .button {
+      @include button;
+      &:hover {
+        @include buttonHover;
+      }
+    }
+  }
+  .title {
+    font-size: 1.8rem;
   }
 }
