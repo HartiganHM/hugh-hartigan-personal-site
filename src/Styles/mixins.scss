@@ -47,7 +47,7 @@
 
 //Button Styling
 @mixin button() {
-  @include width(5);
+  @include width(8);
   @include padding(1);
   border: 1px solid $accent-color-light;
   color: $snow;
@@ -91,6 +91,16 @@
 }
 
 @mixin largeWordmarkLogo() {
+}
+
+@mixin horizontalWordmarkLogo() {
+  @include height(5);
+  @include width(35.7);
+  @include margin(1);
+  background: {
+    size: contain;
+    repeat: no-repeat;
+  }
 }
 
 @mixin icon() {

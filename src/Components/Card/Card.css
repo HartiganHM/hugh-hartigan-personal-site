@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+.Card {
+  padding: 0.625rem; }
+  .Card .url {
+    display: flex;
+    flex-direction: column;
+    color: #f9f9f9;
+    text-decoration: none; }
+    .Card .url .title {
+      font-size: 1.8rem; }

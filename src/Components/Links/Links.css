@@ -3,22 +3,35 @@
 .Links {
   display: flex;
   flex-direction: column;
-  align-items: center; }
-  .Links .nav-link {
-    width: 3.125rem;
-    padding: 0.625rem;
-    border: 1px solid #319fd9;
-    color: #f9f9f9;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.5s ease-in-out; }
-    .Links .nav-link:hover {
-      border: 1px solid #f9f9f9;
-      background-color: #f9f9f9;
-      color: #319fd9;
+  align-items: center;
+  width: 100rem; }
+  .Links .wrapper {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between; }
+    .Links .wrapper .header-wordmark {
+      height: 3.125rem;
+      width: 22.3125rem;
+      margin: 0.625rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("../../images/Wordmark-horizontal.png"); }
+    .Links .wrapper .nav-link {
+      align-self: baseline;
+      width: 5rem;
+      padding: 0.625rem;
+      border: 1px solid #319fd9;
+      color: #f9f9f9;
+      text-align: center;
+      text-decoration: none;
       transition: 0.5s ease-in-out; }
-  .Links .nav-link-top:hover {
-    transform: translate(0, -3px); }
+      .Links .wrapper .nav-link:hover {
+        border: 1px solid #f9f9f9;
+        background-color: #f9f9f9;
+        color: #319fd9;
+        transition: 0.5s ease-in-out; }
+    .Links .wrapper .nav-link-top:hover {
+      transform: translate(0, -3px); }
   .Links .link-wrapper {
     display: flex;
     padding: 3.125rem; }
@@ -31,3 +44,19 @@
         fill: #f9f9f9;
         transform: translate(0, -3px);
         transition: 0.5s ease-in-out; }
+
+@media screen and (max-width: 1634px) {
+  .Links {
+    width: 80rem; } }
+
+@media screen and (max-width: 1334px) {
+  .Links {
+    width: 60rem; } }
+
+@media screen and (max-width: 1014px) {
+  .Links {
+    width: 40rem; } }
+
+@media screen and (max-width: 694px) {
+  .Links {
+    width: 20rem; } }

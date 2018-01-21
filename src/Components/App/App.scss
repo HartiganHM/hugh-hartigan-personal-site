@@ -1,6 +1,5 @@
 //Layout, Box, Visual, Typography, Misc
 @import '../../styles/variables.scss';
-
 .App {
   position: relative;
   display: flex;
@@ -12,5 +11,13 @@
   margin: auto;
   background-color: $accent-color-light;
   color: $snow;
+  font-size: 1rem;
   overflow: hidden;
+}
+
+@media screen and (max-width: 694px) {
+  .App {
+    width: initial;
+    overflow: scroll;
+  }
 }

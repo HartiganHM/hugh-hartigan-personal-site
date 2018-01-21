@@ -7,9 +7,12 @@ class Links extends Component {
   render() {
     return (
       <div className="Links">
-        <Link className="nav-link nav-link-top" to="/">
-          Home
-        </Link>
+        <div className="wrapper">
+          <span className="header-wordmark" />
+          <Link className="nav-link nav-link-top" to="/">
+            Home
+          </Link>
+        </div>
         <div className="link-wrapper">
           <a href="https://github.com/HartiganHM" target="_blank">
             <svg className="icon" viewBox="0 0 436.5 426.8">
@@ -33,10 +36,6 @@ class Links extends Component {
             </svg>
           </a>
         </div>
-        <span>
-          Rummage through my GitHub, contact me via e-mail, or connect on
-          LinkedIn
-        </span>
       </div>
     );
   }

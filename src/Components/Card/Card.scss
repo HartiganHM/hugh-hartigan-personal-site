@@ -1,0 +1,17 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+.Card {
+  @include padding(1);
+  .url {
+    display: flex;
+    flex-direction: column;
+    color: $snow;
+    text-decoration: none;
+    .title {
+      font-size: 1.8rem;
+    }
+    .description {
+
+    }
+  }
+}
