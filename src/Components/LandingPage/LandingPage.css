@@ -61,4 +61,6 @@
       .LandingPage .middle .nav-link-right {
         order: -1; }
     .LandingPage .nav-link-top {
-      order: 1; } }
+      order: 1; }
+    .LandingPage .nav-link:hover {
+      transform: translate(3px); } }

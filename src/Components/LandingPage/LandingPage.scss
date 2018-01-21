@@ -75,5 +75,8 @@
     .nav-link-top {
       order: 1;
     }
+    .nav-link:hover {
+      transform: translate(3px);
+    }
   }
 }
