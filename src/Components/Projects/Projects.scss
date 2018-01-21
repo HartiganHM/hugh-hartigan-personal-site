@@ -1,10 +1,10 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
-
 .Projects {
   display: flex;
   flex-direction: column;
   @include width(160);
+  max-height: 100vh;
   .wrapper {
     align-self: stretch;
     display: flex;
@@ -23,6 +23,13 @@
     .nav-link-left:hover {
       transform: translate(-3px);
     }
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    @include margin(1);
+    border: 1px solid $snow;
+    overflow-y: scroll;
   }
 }
 

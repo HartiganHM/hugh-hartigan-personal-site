@@ -3,7 +3,8 @@
 .Projects {
   display: flex;
   flex-direction: column;
-  width: 100rem; }
+  width: 100rem;
+  max-height: 100vh; }
   .Projects .wrapper {
     align-self: stretch;
     display: flex;
@@ -31,6 +32,12 @@
         transition: 0.5s ease-in-out; }
     .Projects .wrapper .nav-link-left:hover {
       transform: translate(-3px); }
+  .Projects .card-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0.625rem;
+    border: 1px solid #f9f9f9;
+    overflow-y: scroll; }
 
 @media screen and (max-width: 1634px) {
   .Projects {
