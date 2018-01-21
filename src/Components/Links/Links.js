@@ -36,10 +36,6 @@ class Links extends Component {
             </svg>
           </a>
         </div>
-        <span className='page-description'>
-          Rummage through my GitHub, contact me via e-mail, or connect on
-          LinkedIn
-        </span>
       </div>
     );
   }
