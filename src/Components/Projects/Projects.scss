@@ -9,6 +9,7 @@
     align-self: stretch;
     display: flex;
     justify-content: space-between;
+    min-height: 63.5px;
     .header-wordmark {
       @include horizontalWordmarkLogo;
       background-image: url('../../images/Wordmark-horizontal.png');
@@ -28,7 +29,6 @@
     display: flex;
     flex-direction: column;
     @include margin(1);
-    border: 1px solid $snow;
     overflow-y: scroll;
   }
 }
