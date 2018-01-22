@@ -7,7 +7,8 @@
   .Blogs .wrapper {
     align-self: stretch;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    min-height: 63.5px; }
     .Blogs .wrapper .header-wordmark {
       height: 3.125rem;
       width: 22.3125rem;
@@ -34,7 +35,7 @@
   .Blogs .card-container {
     padding: 0.625rem;
     margin: 0 10px;
-    border: 1px solid #f9f9f9; }
+    overflow-y: scroll; }
 
 @media screen and (max-width: 1634px) {
   .Blogs {

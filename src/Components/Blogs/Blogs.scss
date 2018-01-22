@@ -9,6 +9,7 @@
     align-self: stretch;
     display: flex;
     justify-content: space-between;
+    min-height: 63.5px;
     .header-wordmark {
       @include horizontalWordmarkLogo;
       background-image: url('../../images/Wordmark-horizontal.png');
@@ -27,7 +28,7 @@
   .card-container {
     @include padding(1);
     margin: 0 10px;
-    border: 1px solid $snow;
+    overflow-y: scroll;
   }
 }
 
