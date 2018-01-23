@@ -15,7 +15,7 @@ const Card = props => {
   if (gitHub) {
     return (
       <div className="Card">
-        <span className={image} />
+        <img className="project-image" src={require(`../../images/${image}.jpg`)} alt={image} />
         <div className="content-container">
           <span className="title">{title}</span>
           <div className="description-box">
@@ -27,9 +27,9 @@ const Card = props => {
             <span className="tech-stack">{techStack}</span>
           </div>
           <span className="button-wrapper">
-            <a href={liveLink} className="button">
+            {liveLink && <a href={liveLink} className="button">
               Launch
-            </a>
+            </a>}
             <a href={gitHub} className="button">
               GitHub
             </a>
