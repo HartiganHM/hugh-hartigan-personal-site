@@ -34,8 +34,6 @@
     .Projects .wrapper .nav-link-left:hover {
       transform: translate(-3px); }
   .Projects .card-container {
-    display: flex;
-    flex-direction: column;
     margin: 0.625rem;
     overflow-y: scroll; }
 

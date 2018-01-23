@@ -26,8 +26,6 @@
     }
   }
   .card-container {
-    display: flex;
-    flex-direction: column;
     @include margin(1);
     overflow-y: scroll;
   }
