@@ -8,6 +8,10 @@
   max-height: convertRem($maxHeight);
 }
 
+@mixin minHeight($minHeight) {
+  min-height: convertRem($minHeight);
+}
+
 @mixin maxWidth($maxWidth) {
   max-width: convertRem($maxWidth);
 }

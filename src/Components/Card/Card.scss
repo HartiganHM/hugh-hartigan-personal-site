@@ -1,17 +1,68 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 .Card {
-  @include padding(1);
+  display: flex;
+  flex-direction: column;
+  .project-image {
+    @include width(156);
+    margin-bottom: 20px;
+  }
+  .content-container {
+    @include padding(1);
+    .description-box, .tech-stack-box {
+      display: flex;
+      flex-direction: column;
+      .description-header, .tech-stack-header {
+        font-size: 1.2rem;
+        text-decoration: underline;
+      }
+      .description, .tech-stack {
+        @include padding(1);
+      }
+    }
+    .button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      @include padding(1);
+      .button {
+        @include button;
+        &:hover {
+          @include buttonHover;
+        }
+      }
+    }
+  }
   .url {
     display: flex;
     flex-direction: column;
     color: $snow;
     text-decoration: none;
-    .title {
-      font-size: 1.8rem;
-    }
-    .description {
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+}
 
-    }
+@media screen and (max-width: 1634px) {
+  .Card .project-image {
+    @include width(124);
+  }
+}
+
+@media screen and (max-width: 1334px) {
+  .Card .project-image {
+    @include width(92);
+  }
+}
+
+@media screen and (max-width: 1014px) {
+  .Card .project-image {
+    @include width(60);
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .project-image {
+    @include width(28);
   }
 }

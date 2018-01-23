@@ -1,0 +1,56 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+.Projects {
+  display: flex;
+  flex-direction: column;
+  @include width(160);
+  max-height: 100vh;
+  .wrapper {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    min-height: 63.5px;
+    .header-wordmark {
+      @include horizontalWordmarkLogo;
+      background-image: url('../../images/Wordmark-horizontal.png');
+    }
+    .nav-link {
+      align-self: baseline;
+      @include button;
+      &:hover {
+        @include buttonHover;
+      }
+    }
+    .nav-link-left:hover {
+      transform: translate(-3px);
+    }
+  }
+  .card-container {
+    @include margin(1);
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 1634px) {
+  .Projects {
+    @include width(128);
+  }
+}
+
+@media screen and (max-width: 1334px) {
+  .Projects {
+    @include width(96);
+  }
+}
+
+@media screen and (max-width: 1014px) {
+  .Projects {
+    @include width(64);
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .Projects {
+    @include width(32);
+  }
+}
