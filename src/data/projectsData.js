@@ -7,18 +7,18 @@ export default [
     gitHub: 'https://github.com/HartiganHM/our-planet',
     liveLink: 'https://hartiganhm.github.io/our-planet/',
   },
-  // {
-  //   title: 'Our Planet',
-  //   description: 'A study in React, Redux, and Node.js centered around the well being of endangered animals across the globe',
-  //   techStack: 'React, Redux, Router, Node.js, Knex, PostgreSQL',
-  //   gitHub: 'https://github.com/HartiganHM/our-planet',
-  //   liveLink: 'https://hartiganhm.github.io/our-planet/',
-  // },
-  // {
-  //   title: 'Our Planet',
-  //   description: 'A study in React, Redux, and Node.js centered around the well being of endangered animals across the globe',
-  //   techStack: 'React, Redux, Router, Node.js, Knex, PostgreSQL',
-  //   gitHub: 'https://github.com/HartiganHM/our-planet',
-  //   liveLink: 'https://hartiganhm.github.io/our-planet/',
-  // }
+  {
+    title: 'Movie Tracker',
+    description: 'A study in React, Redux, and Node.js centered around the well being of endangered animals across the globe',
+    techStack: 'React, Redux, Router, Jest,Enzyme',
+    gitHub: 'https://github.com/HartiganHM/swapibox',
+    liveLink: '',
+  },
+  {
+    title: 'SWAPI Box',
+    description: 'Uses The Movie Database API to show the twenty most recently released movies. Allows users to log in with a username and password as well as save favorite movies.',
+    techStack: 'React, SCSS, Jest, Enzyme',
+    gitHub: 'https://github.com/HartiganHM/our-planet',
+    liveLink: '',
+  }
 ]
