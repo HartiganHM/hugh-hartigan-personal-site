@@ -3,8 +3,9 @@
 .Card {
   display: flex;
   flex-direction: column;
-  .image {
-    @include minHeight(40);
+  .project-image {
+    @include width(156);
+    margin-bottom: 20px;
   }
   .content-container {
     @include padding(1);
@@ -40,9 +41,28 @@
   .title {
     font-size: 1.8rem;
   }
-  .our-planet-screen-shot {
-    background-image: url('../../images/our-planet-screen-shot');
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1634px) {
+  .Card .project-image {
+    @include width(124);
+  }
+}
+
+@media screen and (max-width: 1334px) {
+  .Card .project-image {
+    @include width(92);
+  }
+}
+
+@media screen and (max-width: 1014px) {
+  .Card .project-image {
+    @include width(60);
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .project-image {
+    @include width(28);
   }
 }
