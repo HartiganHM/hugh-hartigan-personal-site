@@ -19,10 +19,8 @@
       @include button;
       &:hover {
         @include buttonHover;
+        transform: translate(0, -3px);
       }
-    }
-    .nav-link-left:hover {
-      transform: translate(-3px);
     }
   }
   .card-container {

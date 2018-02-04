@@ -6,12 +6,13 @@ import './Projects.css';
 
 class Projects extends Component {
   render() {
+    console.log(this)
     const projects = projectsData.map((project, index) => <Card key={index} data={project} />);
     return (
       <div className="Projects">
         <div className="wrapper">
           <span className="header-wordmark" />
-          <Link className="nav-link nav-link-left" to="/">
+          <Link className="nav-link" to="/">
             Home
           </Link>
         </div>
