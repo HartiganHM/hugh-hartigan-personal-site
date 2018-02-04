@@ -7,10 +7,6 @@
   align-items: center;
   flex-direction: column;
   @include width(160);
-  .middle {
-    display: flex;
-    align-items: center;
-  }
   .wordmark {
     @include width(30);
     @include height(30);
@@ -21,23 +17,15 @@
       repeat: no-repeat;
     }
   }
-  .nav-link {
-    @include button;
-    &:hover {
-      @include buttonHover
+  .nav-bar {
+    display: flex;
+    .nav-link {
+      @include button;
+      &:hover {
+        @include buttonHover;
+        transform: translate(0, -3px);
+      }
     }
-  }
-  .nav-link-top:hover {
-    transform: translate(0, -3px);
-  }
-  .nav-link-right:hover {
-    transform: translate(3px);
-  }
-  .nav-link-bottom:hover {
-    transform: translate(0, 3px);
-  }
-  .nav-link-left:hover {
-    transform: translate(-3px);
   }
 }
 
@@ -62,21 +50,8 @@
 @media screen and (max-width: 694px) {
   .LandingPage {
     @include width(32);
-    .middle {
-      order: -1;
+    .nav-bar {
       flex-direction: column;
-      .wordmark {
-        order: -2;
-      }
-      .nav-link-right {
-        order: -1;
-      }
-    }
-    .nav-link-top {
-      order: 1;
-    }
-    .nav-link:hover {
-      transform: translate(3px);
     }
   }
 }
