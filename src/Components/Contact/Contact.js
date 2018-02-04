@@ -9,7 +9,7 @@ class Contact extends Component {
       <div className="Contact">
         <div className="wrapper">
           <span className="header-wordmark" />
-          <Link className="nav-link nav-link-top" to="/">
+          <Link className="nav-link" to="/">
             Home
           </Link>
         </div>
