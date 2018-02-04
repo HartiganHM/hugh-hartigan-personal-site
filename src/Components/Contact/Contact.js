@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import svgPaths from '../../data/svgPaths';
-import './Links.css';
+import './Contacts.css';
 
-class Links extends Component {
+class Contacts extends Component {
   render() {
     return (
-      <div className="Links">
+      <div className="Contacts">
         <div className="wrapper">
           <span className="header-wordmark" />
           <Link className="nav-link nav-link-top" to="/">
@@ -41,4 +41,4 @@ class Links extends Component {
   }
 }
 
-export default Links;
+export default Contacts;
