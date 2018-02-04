@@ -3,7 +3,9 @@
 .Blogs {
   display: flex;
   flex-direction: column;
-  width: 100rem; }
+  width: 100rem;
+  max-height: 100vh;
+  color: #3c4042; }
   .Blogs .wrapper {
     align-self: stretch;
     display: flex;
@@ -30,9 +32,8 @@
         background-color: #319fd9;
         color: #f9f9f9;
         transition: 0.5s ease-in-out; }
-    .Blogs .wrapper .nav-link-right:hover {
-      transform: translate(3px); }
   .Blogs .card-container {
+    flex: 1;
     padding: 0.625rem;
     margin: 0 10px;
     overflow-y: scroll; }
