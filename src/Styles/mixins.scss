@@ -60,10 +60,27 @@
   transition: 0.5s ease-in-out;
 }
 
+@mixin buttonAlternate() {
+  @include width(8);
+  @include padding(1);
+  border: 1px solid $snow;
+  color: $accent-color-light;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+}
+
 @mixin buttonHover () {
   border: 1px solid $snow;
   background-color: $snow;
   color: $accent-color-light;
+  transition: 0.5s ease-in-out;
+}
+
+@mixin buttonHoverAlternate () {
+  border: 1px solid $accent-color-light;
+  background-color: $accent-color-light;
+  color: $snow;
   transition: 0.5s ease-in-out;
 }
 
