@@ -44,6 +44,4 @@
 
 @media screen and (max-width: 694px) {
   .LandingPage {
-    width: 20rem; }
-    .LandingPage .nav-bar {
-      flex-direction: column; } }
+    width: 20rem; } }

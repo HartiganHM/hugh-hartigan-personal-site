@@ -50,8 +50,5 @@
 @media screen and (max-width: 694px) {
   .LandingPage {
     @include width(32);
-    .nav-bar {
-      flex-direction: column;
-    }
   }
 }
