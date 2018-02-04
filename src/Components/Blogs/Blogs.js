@@ -11,7 +11,7 @@ class Blogs extends Component {
       <div className="Blogs">
         <div className="wrapper">
           <span className="header-wordmark" />
-          <Link className="nav-link nav-link-right" to="/">
+          <Link className="nav-link" to="/">
             Home
           </Link>
         </div>
