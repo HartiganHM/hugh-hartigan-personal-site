@@ -15,23 +15,21 @@
       margin: 0.625rem;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url("../../images/Wordmark-horizontal.png"); }
+      background-image: url("../../images/Wordmark-horizontal-blue.png"); }
     .Links .wrapper .nav-link {
       align-self: baseline;
       width: 5rem;
       padding: 0.625rem;
       border: 1px solid #319fd9;
-      color: #f9f9f9;
+      color: #319fd9;
       text-align: center;
       text-decoration: none;
       transition: 0.5s ease-in-out; }
       .Links .wrapper .nav-link:hover {
-        border: 1px solid #f9f9f9;
-        background-color: #f9f9f9;
-        color: #319fd9;
+        border: 1px solid #319fd9;
+        background-color: #319fd9;
+        color: #f9f9f9;
         transition: 0.5s ease-in-out; }
-    .Links .wrapper .nav-link-top:hover {
-      transform: translate(0, -3px); }
   .Links .link-wrapper {
     display: flex;
     padding: 3.125rem; }
@@ -41,7 +39,7 @@
       fill: #3c4042;
       transition: 0.5s ease-in-out; }
       .Links .link-wrapper .icon:hover {
-        fill: #f9f9f9;
+        fill: #319fd9;
         transform: translate(0, -3px);
         transition: 0.5s ease-in-out; }
 
