@@ -16,9 +16,9 @@
     }
     .nav-link {
       align-self: baseline;
-      @include button;
+      @include buttonAlternate;
       &:hover {
-        @include buttonHover;
+        @include buttonHoverAlternate;
       }
     }
     .nav-link-right:hover {
