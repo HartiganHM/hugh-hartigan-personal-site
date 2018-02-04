@@ -63,7 +63,7 @@
 @mixin buttonAlternate() {
   @include width(8);
   @include padding(1);
-  border: 1px solid $snow;
+  border: 1px solid $accent-color-light;
   color: $accent-color-light;
   text-align: center;
   text-decoration: none;
