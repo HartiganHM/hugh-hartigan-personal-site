@@ -2,7 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 .Card {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  color: #3c4042; }
   .Card .project-image {
     width: 97.5rem;
     margin-bottom: 20px; }
@@ -36,8 +37,11 @@
   .Card .url {
     display: flex;
     flex-direction: column;
-    color: #f9f9f9;
-    text-decoration: none; }
+    color: #3c4042;
+    text-decoration: none;
+    transition: 0.2s color ease-in-out; }
+    .Card .url:hover {
+      color: #319fd9; }
   .Card .title {
     font-size: 2.4rem; }
 
