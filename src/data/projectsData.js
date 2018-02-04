@@ -8,6 +8,14 @@ export default [
     liveLink: 'https://hartiganhm.github.io/our-planet/',
   },
   {
+    image: 'palette-picker-screen-shot',
+    title: 'Palette Picker',
+    description: 'For the little scientist in all of us! A progressive web app that allows users to save projects and palettes (read as: concoctions and goo).',
+    techStack: 'jQuery, Node.js, Knex, PostgreSQL',
+    gitHub: 'https://github.com/HartiganHM/pwa-palette-picker',
+    liveLink: 'palettepickerpwa.herokuapp.com'
+  },
+  {
     image: 'movie-tracker-screen-shot',
     title: 'Movie Tracker',
     description: 'Uses The Movie Database API to show the twenty most recently released movies. Allows users to log in with a username and password as well as save favorite movies.',
@@ -22,13 +30,5 @@ export default [
     techStack: 'React, SCSS, Jest, Enzyme',
     gitHub: 'https://github.com/HartiganHM/swapibox',
     liveLink: 'https://hartiganhm.github.io/swapibox/',
-  },
-  {
-    image: 'palette-picker-screen-shot',
-    title: 'Palette Picker',
-    description: 'For the little scientist in all of us! A progressive web app that allows users to save projects and palettes (read as: concoctions and goo).',
-    techStack: 'jQuery, Node.js, Knex, PostgreSQL',
-    gitHub: 'https://github.com/HartiganHM/pwa-palette-picker',
-    liveLink: 'palettepickerpwa.herokuapp.com'
   }
 ]
