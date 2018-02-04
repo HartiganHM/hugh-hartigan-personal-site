@@ -9,7 +9,6 @@
   .wrapper {
     align-self: stretch;
     display: flex;
-    align-items: baseline;
     justify-content: space-between;
     min-height: 63.5px;
     .header-wordmark {
@@ -21,7 +20,6 @@
       @include buttonAlternate;
       &:hover {
         @include buttonHoverAlternate;
-        transform: translate(0, -3px);
       }
     }
   }
