@@ -16,8 +16,8 @@ const LandingPage = () => {
         <Link className="nav-link" to="/projects">
           Projects
         </Link>
-        <Link className="nav-link" to="/links">
-          Links
+        <Link className="nav-link" to="/contact">
+          Contact
         </Link>
       </div>
     </div>
