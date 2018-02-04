@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   width: 100rem;
-  max-height: 100vh; }
+  max-height: 100vh;
+  color: #3c4042; }
   .Projects .wrapper {
     align-self: stretch;
     display: flex;

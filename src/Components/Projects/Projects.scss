@@ -5,10 +5,11 @@
   flex-direction: column;
   @include width(160);
   max-height: 100vh;
+  color: $neutral-dark;
   .wrapper {
     align-self: stretch;
     display: flex;
-    align-items: baseline;`
+    align-items: baseline;
     justify-content: space-between;
     min-height: 63.5px;
     .header-wordmark {
