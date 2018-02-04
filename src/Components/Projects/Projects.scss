@@ -8,17 +8,18 @@
   .wrapper {
     align-self: stretch;
     display: flex;
+    align-items: baseline;`
     justify-content: space-between;
     min-height: 63.5px;
     .header-wordmark {
       @include horizontalWordmarkLogo;
-      background-image: url('../../images/Wordmark-horizontal.png');
+      background-image: url('../../images/Wordmark-horizontal-blue.png');
     }
     .nav-link {
       align-self: baseline;
-      @include button;
+      @include buttonAlternate;
       &:hover {
-        @include buttonHover;
+        @include buttonHoverAlternate;
         transform: translate(0, -3px);
       }
     }
