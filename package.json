@@ -2,6 +2,7 @@
   "name": "hugh-hartigan-personal-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://hartiganhm.com",
   "dependencies": {
     "fs-watcher": "^0.2.1",
     "gh-pages": "^1.1.0",
@@ -19,6 +20,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
