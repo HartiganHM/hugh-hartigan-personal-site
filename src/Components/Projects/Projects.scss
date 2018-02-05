@@ -25,6 +25,7 @@
   }
   .card-container {
     @include margin(1);
+    background-color: $accent-color-light;
     overflow-y: scroll;
   }
 }
