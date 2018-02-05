@@ -1,6 +1,5 @@
 @import '../../Styles/variables.scss';
 @import '../../Styles/mixins.scss';
-
 .About {
   align-self: stretch;
   display: flex;
@@ -32,12 +31,44 @@
     align-self: stretch;
     flex: 1;
     display: flex;
-    .profile-image {
-      @include height(50);
-      @include width(40);
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    .top-container {
+      display: flex;
+      .profile-image {
+        @include height(50);
+        @include width(40);
+      }
+      .profile-description-container {
+        @include padding(2);
+        .description-header {
+          font-size: 1.8rem;
+          text-decoration: underline;
+        }
+        .profile-description {
+          @include maxWidth(55);
+          text-indent: 1rem;
+          line-height: 150%;
+        }
+        .questions {
+          color: $neutral-light;
+          font-style: italic;
+          list-style: none;
+          line-height: 150%;
+        }
+      }
     }
-    .profile-description {
-      @include maxWidth(55);
+    .bottom-container {
+      display: flex;
+      margin-top: 20px;
+      .about-button {
+        @include buttonAlternate();
+        &:hover {
+          @include buttonHoverAlternate();
+          transform: translate(0, -3px);
+        }
+      }
     }
   }
 }

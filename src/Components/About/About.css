@@ -38,12 +38,46 @@
   .About .info-container {
     align-self: stretch;
     flex: 1;
-    display: flex; }
-    .About .info-container .profile-image {
-      height: 31.25rem;
-      width: 25rem; }
-    .About .info-container .profile-description {
-      max-width: 34.375rem; }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto; }
+    .About .info-container .top-container {
+      display: flex; }
+      .About .info-container .top-container .profile-image {
+        height: 31.25rem;
+        width: 25rem; }
+      .About .info-container .top-container .profile-description-container {
+        padding: 1.25rem; }
+        .About .info-container .top-container .profile-description-container .description-header {
+          font-size: 1.8rem;
+          text-decoration: underline; }
+        .About .info-container .top-container .profile-description-container .profile-description {
+          max-width: 34.375rem;
+          text-indent: 1rem;
+          line-height: 150%; }
+        .About .info-container .top-container .profile-description-container .questions {
+          color: #7d8589;
+          font-style: italic;
+          list-style: none;
+          line-height: 150%; }
+    .About .info-container .bottom-container {
+      display: flex;
+      margin-top: 20px; }
+      .About .info-container .bottom-container .about-button {
+        width: 5rem;
+        padding: 0.625rem;
+        border: 1px solid #319fd9;
+        color: #319fd9;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.5s ease-in-out; }
+        .About .info-container .bottom-container .about-button:hover {
+          border: 1px solid #319fd9;
+          background-color: #319fd9;
+          color: #f9f9f9;
+          transition: 0.5s ease-in-out;
+          transform: translate(0, -3px); }
 
 @media screen and (max-width: 1634px) {
   .About {
