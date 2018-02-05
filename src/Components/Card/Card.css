@@ -3,6 +3,8 @@
 .Card {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
   color: #3c4042; }
   .Card .project-image {
     width: 97.5rem;
@@ -19,9 +21,9 @@
         padding: 0.625rem; }
     .Card .content-container .button-wrapper {
       display: flex;
-      justify-content: flex-end;
       padding: 0.625rem; }
       .Card .content-container .button-wrapper .button {
+        margin-right: 10px;
         width: 5rem;
         padding: 0.625rem;
         border: 1px solid #319fd9;

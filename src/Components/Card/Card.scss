@@ -3,6 +3,8 @@
 .Card {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+  background-color: $snow;
   color: $neutral-dark;
   .project-image {
     @include width(156);
@@ -23,9 +25,9 @@
     }
     .button-wrapper {
       display: flex;
-      justify-content: flex-end;
       @include padding(1);
       .button {
+        margin-right: 10px;
         @include buttonAlternate;
         &:hover {
           @include buttonHoverAlternate;
