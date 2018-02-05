@@ -7,12 +7,23 @@ class Contact extends Component {
   render() {
     return (
       <div className="Contact">
-        <div className="wrapper">
-          <span className="header-wordmark" />
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-        </div>
+      <div className="wrapper">
+      <span className="header-wordmark" />
+      <span className="nav-bar">
+        <Link className="nav-link" to="/">
+          Home
+        </Link>
+        <Link className="nav-link" to="/about">
+          About
+        </Link>
+        <Link className="nav-link" to="/projects">
+          Projects
+        </Link>
+        <Link className="nav-link" to="/blogs">
+          Blogs
+        </Link>
+      </span>
+    </div>
         <div className="link-wrapper">
           <a href="https://github.com/HartiganHM" target="_blank" rel="noopener noreferrer">
             <svg className="icon" viewBox="0 0 436.5 426.8">
