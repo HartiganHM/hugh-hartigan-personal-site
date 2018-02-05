@@ -6,18 +6,29 @@ import './Projects.css';
 
 class Projects extends Component {
   render() {
-    console.log(this);
     const projects = projectsData.map((project, index) => (
       <Card key={index} data={project} />
     ));
+
     return (
       <div className="Projects">
-        <div className="wrapper">
-          <span className="header-wordmark" />
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-        </div>
+      <div className="wrapper">
+      <span className="header-wordmark" />
+      <span className="nav-bar">
+        <Link className="nav-link" to="/">
+          Home
+        </Link>
+        <Link className="nav-link" to="/about">
+          About
+        </Link>
+        <Link className="nav-link" to="/contact">
+          Contact
+        </Link>
+        <Link className="nav-link" to="/blogs">
+          Blogs
+        </Link>
+      </span>
+    </div>
         <div className="card-container">{projects}</div>
       </div>
     );

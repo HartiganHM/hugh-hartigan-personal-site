@@ -13,7 +13,7 @@ export default [
     description: 'For the little scientist in all of us! A progressive web app that allows users to save projects and palettes (read as: concoctions and goo).',
     techStack: 'jQuery, Node.js, Knex, PostgreSQL',
     gitHub: 'https://github.com/HartiganHM/pwa-palette-picker',
-    liveLink: 'palettepickerpwa.herokuapp.com'
+    liveLink: 'https://palettepickerpwa.herokuapp.com'
   },
   {
     image: 'movie-tracker-screen-shot',

@@ -10,15 +10,20 @@
     align-self: stretch;
     display: flex;
     justify-content: space-between;
+    min-height: 63.5px;
     .header-wordmark {
       @include horizontalWordmarkLogo;
       background-image: url('../../images/Wordmark-horizontal-blue.png');
     }
-    .nav-link {
-      align-self: baseline;
-      @include buttonAlternate;
-      &:hover {
-        @include buttonHoverAlternate;
+    .nav-bar {
+      display: flex;
+      .nav-link {
+        align-self: baseline;
+        margin-left: 10px;
+        @include buttonAlternate;
+        &:hover {
+          @include buttonHoverAlternate;
+        }
       }
     }
   }
@@ -43,25 +48,25 @@
 }
 
 @media screen and (max-width: 1634px) {
-  .Links {
+  .Contact {
     @include width(128);
   }
 }
 
 @media screen and (max-width: 1334px) {
-  .Links {
+  .Contact {
     @include width(96);
   }
 }
 
 @media screen and (max-width: 1014px) {
-  .Links {
+  .Contact {
     @include width(64);
   }
 }
 
 @media screen and (max-width: 694px) {
-  .Links {
+  .Contact {
     @include width(32);
   }
 }

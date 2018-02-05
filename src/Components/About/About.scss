@@ -1,0 +1,98 @@
+@import '../../Styles/variables.scss';
+@import '../../Styles/mixins.scss';
+.About {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  color: $neutral-dark;
+  @include width(160);
+  .wrapper {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    min-height: 63.5px;
+    .header-wordmark {
+      @include horizontalWordmarkLogo;
+      background-image: url('../../images/Wordmark-horizontal-blue.png');
+    }
+    .nav-bar {
+      display: flex;
+      .nav-link {
+        align-self: baseline;
+        margin-left: 10px;
+        @include buttonAlternate;
+        &:hover {
+          @include buttonHoverAlternate;
+        }
+      }
+    }
+  }
+  .info-container {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    .top-container {
+      display: flex;
+      .profile-image {
+        @include height(50);
+        @include width(40);
+      }
+      .profile-description-container {
+        @include padding(2);
+        .description-header {
+          font-size: 1.8rem;
+          text-decoration: underline;
+        }
+        .profile-description {
+          @include maxWidth(55);
+          text-indent: 1rem;
+          line-height: 150%;
+        }
+        .questions {
+          color: $neutral-light;
+          font-style: italic;
+          list-style: none;
+          line-height: 150%;
+        }
+      }
+    }
+    .bottom-container {
+      display: flex;
+      margin-top: 20px;
+      .about-button {
+        @include buttonAlternate();
+        &:hover {
+          @include buttonHoverAlternate();
+          transform: translate(0, -3px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1634px) {
+  .About {
+    @include width(128);
+  }
+}
+
+@media screen and (max-width: 1334px) {
+  .About {
+    @include width(96);
+  }
+}
+
+@media screen and (max-width: 1014px) {
+  .About {
+    @include width(64);
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .About {
+    @include width(32);
+  }
+}

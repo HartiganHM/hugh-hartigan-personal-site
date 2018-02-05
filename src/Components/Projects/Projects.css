@@ -18,20 +18,23 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-image: url("../../images/Wordmark-horizontal-blue.png"); }
-    .Projects .wrapper .nav-link {
-      align-self: baseline;
-      width: 5rem;
-      padding: 0.625rem;
-      border: 1px solid #319fd9;
-      color: #319fd9;
-      text-align: center;
-      text-decoration: none;
-      transition: 0.5s ease-in-out; }
-      .Projects .wrapper .nav-link:hover {
+    .Projects .wrapper .nav-bar {
+      display: flex; }
+      .Projects .wrapper .nav-bar .nav-link {
+        align-self: baseline;
+        margin-left: 10px;
+        width: 5rem;
+        padding: 0.625rem;
         border: 1px solid #319fd9;
-        background-color: #319fd9;
-        color: #f9f9f9;
+        color: #319fd9;
+        text-align: center;
+        text-decoration: none;
         transition: 0.5s ease-in-out; }
+        .Projects .wrapper .nav-bar .nav-link:hover {
+          border: 1px solid #319fd9;
+          background-color: #319fd9;
+          color: #f9f9f9;
+          transition: 0.5s ease-in-out; }
   .Projects .card-container {
     margin: 0.625rem;
     background-color: #319fd9;

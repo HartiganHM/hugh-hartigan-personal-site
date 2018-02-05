@@ -32,11 +32,11 @@ const Card = props => {
           </div>
           <span className="button-wrapper">
             {liveLink && (
-              <a href={liveLink} className="button">
+              <a href={liveLink} target="_blank" className="button">
                 Launch
               </a>
             )}
-            <a href={gitHub} className="button">
+            <a href={gitHub} target="_blank" className="button">
               GitHub
             </a>
           </span>
