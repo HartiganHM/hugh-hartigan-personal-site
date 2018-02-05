@@ -6,10 +6,10 @@ import './Projects.css';
 
 class Projects extends Component {
   render() {
-    console.log(this);
     const projects = projectsData.map((project, index) => (
       <Card key={index} data={project} />
     ));
+
     return (
       <div className="Projects">
         <div className="wrapper">
