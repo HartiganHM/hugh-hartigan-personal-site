@@ -2,11 +2,11 @@
 @import '../../Styles/mixins.scss';
 
 .About {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  @include width(160);
-  max-height: 100vh;
   color: $neutral-dark;
+  @include width(160);
   .wrapper {
     align-self: stretch;
     display: flex;
@@ -16,39 +16,52 @@
       @include horizontalWordmarkLogo;
       background-image: url('../../images/Wordmark-horizontal-blue.png');
     }
-    .nav-link {
-      align-self: baseline;
-      @include buttonAlternate;
-      &:hover {
-        @include buttonHoverAlternate;
+    .nav-bar {
+      display: flex;
+      .nav-link {
+        align-self: baseline;
+        margin-left: 10px;
+        @include buttonAlternate;
+        &:hover {
+          @include buttonHoverAlternate;
+        }
       }
     }
   }
-  .profile-image {
-    @include width(50);
+  .info-container {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    .profile-image {
+      @include height(50);
+      @include width(40);
+    }
+    .profile-description {
+      @include maxWidth(55);
+    }
   }
 }
 
 @media screen and (max-width: 1634px) {
-  .Projects {
+  .About {
     @include width(128);
   }
 }
 
 @media screen and (max-width: 1334px) {
-  .Projects {
+  .About {
     @include width(96);
   }
 }
 
 @media screen and (max-width: 1014px) {
-  .Projects {
+  .About {
     @include width(64);
   }
 }
 
 @media screen and (max-width: 694px) {
-  .Projects {
+  .About {
     @include width(32);
   }
 }

@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 .About {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  width: 100rem;
-  max-height: 100vh;
-  color: #3c4042; }
+  color: #3c4042;
+  width: 100rem; }
   .About .wrapper {
     align-self: stretch;
     display: flex;
@@ -18,35 +18,45 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-image: url("../../images/Wordmark-horizontal-blue.png"); }
-    .About .wrapper .nav-link {
-      align-self: baseline;
-      width: 5rem;
-      padding: 0.625rem;
-      border: 1px solid #319fd9;
-      color: #319fd9;
-      text-align: center;
-      text-decoration: none;
-      transition: 0.5s ease-in-out; }
-      .About .wrapper .nav-link:hover {
+    .About .wrapper .nav-bar {
+      display: flex; }
+      .About .wrapper .nav-bar .nav-link {
+        align-self: baseline;
+        margin-left: 10px;
+        width: 5rem;
+        padding: 0.625rem;
         border: 1px solid #319fd9;
-        background-color: #319fd9;
-        color: #f9f9f9;
+        color: #319fd9;
+        text-align: center;
+        text-decoration: none;
         transition: 0.5s ease-in-out; }
-  .About .profile-image {
-    width: 31.25rem; }
+        .About .wrapper .nav-bar .nav-link:hover {
+          border: 1px solid #319fd9;
+          background-color: #319fd9;
+          color: #f9f9f9;
+          transition: 0.5s ease-in-out; }
+  .About .info-container {
+    align-self: stretch;
+    flex: 1;
+    display: flex; }
+    .About .info-container .profile-image {
+      height: 31.25rem;
+      width: 25rem; }
+    .About .info-container .profile-description {
+      max-width: 34.375rem; }
 
 @media screen and (max-width: 1634px) {
-  .Projects {
+  .About {
     width: 80rem; } }
 
 @media screen and (max-width: 1334px) {
-  .Projects {
+  .About {
     width: 60rem; } }
 
 @media screen and (max-width: 1014px) {
-  .Projects {
+  .About {
     width: 40rem; } }
 
 @media screen and (max-width: 694px) {
-  .Projects {
+  .About {
     width: 20rem; } }
