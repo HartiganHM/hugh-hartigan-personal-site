@@ -2,6 +2,7 @@
   "name": "hugh-hartigan-personal-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://hartiganhm.com",
   "dependencies": {
     "fs-watcher": "^0.2.1",
     "gh-pages": "^1.1.0",
