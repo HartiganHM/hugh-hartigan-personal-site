@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   @include width(160);
+  max-height: 100vh;
+  color: $neutral-dark;
   .wrapper {
     align-self: stretch;
     display: flex;
@@ -16,16 +18,14 @@
     }
     .nav-link {
       align-self: baseline;
-      @include button;
+      @include buttonAlternate;
       &:hover {
-        @include buttonHover;
+        @include buttonHoverAlternate;
       }
-    }
-    .nav-link-right:hover {
-      transform: translate(3px);
     }
   }
   .card-container {
+    flex: 1;
     @include padding(1);
     margin: 0 10px;
     overflow-y: scroll;

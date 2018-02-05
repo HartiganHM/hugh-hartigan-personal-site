@@ -2,7 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 .Card {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+  color: #3c4042; }
   .Card .project-image {
     width: 97.5rem;
     margin-bottom: 20px; }
@@ -18,28 +21,31 @@
         padding: 0.625rem; }
     .Card .content-container .button-wrapper {
       display: flex;
-      justify-content: flex-end;
       padding: 0.625rem; }
       .Card .content-container .button-wrapper .button {
+        margin-right: 10px;
         width: 5rem;
         padding: 0.625rem;
         border: 1px solid #319fd9;
-        color: #f9f9f9;
+        color: #319fd9;
         text-align: center;
         text-decoration: none;
         transition: 0.5s ease-in-out; }
         .Card .content-container .button-wrapper .button:hover {
-          border: 1px solid #f9f9f9;
-          background-color: #f9f9f9;
-          color: #319fd9;
+          border: 1px solid #319fd9;
+          background-color: #319fd9;
+          color: #f9f9f9;
           transition: 0.5s ease-in-out; }
   .Card .url {
     display: flex;
     flex-direction: column;
-    color: #f9f9f9;
-    text-decoration: none; }
+    color: #3c4042;
+    text-decoration: none;
+    transition: 0.2s color ease-in-out; }
+    .Card .url:hover {
+      color: #319fd9; }
   .Card .title {
-    font-size: 1.8rem; }
+    font-size: 2.4rem; }
 
 @media screen and (max-width: 1634px) {
   .Card .project-image {

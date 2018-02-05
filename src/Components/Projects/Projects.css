@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   width: 100rem;
-  max-height: 100vh; }
+  max-height: 100vh;
+  color: #3c4042; }
   .Projects .wrapper {
     align-self: stretch;
     display: flex;
@@ -16,25 +17,24 @@
       margin: 0.625rem;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url("../../images/Wordmark-horizontal.png"); }
+      background-image: url("../../images/Wordmark-horizontal-blue.png"); }
     .Projects .wrapper .nav-link {
       align-self: baseline;
       width: 5rem;
       padding: 0.625rem;
       border: 1px solid #319fd9;
-      color: #f9f9f9;
+      color: #319fd9;
       text-align: center;
       text-decoration: none;
       transition: 0.5s ease-in-out; }
       .Projects .wrapper .nav-link:hover {
-        border: 1px solid #f9f9f9;
-        background-color: #f9f9f9;
-        color: #319fd9;
+        border: 1px solid #319fd9;
+        background-color: #319fd9;
+        color: #f9f9f9;
         transition: 0.5s ease-in-out; }
-    .Projects .wrapper .nav-link-left:hover {
-      transform: translate(-3px); }
   .Projects .card-container {
     margin: 0.625rem;
+    background-color: #319fd9;
     overflow-y: scroll; }
 
 @media screen and (max-width: 1634px) {

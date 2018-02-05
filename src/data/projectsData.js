@@ -8,19 +8,27 @@ export default [
     liveLink: 'https://hartiganhm.github.io/our-planet/',
   },
   {
+    image: 'palette-picker-screen-shot',
+    title: 'Palette Picker',
+    description: 'For the little scientist in all of us! A progressive web app that allows users to save projects and palettes (read as: concoctions and goo).',
+    techStack: 'jQuery, Node.js, Knex, PostgreSQL',
+    gitHub: 'https://github.com/HartiganHM/pwa-palette-picker',
+    liveLink: 'palettepickerpwa.herokuapp.com'
+  },
+  {
     image: 'movie-tracker-screen-shot',
     title: 'Movie Tracker',
-    description: 'A study in React, Redux, and Node.js centered around the well being of endangered animals across the globe',
+    description: 'Uses The Movie Database API to show the twenty most recently released movies. Allows users to log in with a username and password as well as save favorite movies.',
     techStack: 'React, Redux, Router, Jest,Enzyme',
-    gitHub: 'https://github.com/HartiganHM/swapibox',
+    gitHub: 'https://github.com/rmorgan323/movie-tracker',
     liveLink: '',
   },
   {
     image: 'swapi-box-screen-shot',
     title: 'SWAPI Box',
-    description: 'Uses The Movie Database API to show the twenty most recently released movies. Allows users to log in with a username and password as well as save favorite movies.',
+    description: 'Built using the Star Wars API as a study in asynchronous JavaScript with nested API calls. Leverages ES6 and hones in on best practices for complex functionality testing.',
     techStack: 'React, SCSS, Jest, Enzyme',
-    gitHub: 'https://github.com/HartiganHM/our-planet',
-    liveLink: '',
+    gitHub: 'https://github.com/HartiganHM/swapibox',
+    liveLink: 'https://hartiganhm.github.io/swapibox/',
   }
 ]

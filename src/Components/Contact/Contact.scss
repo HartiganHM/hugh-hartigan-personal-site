@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
-.Links {
+.Contact {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,21 +12,21 @@
     justify-content: space-between;
     .header-wordmark {
       @include horizontalWordmarkLogo;
-      background-image: url('../../images/Wordmark-horizontal.png');
+      background-image: url('../../images/Wordmark-horizontal-blue.png');
     }
     .nav-link {
       align-self: baseline;
-      @include button;
+      @include buttonAlternate;
       &:hover {
-        @include buttonHover;
+        @include buttonHoverAlternate;
       }
-    }
-    .nav-link-top:hover {
-      transform: translate(0, -3px);
     }
   }
   .link-wrapper {
+    align-self: stretch;
+    flex: 1;
     display: flex;
+    justify-content: center;
     @include padding(5);
     .icon {
       @include width(10);
@@ -33,7 +34,7 @@
       fill: $neutral-dark;
       transition: 0.5s ease-in-out;
       &:hover {
-        fill: $snow;
+        fill: $accent-color-light;
         transform: translate(0, -3px);
         transition: 0.5s ease-in-out;
       }

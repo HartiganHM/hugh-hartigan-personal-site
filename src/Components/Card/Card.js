@@ -15,9 +15,13 @@ const Card = props => {
   if (gitHub) {
     return (
       <div className="Card">
-        <img className="project-image" src={require(`../../images/${image}.jpg`)} alt={image} />
+        <span className="title">{title}</span>
+        <img
+          className="project-image"
+          src={require(`../../images/${image}.jpg`)}
+          alt={image}
+        />
         <div className="content-container">
-          <span className="title">{title}</span>
           <div className="description-box">
             <span className="description-header">Description</span>
             <span className="description">{description}</span>
@@ -27,9 +31,11 @@ const Card = props => {
             <span className="tech-stack">{techStack}</span>
           </div>
           <span className="button-wrapper">
-            {liveLink && <a href={liveLink} className="button">
-              Launch
-            </a>}
+            {liveLink && (
+              <a href={liveLink} className="button">
+                Launch
+              </a>
+            )}
             <a href={gitHub} className="button">
               GitHub
             </a>
