@@ -49,12 +49,12 @@ const About = () => {
 
             <p className="profile-description">
               Reach me through the contacts page of my site to collaborate, grab
-              a coffee, or ponder life's biggest (and smallest) mysteries.
+              a coffee, or ponder life's biggest (and smallest) mysteries:
             </p>
 
             <ul className="questions">
               <li>Is Mario a really good hero or a very bad plumber?</li>
-              <li>If aliens invaded, would they thing dogs owned us?</li>
+              <li>If aliens invaded, would they think dogs owned us?</li>
               <li>
                 Is it possible to get the perfect temperature on a Hot Pocket?
               </li>
