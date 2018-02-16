@@ -22,7 +22,6 @@
       display: flex; }
       .About .wrapper .nav-bar .nav-link {
         align-self: baseline;
-        margin-left: 10px;
         width: 5rem;
         padding: 0.625rem;
         border-bottom: 1px solid #319fd9;
