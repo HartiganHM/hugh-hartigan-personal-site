@@ -59,14 +59,33 @@
         }
       }
     }
-    .bottom-container {
+    .link-wrapper {
+      align-self: stretch;
       display: flex;
-      margin-top: 20px;
-      .about-button {
-        @include buttonAlternate();
-        &:hover {
-          @include buttonHoverAlternate();
-          transform: translate(0, -3px);
+      align-items: baseline;
+      justify-content: center;
+      @include padding(5);
+      .icon-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        .icon {
+          @include width(10);
+          @include padding(1);
+          fill: $neutral-dark;
+          transition: 0.5s ease-in-out;
+          &:hover {
+            fill: $accent-color-light;
+            transform: translate(0, -3px);
+            transition: 0.5s ease-in-out;
+          }
+        }
+        .icon-text {
+          @include width(8);
+          @include padding(1);
+          color: $neutral-dark;
+          text-align: center;
         }
       }
     }
