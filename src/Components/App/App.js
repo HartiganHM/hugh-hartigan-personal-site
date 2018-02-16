@@ -5,7 +5,7 @@ import './App.css';
 
 class App extends Component {
   checkLocation (endpoint) {
-    if (endpoint === '/') {
+    if (endpoint === '/home') {
       return 'App'
     } else {
       return 'App away'
@@ -17,7 +17,7 @@ class App extends Component {
 
     return (
       <div className={this.checkLocation(window.location.pathname)}>
-        <Route to="/" component={Routes} />
+        <Route to="/home" component={Routes} />
       </div>
     );
   }

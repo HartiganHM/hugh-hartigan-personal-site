@@ -12,7 +12,7 @@ class Blogs extends Component {
       <div className="wrapper">
       <span className="header-wordmark" />
       <span className="nav-bar">
-        <NavLink className="nav-link" to="/">
+        <NavLink className="nav-link" to="/home">
           Home
         </NavLink>
         <NavLink className="nav-link" to="/about">
@@ -21,7 +21,7 @@ class Blogs extends Component {
         <NavLink className="nav-link" to="/projects">
         Projects
         </NavLink>
-        <NavLink className="nav-link" to="/contact" disabled>
+        <NavLink className="nav-link" to="/blogs">
           Blogs
         </NavLink>
       </span>

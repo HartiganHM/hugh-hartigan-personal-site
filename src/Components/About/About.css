@@ -35,6 +35,13 @@
           background-color: #319fd9;
           color: #f9f9f9;
           transition: 0.5s ease-in-out; }
+      .About .wrapper .nav-bar .active {
+        border-bottom: 1px solid #319fd9;
+        background-color: #319fd9;
+        color: #f9f9f9;
+        transition: 0.5s ease-in-out;
+        cursor: default;
+        pointer-events: none; }
   .About .info-container {
     align-self: stretch;
     flex: 1;

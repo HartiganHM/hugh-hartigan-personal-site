@@ -23,7 +23,7 @@ class Routes extends Component {
               <Route exact path="/about" render={() => <About />} />
               <Route exact path="/projects" render={() => <Projects />} />
               <Route exact path="/blogs" render={() => <Blogs />} />
-              <Route exact path="/" render={() => <LandingPage />} />
+              <Route exact path="/home" render={() => <LandingPage />} />
             </Switch>
           </div>
         </CSSTransition>

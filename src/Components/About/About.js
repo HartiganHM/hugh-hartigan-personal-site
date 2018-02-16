@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import svgPaths from '../../data/svgPaths';
 import './About.css';
 
@@ -9,18 +9,18 @@ const About = () => {
       <div className="wrapper">
         <span className="header-wordmark" />
         <span className="nav-bar">
-          <Link className="nav-link" to="/">
+          <NavLink className="nav-link" to="/home">
             Home
-          </Link>
-          <Link className="nav-link active" to="/about" disabled>
+          </NavLink>
+          <NavLink className="nav-link active" to="/about" disabled>
             About
-          </Link>
-          <Link className="nav-link" to="/projects">
+          </NavLink>
+          <NavLink className="nav-link" to="/projects">
             Projects
-          </Link>
-          <Link className="nav-link" to="/blogs">
+          </NavLink>
+          <NavLink className="nav-link" to="/blogs">
             Blogs
-          </Link>
+          </NavLink>
         </span>
       </div>
       <div className="info-container">

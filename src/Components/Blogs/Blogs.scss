@@ -26,6 +26,11 @@
           @include buttonHoverAlternate;
         }
       }
+      .active {
+        @include buttonHoverAlternate;
+        cursor: default;
+        pointer-events: none;
+      }
     }
   }
   .card-container {
