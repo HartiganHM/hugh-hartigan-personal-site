@@ -26,13 +26,13 @@
         margin-right: 10px;
         width: 5rem;
         padding: 0.625rem;
-        border: 1px solid #319fd9;
+        border-bottom: 1px solid #319fd9;
         color: #319fd9;
         text-align: center;
         text-decoration: none;
         transition: 0.5s ease-in-out; }
         .Card .content-container .button-wrapper .button:hover {
-          border: 1px solid #319fd9;
+          border-bottom: 1px solid #319fd9;
           background-color: #319fd9;
           color: #f9f9f9;
           transition: 0.5s ease-in-out; }
