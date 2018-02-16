@@ -7,11 +7,11 @@ const LandingPage = () => {
     <div className="LandingPage">
       <span className="wordmark" />
       <div className="nav-bar">
+        <Link className="nav-link active" to="/" disabled>
+          Home
+        </Link>
         <Link className="nav-link" to="/about">
           About
-        </Link>
-        <Link className="nav-link" to="/contact">
-          Contact
         </Link>
         <Link className="nav-link" to="/projects">
           Projects
