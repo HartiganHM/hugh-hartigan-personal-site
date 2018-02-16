@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Card from '../Card/Card';
 import blogsData from '../../data/blogsData';
 import './Blogs.css';
@@ -12,18 +12,18 @@ class Blogs extends Component {
       <div className="wrapper">
       <span className="header-wordmark" />
       <span className="nav-bar">
-        <Link className="nav-link" to="/">
+        <NavLink className="nav-link" to="/home">
           Home
-        </Link>
-        <Link className="nav-link" to="/about">
+        </NavLink>
+        <NavLink className="nav-link" to="/about">
           About
-        </Link>
-        <Link className="nav-link" to="/contact">
-          Contact
-        </Link>
-        <Link className="nav-link" to="/projects">
-          Projects
-        </Link>
+        </NavLink>
+        <NavLink className="nav-link" to="/projects">
+        Projects
+        </NavLink>
+        <NavLink className="nav-link" to="/blogs">
+          Blogs
+        </NavLink>
       </span>
     </div>
         <div className="card-container">{blogPosts}</div>

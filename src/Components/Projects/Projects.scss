@@ -16,14 +16,19 @@
       background-image: url('../../images/Wordmark-horizontal-blue.png');
     }
     .nav-bar {
+      align-self: center;
       display: flex;
       .nav-link {
         align-self: baseline;
-        margin-left: 10px;
         @include buttonAlternate;
         &:hover {
           @include buttonHoverAlternate;
         }
+      }
+      .active {
+        @include buttonHoverAlternate;
+        cursor: default;
+        pointer-events: none;
       }
     }
   }

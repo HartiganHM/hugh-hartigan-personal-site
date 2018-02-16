@@ -18,6 +18,7 @@
     }
   }
   .nav-bar {
+    align-self: center;
     display: flex;
     .nav-link {
       @include button;
@@ -25,6 +26,11 @@
         @include buttonHover;
         transform: translate(0, -3px);
       }
+    }
+    .active {
+      @include buttonHover;
+      cursor: default;
+      pointer-events: none;
     }
   }
 }

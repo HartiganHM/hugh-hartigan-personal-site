@@ -19,22 +19,29 @@
       background-repeat: no-repeat;
       background-image: url("../../images/Wordmark-horizontal-blue.png"); }
     .Blogs .wrapper .nav-bar {
+      align-self: center;
       display: flex; }
       .Blogs .wrapper .nav-bar .nav-link {
         align-self: baseline;
-        margin-left: 10px;
         width: 5rem;
         padding: 0.625rem;
-        border: 1px solid #319fd9;
+        border-bottom: 1px solid #319fd9;
         color: #319fd9;
         text-align: center;
         text-decoration: none;
         transition: 0.5s ease-in-out; }
         .Blogs .wrapper .nav-bar .nav-link:hover {
-          border: 1px solid #319fd9;
+          border-bottom: 1px solid #319fd9;
           background-color: #319fd9;
           color: #f9f9f9;
           transition: 0.5s ease-in-out; }
+      .Blogs .wrapper .nav-bar .active {
+        border-bottom: 1px solid #319fd9;
+        background-color: #319fd9;
+        color: #f9f9f9;
+        transition: 0.5s ease-in-out;
+        cursor: default;
+        pointer-events: none; }
   .Blogs .card-container {
     flex: 1;
     padding: 0.625rem;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -7,18 +7,15 @@ const LandingPage = () => {
     <div className="LandingPage">
       <span className="wordmark" />
       <div className="nav-bar">
-        <Link className="nav-link" to="/about">
+        <NavLink className="nav-link" to="/about">
           About
-        </Link>
-        <Link className="nav-link" to="/contact">
-          Contact
-        </Link>
-        <Link className="nav-link" to="/projects">
+        </NavLink>
+        <NavLink className="nav-link" to="/projects">
           Projects
-        </Link>
-        <Link className="nav-link" to="/blogs">
+        </NavLink>
+        <NavLink className="nav-link" to="/blogs">
           Blogs
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

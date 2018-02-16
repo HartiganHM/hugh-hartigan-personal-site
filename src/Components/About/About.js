@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import svgPaths from '../../data/svgPaths';
 import './About.css';
 
 const About = () => {
@@ -8,18 +9,18 @@ const About = () => {
       <div className="wrapper">
         <span className="header-wordmark" />
         <span className="nav-bar">
-          <Link className="nav-link" to="/">
+          <NavLink className="nav-link" to="/home">
             Home
-          </Link>
-          <Link className="nav-link" to="/contact">
-            Contact
-          </Link>
-          <Link className="nav-link" to="/projects">
+          </NavLink>
+          <NavLink className="nav-link active" to="/about" disabled>
+            About
+          </NavLink>
+          <NavLink className="nav-link" to="/projects">
             Projects
-          </Link>
-          <Link className="nav-link" to="/blogs">
+          </NavLink>
+          <NavLink className="nav-link" to="/blogs">
             Blogs
-          </Link>
+          </NavLink>
         </span>
       </div>
       <div className="info-container">
@@ -62,13 +63,58 @@ const About = () => {
           </div>
         </div>
 
-        <div className="bottom-container">
+        <div className="link-wrapper">
           <a
-            className="about-button"
-            target="_blank"
             href="https://www.turing.io/sites/default/files/resumes/Hugh-Hartigan-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-wrapper"
           >
-            Resume
+            <svg className="icon" viewBox="0 0 512 512">
+              <g>
+                <path d={svgPaths.resume} />
+              </g>
+            </svg>
+            <span className="icon-text">Resume</span>
+          </a>
+          <a
+            href="https://github.com/HartiganHM"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-wrapper"
+          >
+            <svg className="icon" viewBox="0 0 436.5 426.8">
+              <g>
+                <path d={svgPaths.github} />
+              </g>
+            </svg>
+            <span className="icon-text">GitHub</span>
+          </a>
+          <a
+            href="mailto:hartigan.hm@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-wrapper"
+          >
+            <svg className="icon" viewBox="0 0 512 495.1">
+              <g>
+                <path d={svgPaths.email} />
+              </g>
+            </svg>
+            <span className="icon-text">Email</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/hartiganhm/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-wrapper"
+          >
+            <svg className="icon" viewBox="0 0 512 512">
+              <g>
+                <path d={svgPaths.linkedin} />
+              </g>
+            </svg>
+            <span className="icon-text">LinkedIn</span>
           </a>
         </div>
       </div>
@@ -77,3 +123,5 @@ const About = () => {
 };
 
 export default About;
+
+// https://www.turing.io/sites/default/files/resumes/Hugh-Hartigan-Resume.pdf
