@@ -21,8 +21,8 @@ class Projects extends Component {
         <Link className="nav-link" to="/about">
           About
         </Link>
-        <Link className="nav-link" to="/contact">
-          Contact
+        <Link className="nav-link" to="/contact" disabled>
+          Projects
         </Link>
         <Link className="nav-link" to="/blogs">
           Blogs
