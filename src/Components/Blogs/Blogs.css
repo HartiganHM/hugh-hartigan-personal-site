@@ -19,6 +19,7 @@
       background-repeat: no-repeat;
       background-image: url("../../images/Wordmark-horizontal-blue.png"); }
     .Blogs .wrapper .nav-bar {
+      align-self: center;
       display: flex; }
       .Blogs .wrapper .nav-bar .nav-link {
         align-self: baseline;

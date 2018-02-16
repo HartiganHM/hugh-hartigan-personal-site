@@ -18,6 +18,7 @@
     }
   }
   .nav-bar {
+    align-self: center;
     display: flex;
     .nav-link {
       @include button;
