@@ -15,12 +15,12 @@ const Card = props => {
   if (gitHub) {
     return (
       <div className="Card">
-        <span className="title">{title}</span>
         <img
           className="project-image"
           src={require(`../../images/${image}.jpg`)}
           alt={image}
         />
+        <span className="title">{title}</span>
         <div className="content-container">
           <div className="description-box">
             <span className="description-header">Description</span>
