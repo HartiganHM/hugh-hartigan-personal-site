@@ -69,6 +69,7 @@
           list-style: none;
           line-height: 150%; }
     .About .info-container .link-wrapper {
+      flex: 1;
       align-self: stretch;
       display: flex;
       align-items: baseline;
