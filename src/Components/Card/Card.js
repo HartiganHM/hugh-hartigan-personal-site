@@ -47,6 +47,11 @@ const Card = props => {
     return (
       <div className="Card">
         <a className="url" href={url}>
+          <img
+            className="project-image"
+            src={require(`../../images/${image}.jpg`)}
+            alt={image}
+          />
           <span className="title">{title}</span>
           <span className="description">{description}</span>
         </a>
