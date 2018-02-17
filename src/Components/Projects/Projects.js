@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Card from '../Card/Card';
 import projectsData from '../../data/projectsData';
 import './Projects.css';
@@ -15,9 +15,9 @@ class Projects extends Component {
       <div className="wrapper">
       <span className="header-wordmark" />
       <span className="nav-bar">
-        <NavLink className="nav-link" to="/home">
+        <Link className="nav-link" to="/">
           Home
-        </NavLink>
+        </Link>
         <NavLink className="nav-link" to="/about">
           About
         </NavLink>
