@@ -9,15 +9,18 @@
   .Card .project-image {
     width: 97.5rem;
     margin-bottom: 20px; }
+  .Card .blog-image {
+    width: 97.1875rem;
+    margin-bottom: 20px; }
   .Card .content-container {
     padding: 0.625rem; }
-    .Card .content-container .description-box, .Card .content-container .tech-stack-box {
+    .Card .content-container .description-box, .Card .content-container .area-of-focus-box, .Card .content-container .tech-stack-box {
       display: flex;
       flex-direction: column; }
-      .Card .content-container .description-box .description-header, .Card .content-container .description-box .tech-stack-header, .Card .content-container .tech-stack-box .description-header, .Card .content-container .tech-stack-box .tech-stack-header {
+      .Card .content-container .description-box .description-header, .Card .content-container .description-box .area-of-focus-header, .Card .content-container .description-box .tech-stack-header, .Card .content-container .area-of-focus-box .description-header, .Card .content-container .area-of-focus-box .area-of-focus-header, .Card .content-container .area-of-focus-box .tech-stack-header, .Card .content-container .tech-stack-box .description-header, .Card .content-container .tech-stack-box .area-of-focus-header, .Card .content-container .tech-stack-box .tech-stack-header {
         font-size: 1.2rem;
         text-decoration: underline; }
-      .Card .content-container .description-box .description, .Card .content-container .description-box .tech-stack, .Card .content-container .tech-stack-box .description, .Card .content-container .tech-stack-box .tech-stack {
+      .Card .content-container .description-box .description, .Card .content-container .description-box .area-of-focus, .Card .content-container .description-box .tech-stack, .Card .content-container .area-of-focus-box .description, .Card .content-container .area-of-focus-box .area-of-focus, .Card .content-container .area-of-focus-box .tech-stack, .Card .content-container .tech-stack-box .description, .Card .content-container .tech-stack-box .area-of-focus, .Card .content-container .tech-stack-box .tech-stack {
         padding: 0.625rem; }
     .Card .content-container .button-wrapper {
       display: flex;
@@ -49,16 +52,24 @@
 
 @media screen and (max-width: 1634px) {
   .Card .project-image {
-    width: 77.5rem; } }
+    width: 77.5rem; }
+  .Card .blog-image {
+    width: 77.1875rem; } }
 
 @media screen and (max-width: 1334px) {
   .Card .project-image {
-    width: 57.5rem; } }
+    width: 57.5rem; }
+  .Card .blog-image {
+    width: 57.1875rem; } }
 
 @media screen and (max-width: 1014px) {
   .Card .project-image {
-    width: 37.5rem; } }
+    width: 37.5rem; }
+  .Card .blog-image {
+    width: 37.1875rem; } }
 
 @media screen and (max-width: 694px) {
-  .project-image {
-    width: 17.5rem; } }
+  .Card .project-image {
+    width: 17.5rem; }
+  .Card .blog-image {
+    width: 17.1875rem; } }

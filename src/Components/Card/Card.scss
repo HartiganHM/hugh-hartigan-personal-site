@@ -10,16 +10,20 @@
     @include width(156);
     margin-bottom: 20px;
   }
+  .blog-image {
+    @include width(155.5);
+    margin-bottom: 20px;
+  }
   .content-container {
     @include padding(1);
-    .description-box, .tech-stack-box {
+    .description-box, .area-of-focus-box, .tech-stack-box {
       display: flex;
       flex-direction: column;
-      .description-header, .tech-stack-header {
+      .description-header, .area-of-focus-header, .tech-stack-header {
         font-size: 1.2rem;
         text-decoration: underline;
       }
-      .description, .tech-stack {
+      .description, .area-of-focus, .tech-stack {
         @include padding(1);
       }
     }
@@ -54,11 +58,17 @@
   .Card .project-image {
     @include width(124);
   }
+  .Card .blog-image {
+    @include width(123.5);
+  }
 }
 
 @media screen and (max-width: 1334px) {
   .Card .project-image {
     @include width(92);
+  }
+  .Card .blog-image {
+    @include width(91.5);
   }
 }
 
@@ -66,10 +76,16 @@
   .Card .project-image {
     @include width(60);
   }
+  .Card .blog-image {
+    @include width(59.5);
+  }
 }
 
 @media screen and (max-width: 694px) {
-  .project-image {
+  .Card .project-image {
     @include width(28);
+  }
+  .Card .blog-image {
+    @include width(27.5);
   }
 }
