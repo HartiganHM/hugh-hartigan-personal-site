@@ -49,7 +49,7 @@ const About = () => {
             </p>
 
             <p className="profile-description">
-              Reach me through the contacts page of my site to collaborate, grab
+              Reach me through any of the links below to collaborate, grab
               a coffee, or ponder life's biggest (and smallest) mysteries:
             </p>
 

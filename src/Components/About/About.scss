@@ -112,7 +112,12 @@
 
 @media screen and (max-width: 1014px) {
   .About {
+    height: fit-content;
     @include width(64);
+    .info-container .top-container {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 
