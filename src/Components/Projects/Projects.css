@@ -45,6 +45,7 @@
   .Projects .card-container {
     margin: 0.625rem;
     background-color: #319fd9;
+    overflow-x: hidden;
     overflow-y: scroll; }
 
 @media screen and (max-width: 1634px) {
