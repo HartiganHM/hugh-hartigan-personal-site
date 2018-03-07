@@ -4,14 +4,14 @@ import './Card.css';
 class Card extends Component {
   constructor() {
     super();
-    this.state ={
+    this.state = {
       currentClass: 'hidden'
-    }
+    };
   }
 
-  handleClick = (string) => {
+  handleClick = string => {
     let currentClass = this.props.toggleDetails(string);
-    this.setState({ currentClass })
+    this.setState({ currentClass });
   };
 
   render() {
