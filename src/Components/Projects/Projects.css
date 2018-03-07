@@ -60,4 +60,11 @@
 
 @media screen and (max-width: 694px) {
   .Projects {
-    width: 20rem; } }
+    width: 20rem; }
+    .Projects .wrapper {
+      flex-direction: column;
+      margin: 25px 0 50px; }
+      .Projects .wrapper .header-wordmark {
+        height: 15.625rem;
+        width: unset;
+        margin: 0; } }

@@ -124,5 +124,14 @@
 @media screen and (max-width: 694px) {
   .About {
     @include width(32);
+    .wrapper {
+      flex-direction: column;
+      margin: 25px 0 50px;
+      .header-wordmark {
+        @include height(5.4);
+        width: unset;
+        margin: 0;
+      }
+    }
   }
 }
