@@ -70,14 +70,14 @@
   transition: 0.5s ease-in-out;
 }
 
-@mixin buttonHover () {
+@mixin buttonHover() {
   border-bottom: 1px solid $accent-color-light;
   background-color: $snow;
   color: $accent-color-light;
   transition: 0.5s ease-in-out;
 }
 
-@mixin buttonHoverAlternate () {
+@mixin buttonHoverAlternate() {
   border-bottom: 1px solid $accent-color-light;
   background-color: $accent-color-light;
   color: $snow;
@@ -117,6 +117,16 @@
 @mixin horizontalWordmarkLogo() {
   @include height(5);
   @include width(35.7);
+  @include margin(1);
+  background: {
+    size: contain;
+    repeat: no-repeat;
+  }
+}
+
+@mixin verticalWordmarkLogo() {
+  @include height(20);
+  @include width(20);
   @include margin(1);
   background: {
     size: contain;
