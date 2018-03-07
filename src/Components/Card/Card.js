@@ -6,8 +6,10 @@ const Card = props => {
     image,
     title,
     description,
+    description2,
     url,
     areaOfFocus,
+    areaOfFocus2,
     techStack,
     gitHub,
     liveLink
@@ -26,10 +28,18 @@ const Card = props => {
           <div className="description-box">
             <span className="description-header">Description</span>
             <span className="description">{description}</span>
+            {
+              description2 &&
+              <p className="description">{description2}</p>
+            }
           </div>
           <div className="area-of-focus-box">
             <span className="area-of-focus-header">My Area of Focus</span>
             <span className="area-of-focus">{areaOfFocus}</span>
+            {
+              areaOfFocus2 &&
+              <p className="area-of-focus">{areaOfFocus2}</p>
+            }
           </div>
           <div className="tech-stack-box">
             <span className="tech-stack-header">Tech Stack</span>
