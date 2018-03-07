@@ -14,8 +14,21 @@
     @include width(155.5);
     margin-bottom: 20px;
   }
+  .view-details {
+    @include buttonAlternate;
+    @include width(15);
+    &:hover {
+      @include buttonHoverAlternate;
+    }
+  }
   .content-container {
+    height: auto;
+    max-height: none;
     @include padding(1);
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 1;
     .description-box, .area-of-focus-box, .tech-stack-box {
       display: flex;
       flex-direction: column;
@@ -39,6 +52,15 @@
         }
       }
     }
+  }
+  .hidden {
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
   }
   .url {
     display: flex;

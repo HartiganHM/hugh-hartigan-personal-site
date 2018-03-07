@@ -12,8 +12,28 @@
   .Card .blog-image {
     width: 97.1875rem;
     margin-bottom: 20px; }
+  .Card .view-details {
+    width: 5rem;
+    padding: 0.625rem;
+    border-bottom: 1px solid #319fd9;
+    color: #319fd9;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+    width: 9.375rem; }
+    .Card .view-details:hover {
+      border-bottom: 1px solid #319fd9;
+      background-color: #319fd9;
+      color: #f9f9f9;
+      transition: 0.5s ease-in-out; }
   .Card .content-container {
-    padding: 0.625rem; }
+    height: auto;
+    max-height: none;
+    padding: 0.625rem;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 1; }
     .Card .content-container .description-box, .Card .content-container .area-of-focus-box, .Card .content-container .tech-stack-box {
       display: flex;
       flex-direction: column; }
@@ -40,6 +60,14 @@
           background-color: #319fd9;
           color: #f9f9f9;
           transition: 0.5s ease-in-out; }
+  .Card .hidden {
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0; }
   .Card .url {
     display: flex;
     flex-direction: column;

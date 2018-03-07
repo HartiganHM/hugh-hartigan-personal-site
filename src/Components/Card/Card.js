@@ -44,7 +44,7 @@ class Card extends Component {
             className="view-details"
             onClick={() => this.handleClick(currentClass)}
           >
-            :D
+            View Details
           </span>
 
           <div className={currentClass + ' content-container'}>
