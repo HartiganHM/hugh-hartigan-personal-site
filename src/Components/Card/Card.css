@@ -25,6 +25,7 @@
       text-decoration: none;
       transition: 0.5s ease-in-out;
       width: 6.25rem;
+      min-width: 6.25rem;
       margin: 0.625rem; }
       .Card .title-wrapper .view-details:hover {
         border-bottom: 1px solid #319fd9;
@@ -122,6 +123,7 @@
   .Card .project-image {
     width: 17.5rem; }
   .Card .blog-image {
+    align-self: center;
     width: 17.1875rem; }
   .Card .title-wrapper {
     flex-direction: column; } }

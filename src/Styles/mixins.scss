@@ -16,6 +16,10 @@
   max-width: convertRem($maxWidth);
 }
 
+@mixin minWidth($minWidth) {
+  min-width: convertRem($minWidth);
+}
+
 @mixin width($width) {
   width: convertRem($width);
 }

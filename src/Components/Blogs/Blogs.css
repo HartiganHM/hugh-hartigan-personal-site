@@ -59,13 +59,11 @@
     width: 40rem; } }
 
 @media screen and (max-width: 694px) {
-  .Blogs {
-    width: 20rem; }
-    .Blogs .wrapper {
-      flex-direction: column;
-      margin: 25px 0 50px; }
-      .Blogs .wrapper .header-wordmark {
-        height: 3.375rem;
-        width: unset;
-        margin: 0;
-        background-position: center; } }
+  .Blogs .wrapper {
+    flex-direction: column;
+    margin: 25px 0 50px; }
+    .Blogs .wrapper .header-wordmark {
+      height: 3.375rem;
+      width: unset;
+      margin: 0;
+      background-position: center; } }

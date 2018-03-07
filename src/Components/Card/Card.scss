@@ -21,6 +21,7 @@
     .view-details {
       @include buttonAlternate;
       @include width(10);
+      @include minWidth(10);
       @include margin(1);
       &:hover {
         @include buttonHoverAlternate;
@@ -120,6 +121,7 @@
       @include width(28);
     }
     .blog-image {
+      align-self: center;
       @include width(27.5);
     }
     .title-wrapper {
