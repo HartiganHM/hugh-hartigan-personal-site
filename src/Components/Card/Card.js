@@ -23,28 +23,27 @@ const Card = props => {
           src={require(`../../images/${image}.jpg`)}
           alt={image}
         />
+
         <h2 className="title">{title}</h2>
+
         <div className="content-container">
           <div className="description-box">
             <h3 className="description-header">Description</h3>
             <p className="description">{description}</p>
-            {
-              description2 &&
-              <p className="description">{description2}</p>
-            }
+            {description2 && <p className="description">{description2}</p>}
           </div>
+
           <div className="area-of-focus-box">
             <h3 className="area-of-focus-header">My Area of Focus</h3>
             <p className="area-of-focus">{areaOfFocus}</p>
-            {
-              areaOfFocus2 &&
-              <p className="area-of-focus">{areaOfFocus2}</p>
-            }
+            {areaOfFocus2 && <p className="area-of-focus">{areaOfFocus2}</p>}
           </div>
+
           <div className="tech-stack-box">
             <h3 className="tech-stack-header">Tech Stack</h3>
             <p className="tech-stack">{techStack}</p>
           </div>
+
           <span className="button-wrapper">
             {liveLink && (
               <a href={liveLink} target="_blank" className="button">
@@ -66,12 +65,15 @@ const Card = props => {
           src={require(`../../images/${image}.jpg`)}
           alt={image}
         />
-        <span className="title">{title}</span>
+
+        <h2 className="title">{title}</h2>
         <div className="content-container">
           <div className="description-box">
-            <span className="description-header">Description</span>
-            <span className="description">{description}</span>
+            <h3 className="description-header">Description</h3>
+
+            <p className="description">{description}</p>
           </div>
+
           <span className="button-wrapper">
             <a href={url} target="_blank" className="button">
               Read
