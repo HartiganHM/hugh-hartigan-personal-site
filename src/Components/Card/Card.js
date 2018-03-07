@@ -25,6 +25,7 @@ const Card = props => {
         />
 
         <h2 className="title">{title}</h2>
+        <span className="view-details" onClick={() => props.toggleDetails('hat')}>:D</span>
 
         <div className="content-container">
           <div className="description-box">

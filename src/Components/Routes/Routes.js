@@ -9,6 +9,7 @@ import './Routes.css';
 
 class Routes extends Component {
   toggleDetails = (currentClass) => {
+    console.log(currentClass)
     return currentClass === 'hidden' ? 'show' : 'hidden';
   }
 
@@ -25,7 +26,7 @@ class Routes extends Component {
           <div className="switch-wrapper">
             <Switch location={this.props.location}>
               <Route exact path="/about" render={() => <About />} />
-              <Route exact path="/projects" render={() => <Projects />} />
+              <Route exact path="/projects" render={() => <Projects toggleDetails={this.toggleDetails}/>} />
               <Route exact path="/blogs" render={() => <Blogs />} />
               <Route exact path="/" render={() => <LandingPage />} />
             </Switch>
