@@ -42,15 +42,21 @@
       padding-bottom: 50px;
       opacity: 1;
     }
-    .description-box, .area-of-focus-box, .tech-stack-box {
+    .description-box,
+    .area-of-focus-box,
+    .tech-stack-box {
       display: flex;
       flex-direction: column;
-      .description-header, .area-of-focus-header, .tech-stack-header {
+      .description-header,
+      .area-of-focus-header,
+      .tech-stack-header {
         margin: 0;
         font-size: 1.2rem;
         text-decoration: underline;
       }
-      .description, .area-of-focus, .tech-stack {
+      .description,
+      .area-of-focus,
+      .tech-stack {
         @include padding(1);
       }
     }
@@ -109,10 +115,16 @@
 }
 
 @media screen and (max-width: 694px) {
-  .Card .project-image {
-    @include width(28);
-  }
-  .Card .blog-image {
-    @include width(27.5);
+  .Card {
+    .project-image {
+      @include width(28);
+    }
+    .blog-image {
+      @include width(27.5);
+    }
+    .title-wrapper {
+      flex-direction: column;
+
+    }
   }
 }
