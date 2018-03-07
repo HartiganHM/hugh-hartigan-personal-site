@@ -9,7 +9,6 @@ import './Routes.css';
 
 class Routes extends Component {
   toggleDetails = (currentClass) => {
-    console.log(currentClass)
     return currentClass === 'hidden' ? 'show' : 'hidden';
   }
 
