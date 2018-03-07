@@ -112,12 +112,11 @@
       align-items: center; } }
 
 @media screen and (max-width: 694px) {
-  .About {
-    width: 20rem; }
-    .About .wrapper {
-      flex-direction: column;
-      margin: 25px 0 50px; }
-      .About .wrapper .header-wordmark {
-        height: 3.375rem;
-        width: unset;
-        margin: 0; } }
+  .About .wrapper {
+    flex-direction: column;
+    margin: 25px 0 50px; }
+    .About .wrapper .header-wordmark {
+      height: 3.375rem;
+      width: unset;
+      margin: 0;
+      background-position: center; } }

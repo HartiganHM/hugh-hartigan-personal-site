@@ -58,7 +58,7 @@
 
 @media screen and (max-width: 694px) {
   .Projects {
-    @include width(32);
+    // @include width(32);
     .wrapper {
       flex-direction: column;
       margin: 25px 0 50px;
@@ -66,6 +66,7 @@
         @include height(25);
         width: unset;
         margin: 0;
+        background-position: center;
       }
     }
   }

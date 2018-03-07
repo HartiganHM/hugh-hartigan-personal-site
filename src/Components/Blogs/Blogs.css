@@ -67,4 +67,5 @@
       .Blogs .wrapper .header-wordmark {
         height: 3.375rem;
         width: unset;
-        margin: 0; } }
+        margin: 0;
+        background-position: center; } }
