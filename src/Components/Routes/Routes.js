@@ -26,7 +26,7 @@ class Routes extends Component {
             <Switch location={this.props.location}>
               <Route exact path="/about" render={() => <About />} />
               <Route exact path="/projects" render={() => <Projects toggleDetails={this.toggleDetails}/>} />
-              <Route exact path="/blogs" render={() => <Blogs />} />
+              <Route exact path="/blogs" render={() => <Blogs toggleDetails={this.toggleDetails}/>} />
               <Route exact path="/" render={() => <LandingPage />} />
             </Switch>
           </div>

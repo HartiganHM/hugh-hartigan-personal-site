@@ -11,7 +11,6 @@ class Card extends Component {
 
   handleClick = (string) => {
     let currentClass = this.props.toggleDetails(string);
-    console.log(currentClass)
     this.setState({ currentClass })
   };
 
@@ -38,13 +37,15 @@ class Card extends Component {
             src={require(`../../images/${image}.jpg`)}
             alt={image}
           />
+          <span className="title-wrapper">
+            <h2 className="title">{title}</h2>
 
-          <h2 className="title">{title}</h2>
-          <span
-            className="view-details"
-            onClick={() => this.handleClick(currentClass)}
-          >
-            View Details
+            <span
+              className="view-details"
+              onClick={() => this.handleClick(currentClass)}
+            >
+              {currentClass === 'hidden' ? 'View Details' : 'Hide Details'}
+            </span>
           </span>
 
           <div className={currentClass + ' content-container'}>
@@ -87,8 +88,18 @@ class Card extends Component {
             alt={image}
           />
 
-          <h2 className="title">{title}</h2>
-          <div className="content-container">
+          <span className="title-wrapper">
+            <h2 className="title">{title}</h2>
+
+            <span
+              className="view-details"
+              onClick={() => this.handleClick(currentClass)}
+            >
+              {currentClass === 'hidden' ? 'View Details' : 'Hide Details'}
+            </span>
+          </span>
+
+          <div className={currentClass + ' content-container'}>
             <div className="description-box">
               <h3 className="description-header">Description</h3>
 

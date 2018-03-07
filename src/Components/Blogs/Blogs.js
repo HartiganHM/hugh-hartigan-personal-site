@@ -6,7 +6,7 @@ import './Blogs.css';
 
 class Blogs extends Component {
   render() {
-    const blogPosts = blogsData.map(blog => <Card data={blog} />);
+    const blogPosts = blogsData.map(blog => <Card data={blog} toggleDetails={this.props.toggleDetails}/>);
     return (
       <div className="Blogs">
       <div className="wrapper">

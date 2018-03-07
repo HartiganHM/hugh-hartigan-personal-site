@@ -3,37 +3,48 @@
 .Card {
   display: flex;
   flex-direction: column;
-  margin-bottom: 5px;
   background-color: #ecf6fb;
   color: #3c4042; }
   .Card .project-image {
+    align-self: center;
     width: 97.5rem;
     margin-bottom: 20px; }
   .Card .blog-image {
     width: 97.1875rem;
     margin-bottom: 20px; }
-  .Card .view-details {
-    width: 5rem;
-    padding: 0.625rem;
-    border-bottom: 1px solid #319fd9;
-    color: #319fd9;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.5s ease-in-out;
-    width: 9.375rem; }
-    .Card .view-details:hover {
+  .Card .title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .Card .title-wrapper .view-details {
+      width: 5rem;
+      padding: 0.625rem;
       border-bottom: 1px solid #319fd9;
-      background-color: #319fd9;
-      color: #f9f9f9;
-      transition: 0.5s ease-in-out; }
+      color: #319fd9;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.5s ease-in-out;
+      width: 6.25rem;
+      margin: 0.625rem; }
+      .Card .title-wrapper .view-details:hover {
+        border-bottom: 1px solid #319fd9;
+        background-color: #319fd9;
+        color: #f9f9f9;
+        transition: 0.5s ease-in-out; }
   .Card .content-container {
-    height: auto;
-    max-height: none;
+    height: 0;
+    max-height: 0;
     padding: 0.625rem;
+    overflow: hidden;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
-    opacity: 1; }
+    opacity: 0; }
+    .Card .content-container.show {
+      height: initial;
+      max-height: initial;
+      padding-bottom: 50px;
+      opacity: 1; }
     .Card .content-container .description-box, .Card .content-container .area-of-focus-box, .Card .content-container .tech-stack-box {
       display: flex;
       flex-direction: column; }
@@ -60,14 +71,6 @@
           background-color: #319fd9;
           color: #f9f9f9;
           transition: 0.5s ease-in-out; }
-  .Card .hidden {
-    height: 0;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    opacity: 0; }
   .Card .url {
     display: flex;
     flex-direction: column;
