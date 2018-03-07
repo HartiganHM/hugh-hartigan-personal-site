@@ -18,6 +18,7 @@
       display: flex;
       flex-direction: column; }
       .Card .content-container .description-box .description-header, .Card .content-container .description-box .area-of-focus-header, .Card .content-container .description-box .tech-stack-header, .Card .content-container .area-of-focus-box .description-header, .Card .content-container .area-of-focus-box .area-of-focus-header, .Card .content-container .area-of-focus-box .tech-stack-header, .Card .content-container .tech-stack-box .description-header, .Card .content-container .tech-stack-box .area-of-focus-header, .Card .content-container .tech-stack-box .tech-stack-header {
+        margin: 0;
         font-size: 1.2rem;
         text-decoration: underline; }
       .Card .content-container .description-box .description, .Card .content-container .description-box .area-of-focus, .Card .content-container .description-box .tech-stack, .Card .content-container .area-of-focus-box .description, .Card .content-container .area-of-focus-box .area-of-focus, .Card .content-container .area-of-focus-box .tech-stack, .Card .content-container .tech-stack-box .description, .Card .content-container .tech-stack-box .area-of-focus, .Card .content-container .tech-stack-box .tech-stack {
