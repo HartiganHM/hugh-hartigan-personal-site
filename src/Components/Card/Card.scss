@@ -3,10 +3,10 @@
 .Card {
   display: flex;
   flex-direction: column;
-  margin-bottom: 5px;
   background-color: $accent-color-extra-light;
   color: $neutral-dark;
   .project-image {
+    align-self: center;
     @include width(156);
     margin-bottom: 20px;
   }
@@ -14,16 +14,50 @@
     @include width(155.5);
     margin-bottom: 20px;
   }
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .view-details {
+      @include buttonAlternate;
+      @include width(10);
+      @include minWidth(10);
+      @include margin(1);
+      &:hover {
+        @include buttonHoverAlternate;
+      }
+    }
+  }
   .content-container {
+    height: 0;
+    max-height: 0;
     @include padding(1);
-    .description-box, .area-of-focus-box, .tech-stack-box {
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    &.show {
+      height: initial;
+      max-height: initial;
+      padding-bottom: 50px;
+      opacity: 1;
+    }
+    .description-box,
+    .area-of-focus-box,
+    .tech-stack-box {
       display: flex;
       flex-direction: column;
-      .description-header, .area-of-focus-header, .tech-stack-header {
+      .description-header,
+      .area-of-focus-header,
+      .tech-stack-header {
+        margin: 0;
         font-size: 1.2rem;
         text-decoration: underline;
       }
-      .description, .area-of-focus, .tech-stack {
+      .description,
+      .area-of-focus,
+      .tech-stack {
         @include padding(1);
       }
     }
@@ -82,10 +116,17 @@
 }
 
 @media screen and (max-width: 694px) {
-  .Card .project-image {
-    @include width(28);
-  }
-  .Card .blog-image {
-    @include width(27.5);
+  .Card {
+    .project-image {
+      @include width(28);
+    }
+    .blog-image {
+      align-self: center;
+      @include width(27.5);
+    }
+    .title-wrapper {
+      flex-direction: column;
+
+    }
   }
 }

@@ -34,10 +34,8 @@
     }
   }
   .card-container {
-    flex: 1;
-    @include padding(1);
-    margin: 0 10px;
-    overflow-y: scroll;
+    @include margin(1);
+    background-color: $accent-color-light;
   }
 }
 
@@ -61,6 +59,15 @@
 
 @media screen and (max-width: 694px) {
   .Blogs {
-    @include width(32);
+    .wrapper {
+      flex-direction: column;
+      margin: 25px 0 50px;
+      .header-wordmark {
+        @include height(5.4);
+        width: unset;
+        margin: 0;
+        background-position: center;
+      }
+    }
   }
 }

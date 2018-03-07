@@ -44,9 +44,7 @@
         pointer-events: none; }
   .Projects .card-container {
     margin: 0.625rem;
-    background-color: #319fd9;
-    overflow-x: hidden;
-    overflow-y: scroll; }
+    background-color: #319fd9; }
 
 @media screen and (max-width: 1634px) {
   .Projects {
@@ -61,5 +59,11 @@
     width: 40rem; } }
 
 @media screen and (max-width: 694px) {
-  .Projects {
-    width: 20rem; } }
+  .Projects .wrapper {
+    flex-direction: column;
+    margin: 25px 0 50px; }
+    .Projects .wrapper .header-wordmark {
+      height: 15.625rem;
+      width: unset;
+      margin: 0;
+      background-position: center; } }
