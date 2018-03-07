@@ -34,10 +34,8 @@
     }
   }
   .card-container {
-    flex: 1;
-    @include padding(1);
-    margin: 0 10px;
-    overflow-y: scroll;
+    @include margin(1);
+    background-color: $accent-color-light;
   }
 }
 
