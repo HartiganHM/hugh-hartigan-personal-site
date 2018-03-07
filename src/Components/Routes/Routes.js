@@ -8,6 +8,10 @@ import Blogs from '../Blogs/Blogs';
 import './Routes.css';
 
 class Routes extends Component {
+  toggleDetails = (currentClass) => {
+    return currentClass === 'hidden' ? 'show' : 'hidden';
+  }
+
   render() {
     return (
       <TransitionGroup className='transition-group'>
