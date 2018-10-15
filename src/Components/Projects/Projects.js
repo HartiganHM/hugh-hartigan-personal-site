@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
 import projectsData from '../../data/projectsData';
 import './Projects.css';
@@ -12,23 +12,7 @@ class Projects extends Component {
 
     return (
       <div className="Projects">
-        <div className="wrapper">
-          <span className="header-wordmark" />
-          <span className="nav-bar">
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
-            <NavLink className="nav-link" to="/about">
-              About
-            </NavLink>
-            <NavLink className="nav-link" to="/projects">
-              Projects
-            </NavLink>
-            <NavLink className="nav-link" to="/blogs">
-              Blogs
-            </NavLink>
-          </span>
-        </div>
+        <Nav currentPage="Projects"/>
         <div className="card-container">{projects}</div>
       </div>
     );
