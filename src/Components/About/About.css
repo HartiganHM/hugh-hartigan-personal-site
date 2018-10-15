@@ -99,4 +99,8 @@
     width: 310px;
     height: 387.5px; }
   .link-wrapper {
-    flex-direction: column; } }
+    flex-direction: column;
+    padding: 0;
+    align-self: center; }
+  li {
+    margin-bottom: 5px; } }

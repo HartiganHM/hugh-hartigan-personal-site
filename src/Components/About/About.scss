@@ -112,5 +112,10 @@
   }
   .link-wrapper {
     flex-direction: column;
+    padding: 0;
+    align-self: center;
+  }
+  li {
+    margin-bottom: 5px;
   }
 }
