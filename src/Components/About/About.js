@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../Nav/Nav';
 import copyContent from '../../copy/copyContent';
-import svgPaths from '../../data/svgPaths';
+import svgPaths from '../../copy/svgPaths';
 import './About.css';
 
 const About = () => {
