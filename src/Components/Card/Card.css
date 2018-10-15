@@ -125,4 +125,6 @@
     align-self: center;
     width: 17.1875rem; }
   .Card .title-wrapper {
-    flex-direction: column; } }
+    flex-direction: column; }
+  .Card .title {
+    font-size: 1.8rem; } }
