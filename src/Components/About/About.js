@@ -1,10 +1,12 @@
 import React from 'react';
 import Nav from '../Nav/Nav';
-import aboutData from '../../data/aboutData';
+import copyContent from '../../copy/copyContent';
 import svgPaths from '../../data/svgPaths';
 import './About.css';
 
 const About = () => {
+  const { about } = copyContent;
+
   return (
     <div className="About">
       <Nav currentPage={'About'} />
@@ -17,18 +19,18 @@ const About = () => {
             alt="Hugh-Hartigan-software-developer"
           />
           <div className="profile-description-container">
-            <span className="description-header">{aboutData.header}</span>
+            <span className="description-header">{about.header}</span>
 
-            <p className="profile-description">{aboutData.description1}</p>
+            <p className="profile-description">{about.description1}</p>
 
-            <p className="profile-description">{aboutData.description2}</p>
+            <p className="profile-description">{about.description2}</p>
 
-            <p className="profile-description">{aboutData.description3}</p>
+            <p className="profile-description">{about.description3}</p>
 
             <ul className="questions">
-              <li>{aboutData.question1}</li>
-              <li>{aboutData.question2}</li>
-              <li>{aboutData.question3}</li>
+              <li>{about.question1}</li>
+              <li>{about.question2}</li>
+              <li>{about.question3}</li>
             </ul>
           </div>
         </div>
@@ -45,7 +47,7 @@ const About = () => {
                 <path d={svgPaths.resume} />
               </g>
             </svg>
-            <span className="icon-text">{aboutData.iconText1}</span>
+            <span className="icon-text">{about.iconText1}</span>
           </a>
           <a
             href="https://github.com/HartiganHM"
@@ -58,7 +60,7 @@ const About = () => {
                 <path d={svgPaths.github} />
               </g>
             </svg>
-            <span className="icon-text">{aboutData.iconText2}</span>
+            <span className="icon-text">{about.iconText2}</span>
           </a>
           <a
             href="mailto:hartigan.hm@gmail.com"
@@ -71,7 +73,7 @@ const About = () => {
                 <path d={svgPaths.email} />
               </g>
             </svg>
-            <span className="icon-text">{aboutData.iconText3}</span>
+            <span className="icon-text">{about.iconText3}</span>
           </a>
           <a
             href="https://www.linkedin.com/in/hartiganhm/"
@@ -84,7 +86,7 @@ const About = () => {
                 <path d={svgPaths.linkedin} />
               </g>
             </svg>
-            <span className="icon-text">{aboutData.iconText4}</span>
+            <span className="icon-text">{about.iconText4}</span>
           </a>
         </div>
       </div>

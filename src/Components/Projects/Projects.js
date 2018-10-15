@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
-import projectsData from '../../data/projectsData';
+import copyContent from '../../copy/copyContent';
 import PropTypes from 'prop-types';
 import './Projects.css';
 
 class Projects extends Component {
   render() {
-    const projects = projectsData.map((project, index) => (
+    const projects = copyContent.projects.map((project, index) => (
       <Card
         key={index}
         cardData={project}

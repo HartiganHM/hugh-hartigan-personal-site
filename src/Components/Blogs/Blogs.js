@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
-import blogsData from '../../data/blogsData';
+import copyContent from '../../copy/copyContent';
 import PropTypes from 'prop-types';
 import './Blogs.css';
 
 class Blogs extends Component {
   render() {
-    const blogPosts = blogsData.map((blog, index) => (
+    const blogPosts = copyContent.blogs.map((blog, index) => (
       <Card key={index} cardData={blog} toggleDetails={this.props.toggleDetails} />
     ));
 
