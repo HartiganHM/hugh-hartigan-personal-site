@@ -115,4 +115,12 @@
     right: 0;
     left: 0;
   }
+  .nav-bar {
+    flex: 1;
+    flex-direction: column;
+  }
+  .nav-link {
+    width: 100% !important;
+    color: $snow !important;
+  }
 }

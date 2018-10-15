@@ -5,11 +5,17 @@ import './Nav.css';
 
 class Nav extends Component {
   state = {
-    isMenuShown: false
+    isMenuShown: false,
+    isRedirecting: false
   };
 
   handleToggleMenu = () => {
     this.setState({ isMenuShown: !this.state.isMenuShown });
+  };
+
+  handleRedirect = () => {
+    console.log('Butt')
+    this.setState({ isRedirecting: true });
   };
 
   render() {
@@ -24,7 +30,12 @@ class Nav extends Component {
 
           if (page === 'Home') {
             return (
-              <Link key={`nav-link-${index}`} className="nav-link" to="/">
+              <Link
+                key={`nav-link-${index}`}
+                className="nav-link"
+                to="/"
+                onClick={this.handleRedirect}
+              >
                 {page}
               </Link>
             );
@@ -35,6 +46,7 @@ class Nav extends Component {
                 className={`nav-link ${isActive ? 'active' : ''}`}
                 to={`/${page.toLocaleLowerCase()}`}
                 disabled={isActive}
+                onClick={this.handleRedirect}
               >
                 {page}
               </NavLink>
@@ -51,7 +63,10 @@ class Nav extends Component {
           <div className="nav-desktop">{navBar}</div>
         </div>
 
-        <div className={`nav-icon ${isMenuShown ? 'close' : ''}`} onClick={this.handleToggleMenu}>
+        <div
+          className={`nav-icon ${isMenuShown ? 'close' : ''}`}
+          onClick={this.handleToggleMenu}
+        >
           <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
           <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
           <span className={`burger-line ${isMenuShown ? 'remove' : ''}`} />
