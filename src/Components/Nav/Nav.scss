@@ -1,0 +1,42 @@
+@import '../../Styles/variables.scss';
+@import '../../Styles/mixins.scss';
+
+.nav-wrapper {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  min-height: 63.5px;
+  .header-wordmark {
+    @include horizontalWordmarkLogo;
+    background-image: url('../../images/Wordmark-horizontal-blue.png');
+  }
+  .nav-bar {
+    align-self: center;
+    display: flex;
+    .nav-link {
+      align-self: baseline;
+      @include buttonAlternate;
+      &:hover {
+        @include buttonHoverAlternate;
+      }
+    }
+    .active {
+      @include buttonHoverAlternate;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .wrapper {
+    flex-direction: column;
+    margin: 25px 0 50px;
+    .header-wordmark {
+      @include height(5.4);
+      width: unset;
+      margin: 0;
+      background-position: center;
+    }
+  }
+}
