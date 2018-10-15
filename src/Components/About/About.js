@@ -1,28 +1,13 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import Nav from '../Nav/Nav'
 import svgPaths from '../../data/svgPaths';
 import './About.css';
 
 const About = () => {
   return (
     <div className="About">
-      <div className="wrapper">
-        <span className="header-wordmark" />
-        <span className="nav-bar">
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-          <NavLink className="nav-link active" to="/about" disabled>
-            About
-          </NavLink>
-          <NavLink className="nav-link" to="/projects">
-            Projects
-          </NavLink>
-          <NavLink className="nav-link" to="/blogs">
-            Blogs
-          </NavLink>
-        </span>
-      </div>
+      <Nav currentPage={'About'} />
+
       <div className="info-container">
         <div className="top-container">
           <img
