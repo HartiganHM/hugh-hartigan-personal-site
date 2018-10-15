@@ -1,5 +1,6 @@
 import React from 'react';
-import Nav from '../Nav/Nav'
+import Nav from '../Nav/Nav';
+import aboutData from '../../data/aboutData';
 import svgPaths from '../../data/svgPaths';
 import './About.css';
 
@@ -16,34 +17,18 @@ const About = () => {
             alt="Hugh-Hartigan-software-developer"
           />
           <div className="profile-description-container">
-            <span className="description-header">About Hugh</span>
+            <span className="description-header">{aboutData.header}</span>
 
-            <p className="profile-description">
-              I am a software developer with a passion for creative solutions to
-              complex problems. I look forward to innovative challenges, relish
-              in the opportunity to learn something new, and love seeing those
-              around me grow.
-            </p>
+            <p className="profile-description">{aboutData.description1}</p>
 
-            <p className="profile-description">
-              My road to development started with an itch to create. Whether
-              it's painting, drawing, sewing a bow tie, or making a button pixel
-              perfect, I get lost building anything and everything. Software
-              development satisfies this need and more, providing me with an
-              endless ocean of new puzzles to solve.
-            </p>
+            <p className="profile-description">{aboutData.description2}</p>
 
-            <p className="profile-description">
-              Reach me through any of the links below to collaborate, grab
-              a coffee, or ponder life's biggest (and smallest) mysteries:
-            </p>
+            <p className="profile-description">{aboutData.description3}</p>
 
             <ul className="questions">
-              <li>Is Mario a really good hero or a very bad plumber?</li>
-              <li>If aliens invaded, would they think dogs owned us?</li>
-              <li>
-                Is it possible to get the perfect temperature on a Hot Pocket?
-              </li>
+              <li>{aboutData.question1}</li>
+              <li>{aboutData.question2}</li>
+              <li>{aboutData.question3}</li>
             </ul>
           </div>
         </div>
@@ -60,7 +45,7 @@ const About = () => {
                 <path d={svgPaths.resume} />
               </g>
             </svg>
-            <span className="icon-text">Resume</span>
+            <span className="icon-text">{aboutData.iconText1}</span>
           </a>
           <a
             href="https://github.com/HartiganHM"
@@ -73,7 +58,7 @@ const About = () => {
                 <path d={svgPaths.github} />
               </g>
             </svg>
-            <span className="icon-text">GitHub</span>
+            <span className="icon-text">{aboutData.iconText2}</span>
           </a>
           <a
             href="mailto:hartigan.hm@gmail.com"
@@ -86,7 +71,7 @@ const About = () => {
                 <path d={svgPaths.email} />
               </g>
             </svg>
-            <span className="icon-text">Email</span>
+            <span className="icon-text">{aboutData.iconText3}</span>
           </a>
           <a
             href="https://www.linkedin.com/in/hartiganhm/"
@@ -99,7 +84,7 @@ const About = () => {
                 <path d={svgPaths.linkedin} />
               </g>
             </svg>
-            <span className="icon-text">LinkedIn</span>
+            <span className="icon-text">{aboutData.iconText4}</span>
           </a>
         </div>
       </div>
