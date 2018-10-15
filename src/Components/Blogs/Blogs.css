@@ -3,7 +3,7 @@
 .Blogs {
   display: flex;
   flex-direction: column;
-  width: 100rem;
+  width: 1600px;
   max-height: 100vh;
   color: #3c4042; }
   .Blogs .card-container {
@@ -12,12 +12,16 @@
 
 @media screen and (max-width: 1634px) {
   .Blogs {
-    width: 80rem; } }
+    width: 1280px; } }
 
 @media screen and (max-width: 1334px) {
   .Blogs {
-    width: 60rem; } }
+    width: 960px; } }
 
 @media screen and (max-width: 1014px) {
   .Blogs {
-    width: 40rem; } }
+    width: 640px; } }
+
+@media screen and (max-width: 695px) {
+  .Blogs {
+    width: 320px; } }
