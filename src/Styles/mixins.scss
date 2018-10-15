@@ -61,7 +61,7 @@
   color: $snow;
   text-align: center;
   text-decoration: none;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 @mixin buttonAlternate() {
@@ -71,21 +71,21 @@
   color: $accent-color-light;
   text-align: center;
   text-decoration: none;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 @mixin buttonHover() {
   border-bottom: 1px solid $accent-color-light;
   background-color: $snow;
   color: $accent-color-light;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 @mixin buttonHoverAlternate() {
   border-bottom: 1px solid $accent-color-light;
   background-color: $accent-color-light;
   color: $snow;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 @mixin activeButton() {
