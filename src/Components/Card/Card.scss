@@ -17,7 +17,6 @@
   .title-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     .view-details {
       @include buttonAlternate;
       @include width(10);

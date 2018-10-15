@@ -14,8 +14,7 @@
     margin-bottom: 20px; }
   .Card .title-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between; }
+    align-items: center; }
     .Card .title-wrapper .view-details {
       width: 5rem;
       padding: 0.625rem;
