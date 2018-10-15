@@ -54,6 +54,9 @@
   align-items: center;
   text-decoration: none;
 }
+.link-box {
+  display: flex;
+}
 .icon {
   @include width(10);
   @include padding(1);
@@ -106,5 +109,8 @@
   .profile-image {
     width: 310px;
     height: 387.5px;
+  }
+  .link-wrapper {
+    flex-direction: column;
   }
 }
