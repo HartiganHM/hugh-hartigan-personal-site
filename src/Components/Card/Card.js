@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Card.css';
 
 class Card extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentClass: 'hidden'
-    };
-  }
+  state = {
+    currentClass: 'hidden'
+  };
 
   handleClick = string => {
     let currentClass = this.props.toggleDetails(string);
@@ -27,7 +25,7 @@ class Card extends Component {
       techStack,
       gitHub,
       liveLink
-    } = this.props.data;
+    } = this.props.cardData;
 
     if (gitHub) {
       return (
@@ -119,3 +117,8 @@ class Card extends Component {
 }
 
 export default Card;
+
+Card.propTypes = {
+  toggleDetails: PropTypes.func,
+  cardData: PropTypes.object
+};

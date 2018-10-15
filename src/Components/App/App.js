@@ -4,11 +4,11 @@ import { Route } from 'react-router';
 import './App.css';
 
 class App extends Component {
-  checkLocation (endpoint) {
+  checkLocation(endpoint) {
     if (endpoint === '/') {
-      return 'App'
+      return 'App';
     } else {
-      return 'App away'
+      return 'App away';
     }
   }
 
@@ -21,6 +21,6 @@ class App extends Component {
       </div>
     );
   }
-};
+}
 
 export default App;

@@ -1,3 +1,5 @@
+/*eslint-disable max-len*/
+
 export default [
   {
     image: 'open-source-blog-image',
