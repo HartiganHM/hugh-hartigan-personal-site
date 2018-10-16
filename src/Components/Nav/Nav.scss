@@ -104,7 +104,7 @@
     display: flex;
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: -5px;
     background: $accent-color-dark;
     transition: all 0.5s;
   }

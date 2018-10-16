@@ -11,6 +11,7 @@ class Nav extends Component {
       toggleMenu,
       onRedirect,
       isMenuShown,
+      isResumeShown,
       history: { push }
     } = this.props;
 
@@ -62,14 +63,16 @@ class Nav extends Component {
           <div className="nav-desktop">{navBar}</div>
         </div>
 
-        <div
-          className={`nav-icon ${isMenuShown ? 'close' : ''}`}
-          onClick={toggleMenu}
-        >
-          <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
-          <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
-          <span className={`burger-line ${isMenuShown ? 'remove' : ''}`} />
-        </div>
+        {!isResumeShown && (
+          <div
+            className={`nav-icon ${isMenuShown ? 'close' : ''}`}
+            onClick={toggleMenu}
+          >
+            <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
+            <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
+            <span className={`burger-line ${isMenuShown ? 'remove' : ''}`} />
+          </div>
+        )}
 
         <div className="nav-mobile">
           <div className={navMenuClasses}>{navBar}</div>
