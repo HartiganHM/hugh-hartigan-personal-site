@@ -102,5 +102,7 @@
     flex-direction: column;
     padding: 0;
     align-self: center; }
+  ul {
+    padding-inline-start: 5px; }
   li {
     margin-bottom: 5px; } }
