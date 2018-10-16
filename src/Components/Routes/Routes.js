@@ -9,25 +9,8 @@ import PropTypes from 'prop-types';
 import './Routes.css';
 
 class Routes extends Component {
-  state = {
-    isMenuShown: false
-  };
-
-  toggleMenu = () => {
-    this.setState({ isMenuShown: !this.state.isMenuShown });
-  };
-
-  toggleDetails = currentClass => {
-    return currentClass === 'hidden' ? 'show' : 'hidden';
-  };
-
-  handleRedirect = async page => {
-    await this.setState({ isMenuShown: false });
-    console.log(this.props.location, page);
-  };
-
   render() {
-    const { isMenuShown } = this.state;
+    const { isMenuShown, onRedirect, toggleMenu, toggleDetails } = this.props;
 
     return (
       <TransitionGroup className="transition-group">
@@ -45,8 +28,8 @@ class Routes extends Component {
                 path="/about"
                 render={() => (
                   <About
-                    onRedirect={this.handleRedirect}
-                    toggleMenu={this.toggleMenu}
+                    onRedirect={onRedirect}
+                    toggleMenu={toggleMenu}
                     isMenuShown={isMenuShown}
                   />
                 )}
@@ -56,9 +39,9 @@ class Routes extends Component {
                 path="/projects"
                 render={() => (
                   <Projects
-                    onRedirect={this.handleRedirect}
-                    toggleDetails={this.toggleDetails}
-                    toggleMenu={this.toggleMenu}
+                    onRedirect={onRedirect}
+                    toggleDetails={toggleDetails}
+                    toggleMenu={toggleMenu}
                     isMenuShown={isMenuShown}
                   />
                 )}
@@ -68,9 +51,9 @@ class Routes extends Component {
                 path="/blogs"
                 render={() => (
                   <Blogs
-                    onRedirect={this.handleRedirect}
-                    toggleDetails={this.toggleDetails}
-                    toggleMenu={this.toggleMenu}
+                    onRedirect={onRedirect}
+                    toggleDetails={toggleDetails}
+                    toggleMenu={toggleMenu}
                     isMenuShown={isMenuShown}
                   />
                 )}
