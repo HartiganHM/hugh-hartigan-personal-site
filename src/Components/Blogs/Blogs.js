@@ -7,13 +7,24 @@ import './Blogs.css';
 
 class Blogs extends Component {
   render() {
+    const { toggleMenu, onRedirect, isMenuShown } = this.props;
+
     const blogPosts = copyContent.blogs.map((blog, index) => (
-      <Card key={index} cardData={blog} toggleDetails={this.props.toggleDetails} />
+      <Card
+        key={index}
+        cardData={blog}
+        toggleDetails={this.props.toggleDetails}
+      />
     ));
 
     return (
       <div className="Blogs">
-        <Nav currentPage="Blogs" />
+        <Nav
+          currentPage="Blogs"
+          toggleMenu={toggleMenu}
+          onRedirect={onRedirect}
+          isMenuShown={isMenuShown}
+        />
         <div className="card-container">{blogPosts}</div>
       </div>
     );

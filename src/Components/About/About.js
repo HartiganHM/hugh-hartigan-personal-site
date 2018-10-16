@@ -4,12 +4,17 @@ import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
 import './About.css';
 
-const About = () => {
+const About = ({ toggleMenu, onRedirect, isMenuShown }) => {
   const { about } = copyContent;
 
   return (
     <div className="About">
-      <Nav currentPage={'About'} />
+      <Nav
+        currentPage={'About'}
+        toggleMenu={toggleMenu}
+        isMenuShown={isMenuShown}
+        onRedirect={onRedirect}
+      />
 
       <div className="info-container">
         <div className="top-container">
