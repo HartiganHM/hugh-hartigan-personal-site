@@ -7,13 +7,13 @@ const LandingPage = () => {
     <div className="LandingPage">
       <span className="wordmark" />
       <div className="nav-bar">
-        <NavLink className="nav-link" to="/about">
+        <NavLink className="nav-link-home" to="/about">
           About
         </NavLink>
-        <NavLink className="nav-link" to="/projects">
+        <NavLink className="nav-link-home" to="/projects">
           Projects
         </NavLink>
-        <NavLink className="nav-link" to="/blogs">
+        <NavLink className="nav-link-home" to="/blogs">
           Blogs
         </NavLink>
       </div>
