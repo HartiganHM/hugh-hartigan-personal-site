@@ -3,7 +3,7 @@
 .Projects {
   display: flex;
   flex-direction: column;
-  @include width(160);
+  width: 1600px;
   max-height: 100vh;
   color: $neutral-dark;
   .card-container {
@@ -14,18 +14,25 @@
 
 @media screen and (max-width: 1634px) {
   .Projects {
-    @include width(128);
+    width: 1280px;
   }
 }
 
 @media screen and (max-width: 1334px) {
   .Projects {
-    @include width(96);
+    width: 960px;
   }
 }
 
 @media screen and (max-width: 1014px) {
   .Projects {
-    @include width(64);
+    width: 640px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Projects {
+    width: 320px;
+    margin: 5px;
   }
 }
