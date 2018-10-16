@@ -105,12 +105,12 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 480px;
     background: $accent-color-dark;
     transition: all 0.5s;
   }
   .hide {
     right: -480px;
+    left: 480px;
   }
   .show {
     right: 0;
