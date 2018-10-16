@@ -1,28 +1,21 @@
 import React, { Component, Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './Nav.css';
 
 class Nav extends Component {
-  state = {
-    isMenuShown: false,
-    isRedirecting: false
-  };
-
-  handleToggleMenu = () => {
-    this.setState({ isMenuShown: !this.state.isMenuShown });
-  };
-
-  handleRedirect = () => {
-    console.log('Butt')
-    this.setState({ isRedirecting: true });
-  };
-
   render() {
-    const { currentPage } = this.props;
-    const { isMenuShown } = this.state;
+    const { currentPage, toggleMenu, onRedirect, isMenuShown } = this.props;
 
     const pages = ['Home', 'About', 'Projects', 'Blogs'];
+
+    const navMenuClasses = classNames({
+      'nav-menu': true,
+      show: isMenuShown,
+      hide: !isMenuShown
+    });
+
     const navBar = (
       <span className="nav-bar">
         {pages.map((page, index) => {
@@ -30,12 +23,7 @@ class Nav extends Component {
 
           if (page === 'Home') {
             return (
-              <Link
-                key={`nav-link-${index}`}
-                className="nav-link"
-                to="/"
-                onClick={this.handleRedirect}
-              >
+              <Link key={`nav-link-${index}`} className="nav-link" to="/" onClick={() => onRedirect(page)}>
                 {page}
               </Link>
             );
@@ -44,9 +32,9 @@ class Nav extends Component {
               <NavLink
                 key={`nav-link-${index}`}
                 className={`nav-link ${isActive ? 'active' : ''}`}
+                onClick={() => onRedirect(page)}
                 to={`/${page.toLocaleLowerCase()}`}
                 disabled={isActive}
-                onClick={this.handleRedirect}
               >
                 {page}
               </NavLink>
@@ -65,7 +53,7 @@ class Nav extends Component {
 
         <div
           className={`nav-icon ${isMenuShown ? 'close' : ''}`}
-          onClick={this.handleToggleMenu}
+          onClick={toggleMenu}
         >
           <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
           <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
@@ -73,9 +61,7 @@ class Nav extends Component {
         </div>
 
         <div className="nav-mobile">
-          <div className={`nav-menu ${isMenuShown ? 'show' : 'hide'}`}>
-            {navBar}
-          </div>
+          <div className={navMenuClasses}>{navBar}</div>
         </div>
       </Fragment>
     );
