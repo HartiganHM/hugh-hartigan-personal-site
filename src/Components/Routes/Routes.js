@@ -12,12 +12,22 @@ class Routes extends Component {
   render() {
     const {
       isMenuShown,
+      isResumeShown,
       onRedirect,
       toggleMenu,
       toggleDetails,
       history,
       location
     } = this.props;
+
+    const componentProps = {
+      isMenuShown,
+      isResumeShown,
+      onRedirect,
+      toggleDetails,
+      toggleMenu,
+      history
+    };
 
     return (
       <TransitionGroup className="transition-group">
@@ -33,40 +43,17 @@ class Routes extends Component {
               <Route
                 exact
                 path="/about"
-                render={() => (
-                  <About
-                    onRedirect={onRedirect}
-                    toggleMenu={toggleMenu}
-                    isMenuShown={isMenuShown}
-                    history={history}
-                  />
-                )}
+                render={() => <About {...componentProps} />}
               />
               <Route
                 exact
                 path="/projects"
-                render={() => (
-                  <Projects
-                    onRedirect={onRedirect}
-                    toggleDetails={toggleDetails}
-                    toggleMenu={toggleMenu}
-                    isMenuShown={isMenuShown}
-                    history={history}
-                  />
-                )}
+                render={() => <Projects {...componentProps} />}
               />
               <Route
                 exact
                 path="/blogs"
-                render={() => (
-                  <Blogs
-                    onRedirect={onRedirect}
-                    toggleDetails={toggleDetails}
-                    toggleMenu={toggleMenu}
-                    isMenuShown={isMenuShown}
-                    history={history}
-                  />
-                )}
+                render={() => <Blogs {...componentProps} />}
               />
               <Route exact path="/" render={() => <LandingPage />} />
             </Switch>
