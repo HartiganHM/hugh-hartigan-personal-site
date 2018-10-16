@@ -160,7 +160,9 @@
     width: 640px; }
   .top-container {
     flex-direction: column;
-    align-items: center; } }
+    align-items: center; }
+  .profile-description-container {
+    width: 400px; } }
 
 @media screen and (max-width: 480px) {
   .About {
@@ -171,6 +173,8 @@
   .profile-image {
     width: 310px;
     height: 387.5px; }
+  .profile-description-container {
+    width: 310px; }
   .link-wrapper {
     flex-direction: column;
     padding: 0;
