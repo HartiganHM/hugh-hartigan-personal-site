@@ -16,6 +16,8 @@ class Routes extends Component {
       onRedirect,
       toggleMenu,
       toggleDetails,
+      showResume,
+      hideResume,
       history,
       location
     } = this.props;
@@ -26,6 +28,8 @@ class Routes extends Component {
       onRedirect,
       toggleDetails,
       toggleMenu,
+      showResume,
+      hideResume,
       history
     };
 
