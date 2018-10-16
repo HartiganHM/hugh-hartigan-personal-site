@@ -117,17 +117,18 @@
 @media screen and (max-width: 694px) {
   .Card {
     .project-image {
-      @include width(28);
+      width: 300px;
     }
     .blog-image {
       align-self: center;
-      @include width(27.5);
+      width: 300px;
     }
     .title-wrapper {
       flex-direction: column;
     }
     .title {
       font-size: 1.8rem;
+      margin: 0;
     }
   }
 }
