@@ -3,7 +3,6 @@ import Nav from '../Nav/Nav';
 import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
 import { Document, Page } from 'react-pdf';
-import fileDownload from 'js-file-download';
 import resume from '../../images/Hugh-Hartigan-Resume.pdf';
 import './About.css';
 
@@ -16,10 +15,6 @@ class About extends Component {
     } else {
       return window.innerWidth - 60;
     }
-  };
-
-  downloadResume = () => {
-    fileDownload(resume, 'Hugh-Hartigan-Resume.pdf');
   };
 
   render() {
@@ -132,7 +127,7 @@ class About extends Component {
 
         {isResumeShown && (
           <div className="resume-dialog">
-            <div className="download-icon" onClick={this.downloadResume}>
+            <a className="download-icon" href={resume}>
               <svg className="download-arrow" viewBox="0 0 444.819 444.819">
                 <g>
                   <path d={svgPaths.download} />
@@ -140,7 +135,7 @@ class About extends Component {
               </svg>
 
               <span className="download-line" />
-            </div>
+            </a>
 
             <div className="close-icon" onClick={hideResume}>
               <span className="close-icon-line one" />
