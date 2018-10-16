@@ -6,7 +6,13 @@ import './Nav.css';
 
 class Nav extends Component {
   render() {
-    const { currentPage, toggleMenu, onRedirect, isMenuShown } = this.props;
+    const {
+      currentPage,
+      toggleMenu,
+      onRedirect,
+      isMenuShown,
+      history: { push }
+    } = this.props;
 
     const pages = ['Home', 'About', 'Projects', 'Blogs'];
 
@@ -23,7 +29,12 @@ class Nav extends Component {
 
           if (page === 'Home') {
             return (
-              <Link key={`nav-link-${index}`} className="nav-link" to="/" onClick={() => onRedirect(page)}>
+              <Link
+                key={`nav-link-${index}`}
+                className="nav-link"
+                to="/"
+                onClick={event => onRedirect(event, page, push)}
+              >
                 {page}
               </Link>
             );
@@ -32,7 +43,7 @@ class Nav extends Component {
               <NavLink
                 key={`nav-link-${index}`}
                 className={`nav-link ${isActive ? 'active' : ''}`}
-                onClick={() => onRedirect(page)}
+                onClick={event => onRedirect(event, page, push)}
                 to={`/${page.toLocaleLowerCase()}`}
                 disabled={isActive}
               >

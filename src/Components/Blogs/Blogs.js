@@ -7,7 +7,7 @@ import './Blogs.css';
 
 class Blogs extends Component {
   render() {
-    const { toggleMenu, onRedirect, isMenuShown } = this.props;
+    const { toggleMenu, onRedirect, isMenuShown, history } = this.props;
 
     const blogPosts = copyContent.blogs.map((blog, index) => (
       <Card
@@ -24,6 +24,7 @@ class Blogs extends Component {
           toggleMenu={toggleMenu}
           onRedirect={onRedirect}
           isMenuShown={isMenuShown}
+          history={history}
         />
         <div className="card-container">{blogPosts}</div>
       </div>

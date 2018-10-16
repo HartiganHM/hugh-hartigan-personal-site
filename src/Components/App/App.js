@@ -18,8 +18,12 @@ class App extends Component {
     return currentClass === 'hidden' ? 'show' : 'hidden';
   };
 
-  handleRedirect = page => {
+  handleRedirect = (event, page, push) => {
+    event.preventDefault();
+    const path = page === 'Home' ? '/' : `/${page.toLowerCase()}`;
+
     this.setState({ isMenuShown: false, currenPage: page });
+    setTimeout(() => push(path), 500);
   };
 
   render() {
@@ -34,13 +38,14 @@ class App extends Component {
       <div className={appClasses}>
         <Route
           to="/"
-          render={({ location }) => (
+          render={({ location, history }) => (
             <Routes
               toggleDetails={this.toggleDetails}
               toggleMenu={this.toggleMenu}
               isMenuShown={isMenuShown}
               onRedirect={this.handleRedirect}
               location={location}
+              history={history}
             />
           )}
         />

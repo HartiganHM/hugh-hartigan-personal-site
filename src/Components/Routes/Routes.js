@@ -10,19 +10,26 @@ import './Routes.css';
 
 class Routes extends Component {
   render() {
-    const { isMenuShown, onRedirect, toggleMenu, toggleDetails } = this.props;
+    const {
+      isMenuShown,
+      onRedirect,
+      toggleMenu,
+      toggleDetails,
+      history,
+      location
+    } = this.props;
 
     return (
       <TransitionGroup className="transition-group">
         <CSSTransition
-          key={this.props.location.key}
+          key={location.key}
           classNames="fade"
           timeout={300}
           mountOnEnter={true}
           unmountOnExit={true}
         >
           <div className="switch-wrapper">
-            <Switch location={this.props.location}>
+            <Switch location={location}>
               <Route
                 exact
                 path="/about"
@@ -31,6 +38,7 @@ class Routes extends Component {
                     onRedirect={onRedirect}
                     toggleMenu={toggleMenu}
                     isMenuShown={isMenuShown}
+                    history={history}
                   />
                 )}
               />
@@ -43,6 +51,7 @@ class Routes extends Component {
                     toggleDetails={toggleDetails}
                     toggleMenu={toggleMenu}
                     isMenuShown={isMenuShown}
+                    history={history}
                   />
                 )}
               />
@@ -55,6 +64,7 @@ class Routes extends Component {
                     toggleDetails={toggleDetails}
                     toggleMenu={toggleMenu}
                     isMenuShown={isMenuShown}
+                    history={history}
                   />
                 )}
               />

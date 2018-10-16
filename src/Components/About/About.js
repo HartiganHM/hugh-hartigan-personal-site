@@ -4,7 +4,7 @@ import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
 import './About.css';
 
-const About = ({ toggleMenu, onRedirect, isMenuShown }) => {
+const About = ({ toggleMenu, onRedirect, isMenuShown, history }) => {
   const { about } = copyContent;
 
   return (
@@ -14,6 +14,7 @@ const About = ({ toggleMenu, onRedirect, isMenuShown }) => {
         toggleMenu={toggleMenu}
         isMenuShown={isMenuShown}
         onRedirect={onRedirect}
+        history={history}
       />
 
       <div className="info-container">
