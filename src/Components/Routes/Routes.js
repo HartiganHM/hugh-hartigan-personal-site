@@ -71,5 +71,13 @@ class Routes extends Component {
 export default Routes;
 
 Routes.propTypes = {
-  location: PropTypes.object
+  location: PropTypes.object,
+  history: PropTypes.object,
+  isMenuShown: PropTypes.bool,
+  isResumeShown: PropTypes.bool,
+  onRedirect: PropTypes.func,
+  toggleMenu: PropTypes.func,
+  toggleDetails: PropTypes.func,
+  showResume: PropTypes.func,
+  hideResume: PropTypes.func
 };

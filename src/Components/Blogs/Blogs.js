@@ -32,5 +32,9 @@ class Blogs extends Component {
 export default Blogs;
 
 Blogs.propTypes = {
-  toggleDetails: PropTypes.func
+  history: PropTypes.object,
+  toggleDetails: PropTypes.func,
+  toggleMenu: PropTypes.func,
+  onRedirect: PropTypes.func,
+  isMenuShown: PropTypes.bool
 };

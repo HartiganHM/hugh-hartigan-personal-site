@@ -4,6 +4,7 @@ import Loader from '../Loader/Loader';
 import { Document, Page } from 'react-pdf';
 import classNames from 'classnames';
 import is from 'is_js';
+import PropTypes from 'prop-types';
 
 import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
@@ -151,7 +152,11 @@ class About extends Component {
               <span className="close-icon-line two" />
             </div>
 
-            <Document file={resume} className={resumeClassNames} loading={<Loader />}>
+            <Document
+              file={resume}
+              className={resumeClassNames}
+              loading={<Loader />}
+            >
               <Page pageNumber={1} width={this.getResumeSize()} />
             </Document>
           </div>
@@ -162,3 +167,13 @@ class About extends Component {
 }
 
 export default About;
+
+About.propTypes = {
+  history: PropTypes.object,
+  toggleMenu: PropTypes.func,
+  onRedirect: PropTypes.func,
+  isMenuShown: PropTypes.bool,
+  isResumeShown: PropTypes.bool,
+  showResume: PropTypes.func,
+  hideResume: PropTypes.func
+};

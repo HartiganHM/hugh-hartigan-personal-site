@@ -85,5 +85,10 @@ class Nav extends Component {
 export default Nav;
 
 Nav.propTypes = {
-  currentPage: PropTypes.string
+  history: PropTypes.object,
+  currentPage: PropTypes.string,
+  toggleMenu: PropTypes.func,
+  onRedirect: PropTypes.func,
+  isMenuShown: PropTypes.bool,
+  isResumeShown: PropTypes.bool
 };

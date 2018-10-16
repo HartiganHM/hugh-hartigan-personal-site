@@ -32,5 +32,9 @@ class Projects extends Component {
 export default Projects;
 
 Projects.propTypes = {
-  toggleDetails: PropTypes.func
+  history: PropTypes.object,
+  toggleDetails: PropTypes.func,
+  toggleMenu: PropTypes.func,
+  onRedirect: PropTypes.func,
+  isMenuShown: PropTypes.bool
 };
