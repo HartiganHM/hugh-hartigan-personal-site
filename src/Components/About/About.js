@@ -11,27 +11,33 @@ class About extends Component {
     const innerWidth = window.innerWidth;
 
     if (innerWidth > 700) {
-      return 660
+      return 660;
     } else {
-      return window.innerWidth - 40
+      return window.innerWidth - 40;
     }
-  }
+  };
 
   render() {
-    const { isResumeShown } = this.state;
-    const { toggleMenu, onRedirect, isMenuShown, history } = this.props;
+    const {
+      toggleMenu,
+      onRedirect,
+      isMenuShown,
+      isResumeShown,
+      history
+    } = this.props;
     const { about } = copyContent;
+
+    const navProps = {
+      toggleMenu,
+      isMenuShown,
+      isResumeShown,
+      onRedirect,
+      history
+    };
 
     return (
       <div className="About">
-        <Nav
-          currentPage={'About'}
-          toggleMenu={toggleMenu}
-          isMenuShown={isMenuShown}
-          isResumeShown={isResumeShown}
-          onRedirect={onRedirect}
-          history={history}
-        />
+        <Nav currentPage={'About'} {...navProps} />
 
         <div className="info-container">
           <div className="top-container">
