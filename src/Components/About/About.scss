@@ -74,6 +74,59 @@
   color: $neutral-dark;
   text-align: center;
 }
+.resume-dialog {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.resume {
+  margin-top: 40px;
+}
+.close-icon {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  transition: all 0.2s;
+  &:hover {
+    .close {
+      background-color: $accent-color-light;
+      &.one {
+        transform: rotate(45deg);
+      }
+      &.two {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+.close {
+  height: 5px;
+  width: 40px;
+  margin: 3px;
+  background-color: $accent-color-light;
+  border-radius: 2px;
+  transition: all 0.25s;
+  background-color: $snow;
+  position: absolute;
+  top: 10px;
+  &.one {
+    transform: rotate(135deg);
+  }
+  &.two {
+    transform: rotate(-135deg);
+  }
+}
 
 @media screen and (max-width: 1634px) {
   .About {
@@ -120,5 +173,8 @@
   }
   li {
     margin-bottom: 5px;
+  }
+  .resume {
+    margin: 0;
   }
 }

@@ -1,109 +1,155 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
+import { Document, Page } from 'react-pdf';
+import resume from '../../images/Hugh-Hartigan-Resume.pdf';
 import './About.css';
 
-const About = ({ toggleMenu, onRedirect, isMenuShown, history }) => {
-  const { about } = copyContent;
+class About extends Component {
+  state = {
+    isResumeShown: false
+  };
 
-  return (
-    <div className="About">
-      <Nav
-        currentPage={'About'}
-        toggleMenu={toggleMenu}
-        isMenuShown={isMenuShown}
-        onRedirect={onRedirect}
-        history={history}
-      />
+  showResume = async () => {
+    await this.setState({ isResumeShown: true });
+    window.scrollTo(0, 0);
+  };
 
-      <div className="info-container">
-        <div className="top-container">
-          <img
-            className="profile-image"
-            src={require('../../images/Hugh-Hartigan.jpg')}
-            alt="Hugh-Hartigan-software-developer"
-          />
-          <div className="profile-description-container">
-            <span className="description-header">{about.header}</span>
+  hideResume = () => {
+    this.setState({ isResumeShown: false });
+  };
 
-            <p className="profile-description">{about.description1}</p>
+  getResumeSize = () => {
+    const innerWidth = window.innerWidth;
 
-            <p className="profile-description">{about.description2}</p>
+    if (innerWidth > 700) {
+      return 660
+    } else {
+      return window.innerWidth - 40
+    }
+  }
 
-            <p className="profile-description">{about.description3}</p>
+  render() {
+    const { isResumeShown } = this.state;
+    const { toggleMenu, onRedirect, isMenuShown, history } = this.props;
+    const { about } = copyContent;
 
-            <ul className="questions">
-              <li>{about.question1}</li>
-              <li>{about.question2}</li>
-              <li>{about.question3}</li>
-            </ul>
+    return (
+      <div className="About">
+        <Nav
+          currentPage={'About'}
+          toggleMenu={toggleMenu}
+          isMenuShown={isMenuShown}
+          isResumeShown={isResumeShown}
+          onRedirect={onRedirect}
+          history={history}
+        />
+
+        <div className="info-container">
+          <div className="top-container">
+            <img
+              className="profile-image"
+              src={require('../../images/Hugh-Hartigan.jpg')}
+              alt="Hugh-Hartigan-software-developer"
+            />
+            <div className="profile-description-container">
+              <span className="description-header">{about.header}</span>
+
+              <p className="profile-description">{about.description1}</p>
+
+              <p className="profile-description">{about.description2}</p>
+
+              <p className="profile-description">{about.description3}</p>
+
+              <ul className="questions">
+                <li>{about.question1}</li>
+                <li>{about.question2}</li>
+                <li>{about.question3}</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="link-wrapper">
+            <div className="link-box">
+              <a
+                onClick={this.showResume}
+                rel="noopener noreferrer"
+                className="icon-wrapper"
+              >
+                <svg className="icon" viewBox="0 0 512 512">
+                  <g>
+                    <path d={svgPaths.resume} />
+                  </g>
+                </svg>
+                <span className="icon-text">{about.iconText1}</span>
+              </a>
+              <a
+                href="https://github.com/HartiganHM"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-wrapper"
+              >
+                <svg className="icon" viewBox="0 0 436.5 426.8">
+                  <g>
+                    <path d={svgPaths.github} />
+                  </g>
+                </svg>
+                <span className="icon-text">{about.iconText2}</span>
+              </a>
+            </div>
+
+            <div className="link-box">
+              <a
+                href="mailto:hartigan.hm@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-wrapper"
+              >
+                <svg className="icon" viewBox="0 0 512 495.1">
+                  <g>
+                    <path d={svgPaths.email} />
+                  </g>
+                </svg>
+                <span className="icon-text">{about.iconText3}</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hartiganhm/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-wrapper"
+              >
+                <svg className="icon" viewBox="0 0 512 512">
+                  <g>
+                    <path d={svgPaths.linkedin} />
+                  </g>
+                </svg>
+                <span className="icon-text">{about.iconText4}</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="link-wrapper">
-          <div className="link-box">
-            <a
-              href="https://www.turing.io/sites/default/files/resumes/Hugh-Hartigan-Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon-wrapper"
-            >
-              <svg className="icon" viewBox="0 0 512 512">
-                <g>
-                  <path d={svgPaths.resume} />
-                </g>
-              </svg>
-              <span className="icon-text">{about.iconText1}</span>
-            </a>
-            <a
-              href="https://github.com/HartiganHM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon-wrapper"
-            >
-              <svg className="icon" viewBox="0 0 436.5 426.8">
-                <g>
-                  <path d={svgPaths.github} />
-                </g>
-              </svg>
-              <span className="icon-text">{about.iconText2}</span>
-            </a>
-          </div>
+        {isResumeShown && (
+          <div className="resume-dialog">
+            <div className="close-icon" onClick={this.hideResume}>
+              <span className="close one" />
+              <span className="close two" />
+            </div>
 
-          <div className="link-box">
-            <a
-              href="mailto:hartigan.hm@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon-wrapper"
-            >
-              <svg className="icon" viewBox="0 0 512 495.1">
-                <g>
-                  <path d={svgPaths.email} />
-                </g>
-              </svg>
-              <span className="icon-text">{about.iconText3}</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/hartiganhm/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon-wrapper"
-            >
-              <svg className="icon" viewBox="0 0 512 512">
-                <g>
-                  <path d={svgPaths.linkedin} />
-                </g>
-              </svg>
-              <span className="icon-text">{about.iconText4}</span>
-            </a>
+            <Document file={resume}>
+              <Page
+                pageNumber={1}
+                className="resume"
+                width={this.getResumeSize()}
+              />
+            </Document>
           </div>
-        </div>
+        )}
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default About;
 
