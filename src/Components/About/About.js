@@ -153,5 +153,3 @@ class About extends Component {
 }
 
 export default About;
-
-// https://www.turing.io/sites/default/files/resumes/Hugh-Hartigan-Resume.pdf
