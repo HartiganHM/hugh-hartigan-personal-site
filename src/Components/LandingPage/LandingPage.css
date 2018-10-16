@@ -16,7 +16,7 @@
   .LandingPage .nav-bar {
     align-self: center;
     display: flex; }
-    .LandingPage .nav-bar .nav-link {
+    .LandingPage .nav-bar .nav-link-home {
       width: 5rem;
       padding: 0.625rem;
       border-bottom: 1px solid #f9f9f9;
@@ -24,7 +24,7 @@
       text-align: center;
       text-decoration: none;
       transition: 0.25s ease-in-out; }
-      .LandingPage .nav-bar .nav-link:hover {
+      .LandingPage .nav-bar .nav-link-home:hover {
         border-bottom: 1px solid #319fd9;
         background-color: #f9f9f9;
         color: #319fd9;

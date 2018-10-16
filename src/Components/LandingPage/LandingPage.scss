@@ -20,7 +20,7 @@
   .nav-bar {
     align-self: center;
     display: flex;
-    .nav-link {
+    .nav-link-home {
       @include button;
       &:hover {
         @include buttonHover;
