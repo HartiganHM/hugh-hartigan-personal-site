@@ -23,7 +23,7 @@ class App extends Component {
     const path = page === 'Home' ? '/' : `/${page.toLowerCase()}`;
 
     this.setState({ isMenuShown: false, currenPage: page });
-    setTimeout(() => push(path), 500);
+    setTimeout(() => push(path), 300);
   };
 
   render() {
