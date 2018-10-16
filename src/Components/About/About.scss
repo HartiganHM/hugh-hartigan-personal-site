@@ -88,8 +88,10 @@
 }
 .resume {
   position: relative;
-  top: 120px;
   margin-bottom: 20px;
+  &.desktop {
+    top: 120px;
+  }
 }
 .download-icon {
   display: flex;
@@ -213,8 +215,5 @@
   }
   li {
     margin-bottom: 5px;
-  }
-  .resume {
-    top: 0;
   }
 }

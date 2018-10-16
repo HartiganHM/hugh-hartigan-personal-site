@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Loader from '../Loader/Loader';
+import { Document, Page } from 'react-pdf';
+import classNames from 'classnames';
+import is from 'is_js';
 
 import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
-import { Document, Page } from 'react-pdf';
 import resume from '../../images/Hugh-Hartigan-Resume.pdf';
 import './About.css';
 
@@ -30,6 +32,11 @@ class About extends Component {
       history
     } = this.props;
     const { about } = copyContent;
+
+    const resumeClassNames = classNames({
+      resume: true,
+      desktop: is.desktop()
+    });
 
     const navProps = {
       toggleMenu,
@@ -144,8 +151,7 @@ class About extends Component {
               <span className="close-icon-line two" />
             </div>
 
-
-            <Document file={resume} className="resume" loading={<Loader />}>
+            <Document file={resume} className={resumeClassNames} loading={<Loader />}>
               <Page pageNumber={1} width={this.getResumeSize()} />
             </Document>
           </div>

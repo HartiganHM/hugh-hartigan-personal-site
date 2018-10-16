@@ -87,8 +87,9 @@
 
 .resume {
   position: relative;
-  top: 120px;
   margin-bottom: 20px; }
+  .resume.desktop {
+    top: 120px; }
 
 .download-icon {
   display: flex;
@@ -185,6 +186,4 @@
   ul {
     padding-inline-start: 5px; }
   li {
-    margin-bottom: 5px; }
-  .resume {
-    top: 0; } }
+    margin-bottom: 5px; } }
