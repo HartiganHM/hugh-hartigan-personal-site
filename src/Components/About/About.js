@@ -23,6 +23,8 @@ class About extends Component {
       onRedirect,
       isMenuShown,
       isResumeShown,
+      showResume,
+      hideResume,
       history
     } = this.props;
     const { about } = copyContent;
@@ -66,7 +68,7 @@ class About extends Component {
           <div className="link-wrapper">
             <div className="link-box">
               <a
-                onClick={this.showResume}
+                onClick={showResume}
                 rel="noopener noreferrer"
                 className="icon-wrapper"
               >
@@ -125,9 +127,9 @@ class About extends Component {
 
         {isResumeShown && (
           <div className="resume-dialog">
-            <div className="close-icon" onClick={this.hideResume}>
-              <span className="close one" />
-              <span className="close two" />
+            <div className="close-icon" onClick={hideResume}>
+              <span className="close-icon-line one" />
+              <span className="close-icon-line two" />
             </div>
 
             <Document file={resume}>
