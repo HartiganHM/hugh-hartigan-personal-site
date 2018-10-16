@@ -85,12 +85,9 @@
   justify-content: center;
   overflow: scroll; }
 
-.loading {
-  color: red; }
-
 .resume {
   position: relative;
-  top: 110px;
+  top: 120px;
   margin-bottom: 20px; }
 
 .download-icon {
@@ -188,4 +185,6 @@
   ul {
     padding-inline-start: 5px; }
   li {
-    margin-bottom: 5px; } }
+    margin-bottom: 5px; }
+  .resume {
+    top: 0; } }

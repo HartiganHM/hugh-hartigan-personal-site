@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
+import Loader from '../Loader/Loader';
+
 import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
 import { Document, Page } from 'react-pdf';
@@ -142,7 +144,8 @@ class About extends Component {
               <span className="close-icon-line two" />
             </div>
 
-            <Document file={resume} className="resume">
+
+            <Document file={resume} className="resume" loading={<Loader />}>
               <Page pageNumber={1} width={this.getResumeSize()} />
             </Document>
           </div>
