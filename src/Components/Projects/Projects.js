@@ -7,25 +7,22 @@ import './Projects.css';
 
 class Projects extends Component {
   render() {
-    const { toggleMenu, onRedirect, isMenuShown, history } = this.props;
+    const {
+      toggleMenu,
+      toggleDetails,
+      onRedirect,
+      isMenuShown,
+      history
+    } = this.props;
+    const navProps = { toggleMenu, onRedirect, isMenuShown, history };
 
     const projects = copyContent.projects.map((project, index) => (
-      <Card
-        key={index}
-        cardData={project}
-        toggleDetails={this.props.toggleDetails}
-      />
+      <Card key={index} cardData={project} toggleDetails={toggleDetails} />
     ));
 
     return (
       <div className="Projects">
-        <Nav
-          currentPage="Projects"
-          toggleMenu={toggleMenu}
-          onRedirect={onRedirect}
-          isMenuShown={isMenuShown}
-          history={history}
-        />
+        <Nav currentPage="Projects" {...navProps} />
         <div className="card-container">{projects}</div>
       </div>
     );
