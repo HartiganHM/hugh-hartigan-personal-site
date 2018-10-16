@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Routes from '../Routes/Routes';
 import { Route } from 'react-router';
+import classNames from 'classnames';
 import './App.css';
 
 class App extends Component {
@@ -21,20 +22,16 @@ class App extends Component {
     this.setState({ isMenuShown: false, currenPage: page });
   };
 
-  checkLocation(endpoint) {
-    if (endpoint === '/') {
-      return 'App';
-    } else {
-      return 'App away';
-    }
-  }
-
   render() {
     const { isMenuShown } = this.state;
-    this.checkLocation(window.location.pathname);
+    const appClasses = classNames({
+      App: window.location.pathname === '/',
+      'App away': window.location.pathname !== '/',
+      'no-scroll': isMenuShown
+    });
 
     return (
-      <div className={this.checkLocation(window.location.pathname)}>
+      <div className={appClasses}>
         <Route
           to="/"
           render={({ location }) => (
