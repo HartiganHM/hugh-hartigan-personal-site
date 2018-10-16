@@ -3,35 +3,9 @@
 .Projects {
   display: flex;
   flex-direction: column;
-  @include width(160);
+  width: 1600px;
   max-height: 100vh;
   color: $neutral-dark;
-  .wrapper {
-    align-self: stretch;
-    display: flex;
-    justify-content: space-between;
-    min-height: 63.5px;
-    .header-wordmark {
-      @include horizontalWordmarkLogo;
-      background-image: url('../../images/Wordmark-horizontal-blue.png');
-    }
-    .nav-bar {
-      align-self: center;
-      display: flex;
-      .nav-link {
-        align-self: baseline;
-        @include buttonAlternate;
-        &:hover {
-          @include buttonHoverAlternate;
-        }
-      }
-      .active {
-        @include buttonHoverAlternate;
-        cursor: default;
-        pointer-events: none;
-      }
-    }
-  }
   .card-container {
     @include margin(1);
     background-color: $accent-color-light;
@@ -40,33 +14,25 @@
 
 @media screen and (max-width: 1634px) {
   .Projects {
-    @include width(128);
+    width: 1280px;
   }
 }
 
 @media screen and (max-width: 1334px) {
   .Projects {
-    @include width(96);
+    width: 960px;
   }
 }
 
 @media screen and (max-width: 1014px) {
   .Projects {
-    @include width(64);
+    width: 640px;
   }
 }
 
-@media screen and (max-width: 694px) {
+@media screen and (max-width: 480px) {
   .Projects {
-    .wrapper {
-      flex-direction: column;
-      margin: 25px 0 50px;
-      .header-wordmark {
-        @include height(25);
-        width: unset;
-        margin: 0;
-        background-position: center;
-      }
-    }
+    width: 320px;
+    margin: 5px;
   }
 }

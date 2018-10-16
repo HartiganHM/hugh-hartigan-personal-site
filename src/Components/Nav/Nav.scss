@@ -1,0 +1,127 @@
+@import '../../Styles/variables.scss';
+@import '../../Styles/mixins.scss';
+
+.nav-wrapper {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  min-height: 63.5px;
+}
+
+.header-wordmark {
+  @include horizontalWordmarkLogo;
+  background-image: url('../../images/Wordmark-horizontal-blue.png');
+}
+
+.nav-bar,
+.nav-mobile,
+.nav-desktop {
+  align-self: center;
+  display: flex;
+  .nav-link {
+    align-self: baseline;
+    @include buttonAlternate;
+    &:hover {
+      @include buttonHoverAlternate;
+    }
+  }
+  .active {
+    @include buttonHoverAlternate;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.nav-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 694px) {
+  .nav-wrapper {
+    flex-direction: column;
+    margin: 25px 0 50px;
+  }
+  .header-wordmark {
+    @include height(5.4);
+    width: unset;
+    margin: 0;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-wordmark {
+    @include verticalWordmarkLogo;
+    background-image: url('../../images/Wordmark-Blue.png');
+  }
+  .nav-wrapper {
+    width: 320px;
+    min-height: 10rem;
+    margin: 0;
+    align-items: center;
+  }
+  .nav-desktop {
+    display: none;
+  }
+  .nav-mobile {
+    display: flex;
+  }
+  .nav-icon {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 3;
+    &.close {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .burger-line {
+    height: 5px;
+    width: 40px;
+    margin: 3px;
+    background-color: $accent-color-light;
+    border-radius: 2px;
+    transition: all 0.25s;
+    &.close {
+      background-color: $snow;
+      position: absolute;
+      top: 10px;
+    }
+    &.one {
+      transform: rotate(135deg);
+    }
+    &.two {
+      transform: rotate(-135deg);
+    }
+    &.remove {
+      display: none;
+    }
+  }
+  .nav-menu {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: -5px;
+    background: $accent-color-dark;
+    transition: all 0.5s;
+  }
+  .hide {
+    right: -480px;
+    left: 480px;
+  }
+  .show {
+    right: 0;
+    left: 0;
+  }
+  .nav-bar {
+    flex: 1;
+    flex-direction: column;
+  }
+  .nav-link {
+    width: 100% !important;
+    color: $snow !important;
+  }
+}

@@ -5,133 +5,215 @@
   display: flex;
   flex-direction: column;
   color: $neutral-dark;
-  @include width(160);
-  .wrapper {
-    align-self: stretch;
-    display: flex;
-    justify-content: space-between;
-    min-height: 63.5px;
-    .header-wordmark {
-      @include horizontalWordmarkLogo;
-      background-image: url('../../images/Wordmark-horizontal-blue.png');
+  width: 1600px;
+}
+.info-container {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+.top-container {
+  display: flex;
+}
+.profile-image {
+  @include height(50);
+  @include width(40);
+}
+.profile-description-container {
+  @include padding(2);
+}
+.description-header {
+  font-size: 1.8rem;
+  text-decoration: underline;
+}
+.profile-description {
+  @include maxWidth(55);
+  text-indent: 1rem;
+  line-height: 150%;
+}
+.questions {
+  color: $neutral-light;
+  font-style: italic;
+  list-style: none;
+  line-height: 150%;
+}
+.link-wrapper {
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  @include padding(5);
+}
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.link-box {
+  display: flex;
+}
+.icon {
+  @include width(10);
+  @include padding(1);
+  fill: $neutral-dark;
+  transition: 0.5s ease-in-out;
+  &:hover {
+    fill: $accent-color-light;
+    transform: translate(0, -3px);
+    transition: 0.5s ease-in-out;
+  }
+}
+.icon-text {
+  @include width(8);
+  @include padding(1);
+  color: $neutral-dark;
+  text-align: center;
+}
+.resume-dialog {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+.resume {
+  position: relative;
+  margin-bottom: 20px;
+  &.desktop {
+    top: 120px;
+  }
+}
+.download-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 55px;
+  width: 40px;
+  &:hover {
+    .download-arrow {
+      top: 5px;
+      fill: $accent-color-light;
     }
-    .nav-bar {
-      align-self: center;
-      display: flex;
-      .nav-link {
-        align-self: baseline;
-        @include buttonAlternate;
-        &:hover {
-          @include buttonHoverAlternate;
-        }
+    .download-line {
+      background-color: $accent-color-light;
+    }
+  }
+}
+.download-arrow {
+  position: relative;
+  top: 0;
+  height: 30px;
+  fill: $snow;
+  transition: all 0.2s;
+}
+.download-line {
+  width: 30px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: $snow;
+  transition: all 0.2s;
+}
+.close-icon {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  transition: all 0.2s;
+  &:hover {
+    .close-icon-line {
+      background-color: $accent-color-light;
+      &.one {
+        transform: rotate(45deg);
       }
-      .active {
-        @include buttonHoverAlternate;
-        cursor: default;
-        pointer-events: none;
+      &.two {
+        transform: rotate(-45deg);
       }
     }
   }
-  .info-container {
-    align-self: stretch;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    .top-container {
-      display: flex;
-      .profile-image {
-        @include height(50);
-        @include width(40);
-      }
-      .profile-description-container {
-        @include padding(2);
-        .description-header {
-          font-size: 1.8rem;
-          text-decoration: underline;
-        }
-        .profile-description {
-          @include maxWidth(55);
-          text-indent: 1rem;
-          line-height: 150%;
-        }
-        .questions {
-          color: $neutral-light;
-          font-style: italic;
-          list-style: none;
-          line-height: 150%;
-        }
-      }
-    }
-    .link-wrapper {
-      flex: 1;
-      align-self: stretch;
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      @include padding(5);
-      .icon-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        .icon {
-          @include width(10);
-          @include padding(1);
-          fill: $neutral-dark;
-          transition: 0.5s ease-in-out;
-          &:hover {
-            fill: $accent-color-light;
-            transform: translate(0, -3px);
-            transition: 0.5s ease-in-out;
-          }
-        }
-        .icon-text {
-          @include width(8);
-          @include padding(1);
-          color: $neutral-dark;
-          text-align: center;
-        }
-      }
-    }
+}
+.close-icon-line {
+  height: 5px;
+  width: 40px;
+  margin: 3px;
+  border-radius: 2px;
+  transition: all 0.25s;
+  background-color: $snow;
+  position: absolute;
+  top: 10px;
+  &.one {
+    transform: rotate(135deg);
+  }
+  &.two {
+    transform: rotate(-135deg);
   }
 }
 
 @media screen and (max-width: 1634px) {
   .About {
-    @include width(128);
+    width: 1280px;
   }
 }
 
 @media screen and (max-width: 1334px) {
   .About {
-    @include width(96);
+    width: 960px;
   }
 }
 
 @media screen and (max-width: 1014px) {
   .About {
     height: fit-content;
-    @include width(64);
-    .info-container .top-container {
-      flex-direction: column;
-      align-items: center;
-    }
+    width: 640px;
+  }
+  .top-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-description-container {
+    width: 400px;
   }
 }
 
-@media screen and (max-width: 694px) {
+@media screen and (max-width: 480px) {
   .About {
-    .wrapper {
-      flex-direction: column;
-      margin: 25px 0 50px;
-      .header-wordmark {
-        @include height(5.4);
-        width: unset;
-        margin: 0;
-        background-position: center;
-      }
-    }
+    width: 320px;
+    margin: 5px;
+  }
+  .info-container {
+    margin: unset;
+  }
+  .profile-image {
+    width: 310px;
+    height: 387.5px;
+  }
+  .profile-description-container {
+    width: 310px;
+  }
+  .link-wrapper {
+    flex-direction: column;
+    padding: 0;
+    align-self: center;
+  }
+  ul {
+    padding-inline-start: 5px;
+  }
+  li {
+    margin-bottom: 5px;
   }
 }

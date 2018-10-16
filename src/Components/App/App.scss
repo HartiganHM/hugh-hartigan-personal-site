@@ -22,9 +22,12 @@
   overflow-y: scroll;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 694px) {
   .App {
     width: initial;
-    overflow: scroll;
   }
 }

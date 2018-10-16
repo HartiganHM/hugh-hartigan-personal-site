@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
-import projectsData from '../../data/projectsData';
+import copyContent from '../../copy/copyContent';
+import PropTypes from 'prop-types';
 import './Projects.css';
 
 class Projects extends Component {
   render() {
-    const projects = projectsData.map((project, index) => (
-      <Card key={index} data={project} toggleDetails={this.props.toggleDetails}/>
+    const {
+      toggleMenu,
+      toggleDetails,
+      onRedirect,
+      isMenuShown,
+      history
+    } = this.props;
+    const navProps = { toggleMenu, onRedirect, isMenuShown, history };
+
+    const projects = copyContent.projects.map((project, index) => (
+      <Card key={index} cardData={project} toggleDetails={toggleDetails} />
     ));
 
     return (
       <div className="Projects">
-        <div className="wrapper">
-          <span className="header-wordmark" />
-          <span className="nav-bar">
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
-            <NavLink className="nav-link" to="/about">
-              About
-            </NavLink>
-            <NavLink className="nav-link" to="/projects">
-              Projects
-            </NavLink>
-            <NavLink className="nav-link" to="/blogs">
-              Blogs
-            </NavLink>
-          </span>
-        </div>
+        <Nav currentPage="Projects" {...navProps} />
         <div className="card-container">{projects}</div>
       </div>
     );
@@ -36,3 +30,11 @@ class Projects extends Component {
 }
 
 export default Projects;
+
+Projects.propTypes = {
+  history: PropTypes.object,
+  toggleDetails: PropTypes.func,
+  toggleMenu: PropTypes.func,
+  onRedirect: PropTypes.func,
+  isMenuShown: PropTypes.bool
+};

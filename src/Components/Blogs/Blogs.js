@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
-import blogsData from '../../data/blogsData';
+import copyContent from '../../copy/copyContent';
+import PropTypes from 'prop-types';
 import './Blogs.css';
 
 class Blogs extends Component {
   render() {
-    const blogPosts = blogsData.map((blog, index) => (
-      <Card key={index} data={blog} toggleDetails={this.props.toggleDetails} />
+    const {
+      toggleMenu,
+      toggleDetails,
+      onRedirect,
+      isMenuShown,
+      history
+    } = this.props;
+    const navProps = { toggleMenu, onRedirect, isMenuShown, history };
+
+    const blogPosts = copyContent.blogs.map((blog, index) => (
+      <Card key={index} cardData={blog} toggleDetails={toggleDetails} />
     ));
 
     return (
       <div className="Blogs">
-        <div className="wrapper">
-          <span className="header-wordmark" />
-          <span className="nav-bar">
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
-            <NavLink className="nav-link" to="/about">
-              About
-            </NavLink>
-            <NavLink className="nav-link" to="/projects">
-              Projects
-            </NavLink>
-            <NavLink className="nav-link" to="/blogs">
-              Blogs
-            </NavLink>
-          </span>
-        </div>
+        <Nav currentPage="Blogs" {...navProps} />
         <div className="card-container">{blogPosts}</div>
       </div>
     );
@@ -36,3 +30,11 @@ class Blogs extends Component {
 }
 
 export default Blogs;
+
+Blogs.propTypes = {
+  history: PropTypes.object,
+  toggleDetails: PropTypes.func,
+  toggleMenu: PropTypes.func,
+  onRedirect: PropTypes.func,
+  isMenuShown: PropTypes.bool
+};

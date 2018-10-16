@@ -3,67 +3,26 @@
 .Blogs {
   display: flex;
   flex-direction: column;
-  width: 100rem;
+  width: 1600px;
   max-height: 100vh;
   color: #3c4042; }
-  .Blogs .wrapper {
-    align-self: stretch;
-    display: flex;
-    justify-content: space-between;
-    min-height: 63.5px; }
-    .Blogs .wrapper .header-wordmark {
-      height: 3.125rem;
-      width: 22.3125rem;
-      margin: 0.625rem;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url("../../images/Wordmark-horizontal-blue.png"); }
-    .Blogs .wrapper .nav-bar {
-      align-self: center;
-      display: flex; }
-      .Blogs .wrapper .nav-bar .nav-link {
-        align-self: baseline;
-        width: 5rem;
-        padding: 0.625rem;
-        border-bottom: 1px solid #319fd9;
-        color: #319fd9;
-        text-align: center;
-        text-decoration: none;
-        transition: 0.5s ease-in-out; }
-        .Blogs .wrapper .nav-bar .nav-link:hover {
-          border-bottom: 1px solid #319fd9;
-          background-color: #319fd9;
-          color: #f9f9f9;
-          transition: 0.5s ease-in-out; }
-      .Blogs .wrapper .nav-bar .active {
-        border-bottom: 1px solid #319fd9;
-        background-color: #319fd9;
-        color: #f9f9f9;
-        transition: 0.5s ease-in-out;
-        cursor: default;
-        pointer-events: none; }
   .Blogs .card-container {
     margin: 0.625rem;
     background-color: #319fd9; }
 
 @media screen and (max-width: 1634px) {
   .Blogs {
-    width: 80rem; } }
+    width: 1280px; } }
 
 @media screen and (max-width: 1334px) {
   .Blogs {
-    width: 60rem; } }
+    width: 960px; } }
 
 @media screen and (max-width: 1014px) {
   .Blogs {
-    width: 40rem; } }
+    width: 640px; } }
 
-@media screen and (max-width: 694px) {
-  .Blogs .wrapper {
-    flex-direction: column;
-    margin: 25px 0 50px; }
-    .Blogs .wrapper .header-wordmark {
-      height: 3.375rem;
-      width: unset;
-      margin: 0;
-      background-position: center; } }
+@media screen and (max-width: 480px) {
+  .Blogs {
+    width: 320px;
+    margin: 5px; } }

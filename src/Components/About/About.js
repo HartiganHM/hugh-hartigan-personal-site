@@ -1,127 +1,179 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import svgPaths from '../../data/svgPaths';
+import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
+import Loader from '../Loader/Loader';
+import { Document, Page } from 'react-pdf';
+import classNames from 'classnames';
+import is from 'is_js';
+import PropTypes from 'prop-types';
+
+import copyContent from '../../copy/copyContent';
+import svgPaths from '../../copy/svgPaths';
+import resume from '../../images/Hugh-Hartigan-Resume.pdf';
 import './About.css';
 
-const About = () => {
-  return (
-    <div className="About">
-      <div className="wrapper">
-        <span className="header-wordmark" />
-        <span className="nav-bar">
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-          <NavLink className="nav-link active" to="/about" disabled>
-            About
-          </NavLink>
-          <NavLink className="nav-link" to="/projects">
-            Projects
-          </NavLink>
-          <NavLink className="nav-link" to="/blogs">
-            Blogs
-          </NavLink>
-        </span>
-      </div>
-      <div className="info-container">
-        <div className="top-container">
-          <img
-            className="profile-image"
-            src={require('../../images/Hugh-Hartigan.jpg')}
-            alt="Hugh-Hartigan-software-developer"
-          />
-          <div className="profile-description-container">
-            <span className="description-header">About Hugh</span>
+class About extends Component {
+  getResumeSize = () => {
+    const innerWidth = window.innerWidth;
 
-            <p className="profile-description">
-              I am a software developer with a passion for creative solutions to
-              complex problems. I look forward to innovative challenges, relish
-              in the opportunity to learn something new, and love seeing those
-              around me grow.
-            </p>
+    if (innerWidth > 700) {
+      return 640;
+    } else {
+      return window.innerWidth - 60;
+    }
+  };
 
-            <p className="profile-description">
-              My road to development started with an itch to create. Whether
-              it's painting, drawing, sewing a bow tie, or making a button pixel
-              perfect, I get lost building anything and everything. Software
-              development satisfies this need and more, providing me with an
-              endless ocean of new puzzles to solve.
-            </p>
+  render() {
+    const {
+      toggleMenu,
+      onRedirect,
+      isMenuShown,
+      isResumeShown,
+      showResume,
+      hideResume,
+      history
+    } = this.props;
+    const { about } = copyContent;
 
-            <p className="profile-description">
-              Reach me through any of the links below to collaborate, grab
-              a coffee, or ponder life's biggest (and smallest) mysteries:
-            </p>
+    const resumeClassNames = classNames({
+      resume: true,
+      desktop: is.desktop()
+    });
 
-            <ul className="questions">
-              <li>Is Mario a really good hero or a very bad plumber?</li>
-              <li>If aliens invaded, would they think dogs owned us?</li>
-              <li>
-                Is it possible to get the perfect temperature on a Hot Pocket?
-              </li>
-            </ul>
+    const navProps = {
+      toggleMenu,
+      isMenuShown,
+      isResumeShown,
+      onRedirect,
+      history
+    };
+
+    return (
+      <div className="About">
+        <Nav currentPage={'About'} {...navProps} />
+
+        <div className="info-container">
+          <div className="top-container">
+            <img
+              className="profile-image"
+              src={require('../../images/Hugh-Hartigan.jpg')}
+              alt="Hugh-Hartigan-software-developer"
+            />
+            <div className="profile-description-container">
+              <span className="description-header">{about.header}</span>
+
+              <p className="profile-description">{about.description1}</p>
+
+              <p className="profile-description">{about.description2}</p>
+
+              <p className="profile-description">{about.description3}</p>
+
+              <ul className="questions">
+                <li>{about.question1}</li>
+                <li>{about.question2}</li>
+                <li>{about.question3}</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="link-wrapper">
+            <div className="link-box">
+              <a
+                onClick={showResume}
+                rel="noopener noreferrer"
+                className="icon-wrapper"
+              >
+                <svg className="icon" viewBox="0 0 512 512">
+                  <g>
+                    <path d={svgPaths.resume} />
+                  </g>
+                </svg>
+                <span className="icon-text">{about.iconText1}</span>
+              </a>
+              <a
+                href="https://github.com/HartiganHM"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-wrapper"
+              >
+                <svg className="icon" viewBox="0 0 436.5 426.8">
+                  <g>
+                    <path d={svgPaths.github} />
+                  </g>
+                </svg>
+                <span className="icon-text">{about.iconText2}</span>
+              </a>
+            </div>
+
+            <div className="link-box">
+              <a
+                href="mailto:hartigan.hm@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-wrapper"
+              >
+                <svg className="icon" viewBox="0 0 512 495.1">
+                  <g>
+                    <path d={svgPaths.email} />
+                  </g>
+                </svg>
+                <span className="icon-text">{about.iconText3}</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hartiganhm/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-wrapper"
+              >
+                <svg className="icon" viewBox="0 0 512 512">
+                  <g>
+                    <path d={svgPaths.linkedin} />
+                  </g>
+                </svg>
+                <span className="icon-text">{about.iconText4}</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="link-wrapper">
-          <a
-            href="https://www.turing.io/sites/default/files/resumes/Hugh-Hartigan-Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-wrapper"
-          >
-            <svg className="icon" viewBox="0 0 512 512">
-              <g>
-                <path d={svgPaths.resume} />
-              </g>
-            </svg>
-            <span className="icon-text">Resume</span>
-          </a>
-          <a
-            href="https://github.com/HartiganHM"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-wrapper"
-          >
-            <svg className="icon" viewBox="0 0 436.5 426.8">
-              <g>
-                <path d={svgPaths.github} />
-              </g>
-            </svg>
-            <span className="icon-text">GitHub</span>
-          </a>
-          <a
-            href="mailto:hartigan.hm@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-wrapper"
-          >
-            <svg className="icon" viewBox="0 0 512 495.1">
-              <g>
-                <path d={svgPaths.email} />
-              </g>
-            </svg>
-            <span className="icon-text">Email</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/hartiganhm/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-wrapper"
-          >
-            <svg className="icon" viewBox="0 0 512 512">
-              <g>
-                <path d={svgPaths.linkedin} />
-              </g>
-            </svg>
-            <span className="icon-text">LinkedIn</span>
-          </a>
-        </div>
+        {isResumeShown && (
+          <div className="resume-dialog">
+            <a className="download-icon" href={resume} target="_blank">
+              <svg className="download-arrow" viewBox="0 0 444.819 444.819">
+                <g>
+                  <path d={svgPaths.download} />
+                </g>
+              </svg>
+
+              <span className="download-line" />
+            </a>
+
+            <div className="close-icon" onClick={hideResume}>
+              <span className="close-icon-line one" />
+              <span className="close-icon-line two" />
+            </div>
+
+            <Document
+              file={resume}
+              className={resumeClassNames}
+              loading={<Loader />}
+            >
+              <Page pageNumber={1} width={this.getResumeSize()} />
+            </Document>
+          </div>
+        )}
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default About;
 
-// https://www.turing.io/sites/default/files/resumes/Hugh-Hartigan-Resume.pdf
+About.propTypes = {
+  history: PropTypes.object,
+  toggleMenu: PropTypes.func,
+  onRedirect: PropTypes.func,
+  isMenuShown: PropTypes.bool,
+  isResumeShown: PropTypes.bool,
+  showResume: PropTypes.func,
+  hideResume: PropTypes.func
+};

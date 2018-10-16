@@ -61,7 +61,7 @@
   color: $snow;
   text-align: center;
   text-decoration: none;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 @mixin buttonAlternate() {
@@ -71,21 +71,21 @@
   color: $accent-color-light;
   text-align: center;
   text-decoration: none;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 @mixin buttonHover() {
   border-bottom: 1px solid $accent-color-light;
   background-color: $snow;
   color: $accent-color-light;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 @mixin buttonHoverAlternate() {
   border-bottom: 1px solid $accent-color-light;
   background-color: $accent-color-light;
   color: $snow;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 @mixin activeButton() {
@@ -129,9 +129,8 @@
 }
 
 @mixin verticalWordmarkLogo() {
-  @include height(20);
-  @include width(20);
-  @include margin(1);
+  height: 10rem;
+  width: 10rem;
   background: {
     size: contain;
     repeat: no-repeat;
@@ -170,4 +169,59 @@
 
 @mixin component-transition {
   transition: 1s cubic-bezier(0.78, 0.07, 0.35, 1);
+}
+
+// Animations
+@mixin baseLoader(){
+  display: inline-block;
+  position: relative;
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin buttonLoader() {
+  @include baseLoader();
+  width: 2.6rem;
+  height: 2.6rem;
+  div {
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 3px solid $snow;
+    border-color: $snow transparent transparent transparent;
+  }
+}
+
+@mixin largeLoader() {
+  @include baseLoader();
+  width: 7.5rem;
+  height: 7.5rem;
+  div {
+    width: 6.2rem;
+    height: 6.2rem;
+    margin: 0.6rem;
+    border: 8px solid $accent-color-light;
+    border-color: $accent-color-light transparent transparent transparent;
+  }
 }

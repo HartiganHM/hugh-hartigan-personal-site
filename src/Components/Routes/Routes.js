@@ -5,28 +5,60 @@ import LandingPage from '../LandingPage/LandingPage';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
 import Blogs from '../Blogs/Blogs';
+import PropTypes from 'prop-types';
 import './Routes.css';
 
 class Routes extends Component {
-  toggleDetails = (currentClass) => {
-    return currentClass === 'hidden' ? 'show' : 'hidden';
-  }
-
   render() {
+    const {
+      isMenuShown,
+      isResumeShown,
+      onRedirect,
+      toggleMenu,
+      toggleDetails,
+      showResume,
+      hideResume,
+      history,
+      location
+    } = this.props;
+
+    const componentProps = {
+      isMenuShown,
+      isResumeShown,
+      onRedirect,
+      toggleDetails,
+      toggleMenu,
+      showResume,
+      hideResume,
+      history
+    };
+
     return (
-      <TransitionGroup className='transition-group'>
+      <TransitionGroup className="transition-group">
         <CSSTransition
-          key={this.props.location.key}
+          key={location.key}
           classNames="fade"
           timeout={300}
           mountOnEnter={true}
           unmountOnExit={true}
         >
           <div className="switch-wrapper">
-            <Switch location={this.props.location}>
-              <Route exact path="/about" render={() => <About />} />
-              <Route exact path="/projects" render={() => <Projects toggleDetails={this.toggleDetails}/>} />
-              <Route exact path="/blogs" render={() => <Blogs toggleDetails={this.toggleDetails}/>} />
+            <Switch location={location}>
+              <Route
+                exact
+                path="/about"
+                render={() => <About {...componentProps} />}
+              />
+              <Route
+                exact
+                path="/projects"
+                render={() => <Projects {...componentProps} />}
+              />
+              <Route
+                exact
+                path="/blogs"
+                render={() => <Blogs {...componentProps} />}
+              />
               <Route exact path="/" render={() => <LandingPage />} />
             </Switch>
           </div>
@@ -34,6 +66,18 @@ class Routes extends Component {
       </TransitionGroup>
     );
   }
-};
+}
 
 export default Routes;
+
+Routes.propTypes = {
+  location: PropTypes.object,
+  history: PropTypes.object,
+  isMenuShown: PropTypes.bool,
+  isResumeShown: PropTypes.bool,
+  onRedirect: PropTypes.func,
+  toggleMenu: PropTypes.func,
+  toggleDetails: PropTypes.func,
+  showResume: PropTypes.func,
+  hideResume: PropTypes.func
+};
