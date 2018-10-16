@@ -127,7 +127,7 @@ class About extends Component {
 
         {isResumeShown && (
           <div className="resume-dialog">
-            <a className="download-icon" href={resume}>
+            <a className="download-icon" href={resume} target="_blank">
               <svg className="download-arrow" viewBox="0 0 444.819 444.819">
                 <g>
                   <path d={svgPaths.download} />
@@ -142,12 +142,8 @@ class About extends Component {
               <span className="close-icon-line two" />
             </div>
 
-            <Document file={resume}>
-              <Page
-                pageNumber={1}
-                className="resume"
-                width={this.getResumeSize()}
-              />
+            <Document file={resume} className="resume">
+              <Page pageNumber={1} width={this.getResumeSize()} />
             </Document>
           </div>
         )}
