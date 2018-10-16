@@ -7,19 +7,6 @@ import resume from '../../images/Hugh-Hartigan-Resume.pdf';
 import './About.css';
 
 class About extends Component {
-  state = {
-    isResumeShown: false
-  };
-
-  showResume = async () => {
-    await this.setState({ isResumeShown: true });
-    window.scrollTo(0, 0);
-  };
-
-  hideResume = () => {
-    this.setState({ isResumeShown: false });
-  };
-
   getResumeSize = () => {
     const innerWidth = window.innerWidth;
 

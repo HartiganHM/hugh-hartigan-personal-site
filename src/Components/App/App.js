@@ -7,6 +7,7 @@ import './App.css';
 class App extends Component {
   state = {
     isMenuShown: false,
+    isResumeShown: false,
     currenPage: 'Home'
   };
 
@@ -26,13 +27,30 @@ class App extends Component {
     setTimeout(() => push(path), 300);
   };
 
+  showResume = async () => {
+    await this.setState({ isResumeShown: true });
+    window.scrollTo(0, 0);
+  };
+
+  hideResume = () => {
+    this.setState({ isResumeShown: false });
+  };
+
   render() {
-    const { isMenuShown } = this.state;
+    const { isMenuShown, isResumeShown } = this.state;
     const appClasses = classNames({
       App: window.location.pathname === '/',
       'App away': window.location.pathname !== '/',
       'no-scroll': isMenuShown
     });
+
+    const componentProps = {
+      isMenuShown,
+      isResumeShown,
+      toggleDetails: this.toggleDetails,
+      toggleMenu: this.toggleMenu,
+      onRedirect: this.handleRedirect
+    };
 
     return (
       <div className={appClasses}>
@@ -40,10 +58,7 @@ class App extends Component {
           to="/"
           render={({ location, history }) => (
             <Routes
-              toggleDetails={this.toggleDetails}
-              toggleMenu={this.toggleMenu}
-              isMenuShown={isMenuShown}
-              onRedirect={this.handleRedirect}
+              {...componentProps}
               location={location}
               history={history}
             />
