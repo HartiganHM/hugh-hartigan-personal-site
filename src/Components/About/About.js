@@ -11,9 +11,9 @@ class About extends Component {
     const innerWidth = window.innerWidth;
 
     if (innerWidth > 700) {
-      return 660;
+      return 640;
     } else {
-      return window.innerWidth - 40;
+      return window.innerWidth - 60;
     }
   };
 
@@ -127,6 +127,16 @@ class About extends Component {
 
         {isResumeShown && (
           <div className="resume-dialog">
+            <div className="download-icon">
+              <svg className="download-arrow" viewBox="0 0 444.819 444.819">
+                <g>
+                  <path d={svgPaths.download} />
+                </g>
+              </svg>
+
+              <span className="download-line" />
+            </div>
+
             <div className="close-icon" onClick={hideResume}>
               <span className="close-icon-line one" />
               <span className="close-icon-line two" />

@@ -86,7 +86,39 @@
   justify-content: center;
 }
 .resume {
-  margin-top: 40px;
+  margin-top: 45px;
+}
+.download-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  width: 40px;
+  &:hover {
+    .download-arrow {
+      top: 5px;
+      fill: $accent-color-light;
+    }
+    .download-line {
+      background-color: $accent-color-light;
+    }
+  }
+}
+.download-arrow {
+  position: relative;
+  top: 0;
+  height: 30px;
+  fill: $snow;
+  transition: all 0.2s;
+}
+.download-line {
+  width: 30px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: $snow;
+  transition: all 0.2s;
 }
 .close-icon {
   display: flex;
@@ -99,7 +131,7 @@
   height: 40px;
   transition: all 0.2s;
   &:hover {
-    .close {
+    .close-icon-line {
       background-color: $accent-color-light;
       &.one {
         transform: rotate(45deg);
@@ -114,7 +146,6 @@
   height: 5px;
   width: 40px;
   margin: 3px;
-  background-color: $accent-color-light;
   border-radius: 2px;
   transition: all 0.25s;
   background-color: $snow;
