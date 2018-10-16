@@ -28,8 +28,8 @@ class App extends Component {
   };
 
   showResume = async () => {
+    document.querySelector('.App').scrollTop = 0;
     await this.setState({ isResumeShown: true });
-    window.scrollTo(0, 0);
   };
 
   hideResume = () => {
@@ -41,7 +41,7 @@ class App extends Component {
     const appClasses = classNames({
       App: window.location.pathname === '/',
       'App away': window.location.pathname !== '/',
-      'no-scroll': isMenuShown
+      'no-scroll': isMenuShown || isResumeShown
     });
 
     const componentProps = {
@@ -49,7 +49,9 @@ class App extends Component {
       isResumeShown,
       toggleDetails: this.toggleDetails,
       toggleMenu: this.toggleMenu,
-      onRedirect: this.handleRedirect
+      onRedirect: this.handleRedirect,
+      showResume: this.showResume,
+      hideResume: this.hideResume
     };
 
     return (
