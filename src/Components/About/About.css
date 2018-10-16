@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   color: #3c4042;
-  width: 100rem; }
+  width: 1600px; }
 
 .info-container {
   align-self: stretch;
@@ -75,16 +75,16 @@
 
 @media screen and (max-width: 1634px) {
   .About {
-    width: 80rem; } }
+    width: 1280px; } }
 
 @media screen and (max-width: 1334px) {
   .About {
-    width: 60rem; } }
+    width: 960px; } }
 
 @media screen and (max-width: 1014px) {
   .About {
     height: fit-content;
-    width: 40rem; }
+    width: 640px; }
   .top-container {
     flex-direction: column;
     align-items: center; } }
