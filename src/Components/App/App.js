@@ -8,7 +8,7 @@ class App extends Component {
   state = {
     isMenuShown: false,
     isResumeShown: false,
-    currenPage: 'Home'
+    currentPage: 'Home'
   };
 
   toggleMenu = () => {
@@ -23,7 +23,7 @@ class App extends Component {
     event.preventDefault();
     const path = page === 'Home' ? '/' : `/${page.toLowerCase()}`;
 
-    this.setState({ isMenuShown: false, currenPage: page });
+    this.setState({ isMenuShown: false, currentPage: page });
     setTimeout(() => push(path), 300);
   };
 
