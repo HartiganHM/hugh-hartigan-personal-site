@@ -1,11 +1,15 @@
 import React from 'react';
 import { func, object } from 'prop-types';
 import { NavLink } from 'react-router-dom';
+
+import { useCurrentPageState } from '../../hooks';
 import './LandingPage.scss';
 
 const pages = ['about', 'projects', 'blogs'];
 
-const LandingPage = ({ onRedirect, history: { push } }) => {
+const LandingPage = ({ history: { push } }) => {
+  const [currentPage, handleChangeCurrentPage] = useCurrentPageState();
+
   return (
     <div className="LandingPage">
       <span className="wordmark" />
@@ -16,7 +20,10 @@ const LandingPage = ({ onRedirect, history: { push } }) => {
             key={page}
             className="nav-link-home"
             to={`/${page}`}
-            onClick={event => onRedirect(event, page, push)}
+            onClick={() => {
+              push(page);
+              handleChangeCurrentPage(page);
+            }}
           >
             {page}
           </NavLink>
