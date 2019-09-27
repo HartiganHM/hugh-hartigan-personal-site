@@ -8,8 +8,14 @@ class App extends Component {
   state = {
     isMenuShown: false,
     isResumeShown: false,
-    currentPage: 'Home'
+    currentPage: 'home'
   };
+
+  componentDidMount() {
+    const currentPage = window.location.pathname.split('/')[1];
+
+    this.setState({ currentPage });
+  }
 
   toggleMenu = () => {
     this.setState({ isMenuShown: !this.state.isMenuShown });
@@ -21,7 +27,7 @@ class App extends Component {
 
   handleRedirect = (event, page, push) => {
     event.preventDefault();
-    const path = page === 'Home' ? '/' : `/${page.toLowerCase()}`;
+    const path = page === 'home' ? '/' : `/${page.toLowerCase()}`;
 
     this.setState({ isMenuShown: false, currentPage: page });
     setTimeout(() => push(path), 300);
@@ -40,8 +46,8 @@ class App extends Component {
     const { isMenuShown, isResumeShown, currentPage } = this.state;
 
     const appClasses = classNames({
-      App: currentPage === 'Home',
-      'App away': currentPage !== 'Home',
+      App: currentPage === 'home',
+      'App away': currentPage !== 'home',
       'no-scroll': isMenuShown || isResumeShown
     });
 
