@@ -28,7 +28,7 @@ class About extends Component {
       onRedirect,
       isMenuShown,
       isResumeShown,
-      showResume,
+      // showResume,
       hideResume,
       history
     } = this.props;
@@ -77,8 +77,10 @@ class About extends Component {
 
           <div className="link-wrapper">
             <div className="link-box">
-              <button
-                onClick={showResume}
+              <a
+                //TODO: Adjust once `react-pdf` is updated
+                href={resume}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="icon-wrapper"
               >
@@ -88,7 +90,7 @@ class About extends Component {
                   </g>
                 </svg>
                 <span className="icon-text">{about.iconText1}</span>
-              </button>
+              </a>
               <a
                 href="https://github.com/HartiganHM"
                 target="_blank"
@@ -137,7 +139,12 @@ class About extends Component {
 
         {isResumeShown && (
           <div className="resume-dialog">
-            <a className="download-icon" href={resume} target="_blank" rel="noopener noreferrer">
+            <a
+              className="download-icon"
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg className="download-arrow" viewBox="0 0 444.819 444.819">
                 <g>
                   <path d={svgPaths.download} />
