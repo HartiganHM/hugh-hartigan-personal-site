@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -6,12 +6,12 @@ import './Nav.scss';
 
 const Nav = ({
   currentPage,
-  toggleMenu,
   onRedirect,
-  isMenuShown,
   isResumeShown,
   history: { push }
 }) => {
+  const [isMenuShown, handleToggleMenu] = useState(false);
+
   const pages = ['home', 'about', 'projects', 'blogs'];
 
   const navMenuClasses = classNames({
@@ -55,7 +55,7 @@ const Nav = ({
       {!isResumeShown && (
         <div
           className={`nav-icon ${isMenuShown ? 'close' : ''}`}
-          onClick={toggleMenu}
+          onClick={() => handleToggleMenu(!isMenuShown)}
         >
           <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
           <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
@@ -77,8 +77,6 @@ export default Nav;
 Nav.propTypes = {
   history: PropTypes.object,
   currentPage: PropTypes.string,
-  toggleMenu: PropTypes.func,
   onRedirect: PropTypes.func,
-  isMenuShown: PropTypes.bool,
   isResumeShown: PropTypes.bool
 };
