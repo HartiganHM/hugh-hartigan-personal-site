@@ -70,7 +70,7 @@ export default {
       title: 'SWAPI Box',
       description:
         'Built using the Star Wars API as a study in asynchronous JavaScript with nested API calls. Leverages ES6 and hones in on best practices for complex functionality testing.',
-      areaOfFocus: `The area of focus for SWAPI Box was to navigate around aynchronous JavaScript that had long load times, while still providing a tangible user experience. Efforts were made to break complex fetch requests into smaller pieces allowing large sets of data to arrive individually and load faster if the completed sooner.`,
+      areaOfFocus: `The area of focus for SWAPI Box was to navigate around asynchronous JavaScript that had long load times, while still providing a tangible user experience. Efforts were made to break complex fetch requests into smaller pieces allowing large sets of data to arrive individually and load faster if the completed sooner.`,
       techStack: 'React, SASS, Jest, Enzyme',
       gitHub: 'https://github.com/HartiganHM/swapibox',
       liveLink: 'http://hartiganhm.com/swapibox/'
