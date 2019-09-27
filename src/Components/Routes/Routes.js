@@ -9,12 +9,10 @@ import PropTypes from 'prop-types';
 import './Routes.scss';
 
 const Routes = ({
-  onRedirect,
   history,
   location
 }) => {
   const componentProps = {
-    onRedirect,
     history
   };
 
@@ -48,7 +46,7 @@ const Routes = ({
               exact
               path="/"
               render={() => (
-                <LandingPage onRedirect={onRedirect} history={history} />
+                <LandingPage history={history} />
               )}
             />
           </Switch>
@@ -63,5 +61,4 @@ export default Routes;
 Routes.propTypes = {
   location: PropTypes.object,
   history: PropTypes.object,
-  onRedirect: PropTypes.func
 };
