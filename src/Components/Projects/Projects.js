@@ -7,12 +7,11 @@ import copyContent from '../../copy/copyContent';
 import './Projects.scss';
 
 const Projects = ({
-  toggleMenu,
   onRedirect,
   isMenuShown,
   history
 }) => {
-  const navProps = { toggleMenu, onRedirect, isMenuShown, history };
+  const navProps = { onRedirect, isMenuShown, history };
 
   const projects = copyContent.projects.map((project, index) => (
     <Card key={index} cardData={project} />
@@ -30,7 +29,6 @@ export default Projects;
 
 Projects.propTypes = {
   history: object,
-  toggleMenu: func,
   onRedirect: func,
   isMenuShown: bool
 };

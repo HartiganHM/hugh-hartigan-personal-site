@@ -1,10 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import Routes from '../Routes/Routes';
 import { Route } from 'react-router';
 import classNames from 'classnames';
 import './App.scss';
-
-// const [isMenuShown, handleToggleMenu] = useState(false);
 
 class App extends Component {
   state = {
@@ -20,10 +18,6 @@ class App extends Component {
       this.setState({ currentPage });
     }
   }
-
-  toggleMenu = () => {
-    this.setState({ isMenuShown: !this.state.isMenuShown });
-  };
 
   handleRedirect = (event, page, push) => {
     event.preventDefault();
@@ -54,7 +48,6 @@ class App extends Component {
     const componentProps = {
       isMenuShown,
       isResumeShown,
-      toggleMenu: this.toggleMenu,
       onRedirect: this.handleRedirect,
       showResume: this.showResume,
       hideResume: this.hideResume

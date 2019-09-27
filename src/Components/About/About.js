@@ -22,7 +22,6 @@ const getResumeSize = () => {
 };
 
 const About = ({
-  toggleMenu,
   onRedirect,
   isMenuShown,
   isResumeShown,
@@ -38,7 +37,6 @@ const About = ({
   });
 
   const navProps = {
-    toggleMenu,
     isMenuShown,
     isResumeShown,
     onRedirect,
@@ -174,7 +172,6 @@ export default About;
 
 About.propTypes = {
   history: object,
-  toggleMenu: func,
   onRedirect: func,
   isMenuShown: bool,
   isResumeShown: bool,
