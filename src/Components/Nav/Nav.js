@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import useMenuState from '../../hooks/useMenuState';
+import { useMenuState } from '../../hooks';
 import './Nav.scss';
 
 const Nav = ({
