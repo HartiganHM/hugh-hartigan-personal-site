@@ -8,7 +8,6 @@ import './Blogs.scss';
 
 const Blogs = ({
   toggleMenu,
-  toggleDetails,
   onRedirect,
   isMenuShown,
   history
@@ -16,7 +15,7 @@ const Blogs = ({
   const navProps = { toggleMenu, onRedirect, isMenuShown, history };
 
   const blogPosts = copyContent.blogs.map((blog, index) => (
-    <Card key={index} cardData={blog} toggleDetails={toggleDetails} />
+    <Card key={index} cardData={blog} />
   ));
 
   return (
@@ -31,7 +30,6 @@ export default Blogs;
 
 Blogs.propTypes = {
   history: object,
-  toggleDetails: func,
   toggleMenu: func,
   onRedirect: func,
   isMenuShown: bool

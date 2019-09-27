@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { object } from 'prop-types';
 import './Card.scss';
 
 const Card = ({
@@ -128,6 +128,5 @@ const Card = ({
 export default Card;
 
 Card.propTypes = {
-  toggleDetails: PropTypes.func,
-  cardData: PropTypes.object
+  cardData: object
 };

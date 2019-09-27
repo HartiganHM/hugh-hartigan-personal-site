@@ -25,10 +25,6 @@ class App extends Component {
     this.setState({ isMenuShown: !this.state.isMenuShown });
   };
 
-  toggleDetails = currentClass => {
-    return currentClass === 'hidden' ? 'show' : 'hidden';
-  };
-
   handleRedirect = (event, page, push) => {
     event.preventDefault();
     const path = page === 'home' ? '/' : `/${page.toLowerCase()}`;
@@ -58,7 +54,6 @@ class App extends Component {
     const componentProps = {
       isMenuShown,
       isResumeShown,
-      toggleDetails: this.toggleDetails,
       toggleMenu: this.toggleMenu,
       onRedirect: this.handleRedirect,
       showResume: this.showResume,

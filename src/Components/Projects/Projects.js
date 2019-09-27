@@ -8,7 +8,6 @@ import './Projects.scss';
 
 const Projects = ({
   toggleMenu,
-  toggleDetails,
   onRedirect,
   isMenuShown,
   history
@@ -16,7 +15,7 @@ const Projects = ({
   const navProps = { toggleMenu, onRedirect, isMenuShown, history };
 
   const projects = copyContent.projects.map((project, index) => (
-    <Card key={index} cardData={project} toggleDetails={toggleDetails} />
+    <Card key={index} cardData={project} />
   ));
 
   return (
@@ -31,7 +30,6 @@ export default Projects;
 
 Projects.propTypes = {
   history: object,
-  toggleDetails: func,
   toggleMenu: func,
   onRedirect: func,
   isMenuShown: bool

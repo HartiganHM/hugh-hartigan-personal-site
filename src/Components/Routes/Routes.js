@@ -13,7 +13,6 @@ const Routes = ({
   isResumeShown,
   onRedirect,
   toggleMenu,
-  toggleDetails,
   showResume,
   hideResume,
   history,
@@ -23,7 +22,6 @@ const Routes = ({
     isMenuShown,
     isResumeShown,
     onRedirect,
-    toggleDetails,
     toggleMenu,
     showResume,
     hideResume,
@@ -79,7 +77,6 @@ Routes.propTypes = {
   isResumeShown: PropTypes.bool,
   onRedirect: PropTypes.func,
   toggleMenu: PropTypes.func,
-  toggleDetails: PropTypes.func,
   showResume: PropTypes.func,
   hideResume: PropTypes.func
 };
