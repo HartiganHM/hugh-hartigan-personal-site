@@ -68,11 +68,11 @@ const About = ({
           <div className="link-box">
             <a
               //TODO: Adjust once `react-pdf` is updated
-              onClick={() => {
-                document.querySelector('.App').scrollTop = 0;
-                handleToggleResume(true);
-              }}
-              // href={resume}
+              // onClick={() => {
+              //   document.querySelector('.App').scrollTop = 0;
+              //   handleToggleResume(true);
+              // }}
+              href={resume}
               target="_blank"
               rel="noopener noreferrer"
               className="icon-wrapper"
