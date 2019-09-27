@@ -1,5 +1,5 @@
 import React from 'react';
-import { object, func, bool } from 'prop-types';
+import { object, func } from 'prop-types';
 
 import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
@@ -8,10 +8,9 @@ import './Projects.scss';
 
 const Projects = ({
   onRedirect,
-  isMenuShown,
   history
 }) => {
-  const navProps = { onRedirect, isMenuShown, history };
+  const navProps = { onRedirect, history };
 
   const projects = copyContent.projects.map((project, index) => (
     <Card key={index} cardData={project} />
@@ -29,6 +28,5 @@ export default Projects;
 
 Projects.propTypes = {
   history: object,
-  onRedirect: func,
-  isMenuShown: bool
+  onRedirect: func
 };

@@ -9,20 +9,12 @@ import PropTypes from 'prop-types';
 import './Routes.scss';
 
 const Routes = ({
-  isMenuShown,
-  isResumeShown,
   onRedirect,
-  showResume,
-  hideResume,
   history,
   location
 }) => {
   const componentProps = {
-    isMenuShown,
-    isResumeShown,
     onRedirect,
-    showResume,
-    hideResume,
     history
   };
 
@@ -71,9 +63,5 @@ export default Routes;
 Routes.propTypes = {
   location: PropTypes.object,
   history: PropTypes.object,
-  isMenuShown: PropTypes.bool,
-  isResumeShown: PropTypes.bool,
-  onRedirect: PropTypes.func,
-  showResume: PropTypes.func,
-  hideResume: PropTypes.func
+  onRedirect: PropTypes.func
 };
