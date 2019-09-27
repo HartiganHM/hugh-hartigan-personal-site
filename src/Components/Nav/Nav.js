@@ -3,16 +3,12 @@ import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { useMenuState } from '../../hooks';
+import { useCurrentPageState, useMenuState } from '../../hooks';
 import './Nav.scss';
 
-const Nav = ({
-  currentPage,
-  onRedirect,
-  isResumeShown,
-  history: { push }
-}) => {
+const Nav = ({ isResumeShown, history: { push } }) => {
   const [isMenuShown, handleToggleMenu] = useMenuState();
+  const [currentPage, handleChangeCurrentPage] = useCurrentPageState();
 
   const pages = ['home', 'about', 'projects', 'blogs'];
 
@@ -28,7 +24,10 @@ const Nav = ({
         key={`nav-link-${index}`}
         className="nav-link"
         to="/"
-        onClick={event => onRedirect(event, page, push)}
+        onClick={() => {
+          push(page);
+          handleChangeCurrentPage(page);
+        }}
       >
         {page}
       </Link>
@@ -36,7 +35,10 @@ const Nav = ({
       <NavLink
         key={`nav-link-${index}`}
         className={`nav-link ${page === currentPage ? 'active' : ''}`}
-        onClick={event => onRedirect(event, page, push)}
+        onClick={() => {
+          push(page);
+          handleChangeCurrentPage(page);
+        }}
         to={`/${page.toLocaleLowerCase()}`}
         disabled={page === currentPage}
       >
