@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { object, func, bool } from 'prop-types';
 
 import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
@@ -30,9 +30,9 @@ const Blogs = ({
 export default Blogs;
 
 Blogs.propTypes = {
-  history: PropTypes.object,
-  toggleDetails: PropTypes.func,
-  toggleMenu: PropTypes.func,
-  onRedirect: PropTypes.func,
-  isMenuShown: PropTypes.bool
+  history: object,
+  toggleDetails: func,
+  toggleMenu: func,
+  onRedirect: func,
+  isMenuShown: bool
 };
