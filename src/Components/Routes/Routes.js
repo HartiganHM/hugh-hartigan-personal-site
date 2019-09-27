@@ -59,7 +59,7 @@ class Routes extends Component {
                 path="/blogs"
                 render={() => <Blogs {...componentProps} />}
               />
-              <Route exact path="/" render={() => <LandingPage />} />
+              <Route exact path="/" render={() => <LandingPage onRedirect={onRedirect} history={history} />} />
             </Switch>
           </div>
         </CSSTransition>
