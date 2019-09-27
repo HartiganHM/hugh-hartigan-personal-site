@@ -16,7 +16,9 @@ class App extends Component {
   componentDidMount() {
     const currentPage = window.location.pathname.split('/')[1];
 
-    this.setState({ currentPage });
+    if (currentPage) {
+      this.setState({ currentPage });
+    }
   }
 
   toggleMenu = () => {
