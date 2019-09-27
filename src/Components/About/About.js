@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { object, func, bool } from 'prop-types';
 import classNames from 'classnames';
 import { Document, Page } from 'react-pdf';
@@ -23,12 +23,10 @@ const getResumeSize = () => {
 
 const About = ({
   onRedirect,
-  isMenuShown,
-  isResumeShown,
-  // showResume,
-  hideResume,
   history
 }) => {
+  const [isResumeShown, handleToggleResume] = useState(false);
+
   const { about } = copyContent;
 
   const resumeClassNames = classNames({
@@ -37,7 +35,6 @@ const About = ({
   });
 
   const navProps = {
-    isMenuShown,
     isResumeShown,
     onRedirect,
     history
@@ -73,7 +70,11 @@ const About = ({
           <div className="link-box">
             <a
               //TODO: Adjust once `react-pdf` is updated
-              href={resume}
+              onClick={() => {
+                document.querySelector('.App').scrollTop = 0;
+                handleToggleResume(true);
+              }}
+              // href={resume}
               target="_blank"
               rel="noopener noreferrer"
               className="icon-wrapper"
@@ -150,7 +151,7 @@ const About = ({
             <span className="download-line" />
           </a>
 
-          <div className="close-icon" onClick={hideResume}>
+          <div className="close-icon" onClick={() => handleToggleResume(false)}>
             <span className="close-icon-line one" />
             <span className="close-icon-line two" />
           </div>
@@ -173,7 +174,6 @@ export default About;
 About.propTypes = {
   history: object,
   onRedirect: func,
-  isMenuShown: bool,
   isResumeShown: bool,
   showResume: func,
   hideResume: func
