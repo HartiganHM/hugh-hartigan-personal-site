@@ -21,6 +21,7 @@
   .nav-link {
     align-self: baseline;
     @include buttonAlternate;
+    text-transform: capitalize;
     &:hover {
       @include buttonHoverAlternate;
     }

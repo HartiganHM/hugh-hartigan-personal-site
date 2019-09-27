@@ -15,7 +15,7 @@ class Nav extends Component {
       history: { push }
     } = this.props;
 
-    const pages = ['Home', 'About', 'Projects', 'Blogs'];
+    const pages = ['home', 'about', 'projects', 'blogs'];
 
     const navMenuClasses = classNames({
       'nav-menu': true,
