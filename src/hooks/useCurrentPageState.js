@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const useCurrentPageState = () => {
-  const [isMenuShown, handleToggleMenu] = useState('home');
+  const [currentPage, handleChangeCurrentPage] = useState('home');
 
   return [
-    isMenuShown, handleToggleMenu
+    currentPage, handleChangeCurrentPage
   ];
 };
 
