@@ -3,11 +3,11 @@ import Routes from '../Routes/Routes';
 import { Route } from 'react-router';
 import classNames from 'classnames';
 
-import useMenuState from '../../hooks/useMenuState';
+import { useCurrentPageState, useMenuState } from '../../hooks';
 import './App.scss';
 
 const App = () => {
-  const currentPage = 'home';
+  const [currentPage] = useCurrentPageState();
   const [isMenuShown] = useMenuState();
 
   const appClasses = classNames({
@@ -16,16 +16,12 @@ const App = () => {
     'no-scroll': isMenuShown
   });
 
-  const componentProps = {
-    // onRedirect: this.handleRedirect
-  };
-
   return (
     <div className={appClasses}>
       <Route
         to="/"
         render={({ location, history }) => (
-          <Routes {...componentProps} location={location} history={history} />
+          <Routes location={location} history={history} />
         )}
       />
     </div>
