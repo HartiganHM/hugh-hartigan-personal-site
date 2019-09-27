@@ -37,10 +37,11 @@ class App extends Component {
   };
 
   render() {
-    const { isMenuShown, isResumeShown } = this.state;
+    const { isMenuShown, isResumeShown, currentPage } = this.state;
+    console.log(currentPage)
     const appClasses = classNames({
-      App: window.location.pathname === '/',
-      'App away': window.location.pathname !== '/',
+      App: currentPage === 'Home',
+      'App away': currentPage !== 'Home',
       'no-scroll': isMenuShown || isResumeShown
     });
 
