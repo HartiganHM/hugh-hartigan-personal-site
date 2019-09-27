@@ -6,7 +6,6 @@ import './App.scss';
 
 class App extends Component {
   state = {
-    isMenuShown: false,
     isResumeShown: false,
     currentPage: 'home'
   };
@@ -27,15 +26,6 @@ class App extends Component {
     setTimeout(() => push(path), 300);
   };
 
-  showResume = async () => {
-    document.querySelector('.App').scrollTop = 0;
-    await this.setState({ isResumeShown: true });
-  };
-
-  hideResume = () => {
-    this.setState({ isResumeShown: false });
-  };
-
   render() {
     const { isMenuShown, isResumeShown, currentPage } = this.state;
 
@@ -46,11 +36,7 @@ class App extends Component {
     });
 
     const componentProps = {
-      isMenuShown,
-      isResumeShown,
-      onRedirect: this.handleRedirect,
-      showResume: this.showResume,
-      hideResume: this.hideResume
+      onRedirect: this.handleRedirect
     };
 
     return (
