@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import Reactfrom 'react';
 import { Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import LandingPage from '../LandingPage/LandingPage';
@@ -8,71 +8,67 @@ import Blogs from '../Blogs/Blogs';
 import PropTypes from 'prop-types';
 import './Routes.scss';
 
-class Routes extends Component {
-  render() {
-    const {
-      isMenuShown,
-      isResumeShown,
-      onRedirect,
-      toggleMenu,
-      toggleDetails,
-      showResume,
-      hideResume,
-      history,
-      location
-    } = this.props;
+const Routes = ({
+  isMenuShown,
+  isResumeShown,
+  onRedirect,
+  toggleMenu,
+  toggleDetails,
+  showResume,
+  hideResume,
+  history,
+  location
+}) => {
+  const componentProps = {
+    isMenuShown,
+    isResumeShown,
+    onRedirect,
+    toggleDetails,
+    toggleMenu,
+    showResume,
+    hideResume,
+    history
+  };
 
-    const componentProps = {
-      isMenuShown,
-      isResumeShown,
-      onRedirect,
-      toggleDetails,
-      toggleMenu,
-      showResume,
-      hideResume,
-      history
-    };
-
-    return (
-      <TransitionGroup className="transition-group">
-        <CSSTransition
-          key={location.key}
-          classNames="fade"
-          timeout={300}
-          mountOnEnter={true}
-          unmountOnExit={true}
-        >
-          <div className="switch-wrapper">
-            <Switch location={location}>
-              <Route
-                exact
-                path="/about"
-                render={() => <About {...componentProps} />}
-              />
-              <Route
-                exact
-                path="/projects"
-                render={() => <Projects {...componentProps} />}
-              />
-              <Route
-                exact
-                path="/blogs"
-                render={() => <Blogs {...componentProps} />}
-              />
-              <Route
-                exact
-                path="/"
-                render={() => (
-                  <LandingPage onRedirect={onRedirect} history={history} />
-                )}
-              />
-            </Switch>
-          </div>
-        </CSSTransition>
-      </TransitionGroup>
-    );
-  }
-}
+  return (
+    <TransitionGroup className="transition-group">
+      <CSSTransition
+        key={location.key}
+        classNames="fade"
+        timeout={300}
+        mountOnEnter={true}
+        unmountOnExit={true}
+      >
+        <div className="switch-wrapper">
+          <Switch location={location}>
+            <Route
+              exact
+              path="/about"
+              render={() => <About {...componentProps} />}
+            />
+            <Route
+              exact
+              path="/projects"
+              render={() => <Projects {...componentProps} />}
+            />
+            <Route
+              exact
+              path="/blogs"
+              render={() => <Blogs {...componentProps} />}
+            />
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <LandingPage onRedirect={onRedirect} history={history} />
+              )}
+            />
+          </Switch>
+        </div>
+      </CSSTransition>
+    </TransitionGroup>
+  );
+};
 
 export default Routes;
 
