@@ -1,5 +1,5 @@
 import React from 'react';
-import { object, func } from 'prop-types';
+import { object } from 'prop-types';
 
 import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
@@ -7,10 +7,9 @@ import copyContent from '../../copy/copyContent';
 import './Blogs.scss';
 
 const Blogs = ({
-  onRedirect,
   history
 }) => {
-  const navProps = { onRedirect, history };
+  const navProps = { history };
 
   const blogPosts = copyContent.blogs.map((blog, index) => (
     <Card key={index} cardData={blog} />
@@ -27,6 +26,5 @@ const Blogs = ({
 export default Blogs;
 
 Blogs.propTypes = {
-  history: object,
-  onRedirect: func
+  history: object
 };
