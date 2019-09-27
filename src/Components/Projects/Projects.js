@@ -1,40 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { object, func, bool } from 'prop-types';
+
 import Nav from '../Nav/Nav';
 import Card from '../Card/Card';
 import copyContent from '../../copy/copyContent';
-import PropTypes from 'prop-types';
 import './Projects.scss';
 
-class Projects extends Component {
-  render() {
-    const {
-      toggleMenu,
-      toggleDetails,
-      onRedirect,
-      isMenuShown,
-      history
-    } = this.props;
-    const navProps = { toggleMenu, onRedirect, isMenuShown, history };
+const Projects = ({
+  toggleMenu,
+  toggleDetails,
+  onRedirect,
+  isMenuShown,
+  history
+}) => {
+  const navProps = { toggleMenu, onRedirect, isMenuShown, history };
 
-    const projects = copyContent.projects.map((project, index) => (
-      <Card key={index} cardData={project} toggleDetails={toggleDetails} />
-    ));
+  const projects = copyContent.projects.map((project, index) => (
+    <Card key={index} cardData={project} toggleDetails={toggleDetails} />
+  ));
 
-    return (
-      <div className="Projects">
-        <Nav currentPage="Projects" {...navProps} />
-        <div className="card-container">{projects}</div>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="Projects">
+      <Nav currentPage="Projects" {...navProps} />
+      <div className="card-container">{projects}</div>
+    </div>
+  );
+};
 
 export default Projects;
 
 Projects.propTypes = {
-  history: PropTypes.object,
-  toggleDetails: PropTypes.func,
-  toggleMenu: PropTypes.func,
-  onRedirect: PropTypes.func,
-  isMenuShown: PropTypes.bool
+  history: object,
+  toggleDetails: func,
+  toggleMenu: func,
+  onRedirect: func,
+  isMenuShown: bool
 };
