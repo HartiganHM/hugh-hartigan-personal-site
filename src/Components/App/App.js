@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Routes from '../Routes/Routes';
 import { Route } from 'react-router';
 import classNames from 'classnames';
 import './App.scss';
+
+// const [isMenuShown, handleToggleMenu] = useState(false);
 
 class App extends Component {
   state = {
