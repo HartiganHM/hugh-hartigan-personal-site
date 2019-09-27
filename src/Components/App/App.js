@@ -9,6 +9,7 @@ import './App.scss';
 const App = () => {
   const [currentPage] = useCurrentPageState();
   const [isMenuShown] = useMenuState();
+  console.log({ currentPage, isMenuShown });
 
   const appClasses = classNames({
     App: currentPage === 'home',
