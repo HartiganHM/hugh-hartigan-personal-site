@@ -38,7 +38,7 @@ class App extends Component {
 
   render() {
     const { isMenuShown, isResumeShown, currentPage } = this.state;
-    console.log(currentPage)
+
     const appClasses = classNames({
       App: currentPage === 'Home',
       'App away': currentPage !== 'Home',
