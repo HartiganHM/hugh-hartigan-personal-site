@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Routes from '../Routes/Routes';
 import { Route } from 'react-router';
 import classNames from 'classnames';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   state = {
