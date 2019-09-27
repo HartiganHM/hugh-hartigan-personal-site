@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { object, func, bool } from 'prop-types';
+import { object } from 'prop-types';
 import classNames from 'classnames';
 import { Document, Page } from 'react-pdf';
 import is from 'is_js';
@@ -22,7 +22,6 @@ const getResumeSize = () => {
 };
 
 const About = ({
-  onRedirect,
   history
 }) => {
   const [isResumeShown, handleToggleResume] = useState(false);
@@ -36,7 +35,6 @@ const About = ({
 
   const navProps = {
     isResumeShown,
-    onRedirect,
     history
   };
 
@@ -172,9 +170,5 @@ const About = ({
 export default About;
 
 About.propTypes = {
-  history: object,
-  onRedirect: func,
-  isResumeShown: bool,
-  showResume: func,
-  hideResume: func
+  history: object
 };
