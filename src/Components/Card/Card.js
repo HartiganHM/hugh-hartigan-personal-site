@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Card.css';
+import './Card.scss';
 
 class Card extends Component {
   state = {
@@ -66,11 +66,21 @@ class Card extends Component {
 
             <span className="button-wrapper">
               {liveLink && (
-                <a href={liveLink} target="_blank" className="button">
+                <a
+                  href={liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button"
+                >
                   Launch
                 </a>
               )}
-              <a href={gitHub} target="_blank" className="button">
+              <a
+                href={gitHub}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button"
+              >
                 GitHub
               </a>
             </span>
@@ -105,7 +115,12 @@ class Card extends Component {
             </div>
 
             <span className="button-wrapper">
-              <a href={url} target="_blank" className="button">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button"
+              >
                 Read
               </a>
             </span>

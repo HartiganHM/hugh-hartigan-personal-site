@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
 import resume from '../../images/Hugh-Hartigan-Resume.pdf';
-import './About.css';
+import './About.scss';
 
 class About extends Component {
   getResumeSize = () => {

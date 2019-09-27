@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import './Nav.css';
+import './Nav.scss';
 
 class Nav extends Component {
   render() {

@@ -6,7 +6,7 @@ import About from '../About/About';
 import Projects from '../Projects/Projects';
 import Blogs from '../Blogs/Blogs';
 import PropTypes from 'prop-types';
-import './Routes.css';
+import './Routes.scss';
 
 class Routes extends Component {
   render() {
