@@ -3,12 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { useCurrentPageState, useMenuState } from '../../hooks';
+import { useStateValue } from '../StateProvider/StateProvider';
 import './Nav.scss';
 
 const Nav = ({ isResumeShown, history: { push } }) => {
-  const [isMenuShown, handleToggleMenu] = useMenuState();
-  const [currentPage, handleChangeCurrentPage] = useCurrentPageState();
+  const [{ currentPage, isMenuShown }, dispatch] = useStateValue();
 
   const pages = ['home', 'about', 'projects', 'blogs'];
 
@@ -19,14 +18,17 @@ const Nav = ({ isResumeShown, history: { push } }) => {
   });
 
   const navBar = pages.map((page, index) =>
-    page === 'Home' ? (
+    page === 'home' ? (
       <Link
         key={`nav-link-${index}`}
         className="nav-link"
         to="/"
         onClick={() => {
-          push(page);
-          handleChangeCurrentPage(page);
+          push('/');
+          dispatch({
+            type: 'CHANGE_CURRENT_PAGE',
+            page
+          });
         }}
       >
         {page}
@@ -37,7 +39,10 @@ const Nav = ({ isResumeShown, history: { push } }) => {
         className={`nav-link ${page === currentPage ? 'active' : ''}`}
         onClick={() => {
           push(page);
-          handleChangeCurrentPage(page);
+          dispatch({
+            type: 'CHANGE_CURRENT_PAGE',
+            page
+          });
         }}
         to={`/${page.toLocaleLowerCase()}`}
         disabled={page === currentPage}
@@ -59,7 +64,10 @@ const Nav = ({ isResumeShown, history: { push } }) => {
       {!isResumeShown && (
         <div
           className={`nav-icon ${isMenuShown ? 'close' : ''}`}
-          onClick={() => handleToggleMenu(!isMenuShown)}
+          onClick={() => dispatch({
+            type: 'TOGGLE_MENU',
+            isMenuShown: !isMenuShown
+          })}
         >
           <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
           <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
