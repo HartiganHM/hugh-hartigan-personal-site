@@ -1,11 +1,12 @@
 import React from 'react';
+import { object } from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
 import LandingPage from '../LandingPage/LandingPage';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
 import Blogs from '../Blogs/Blogs';
-import PropTypes from 'prop-types';
 import './Routes.scss';
 
 const Routes = ({
@@ -59,6 +60,6 @@ const Routes = ({
 export default Routes;
 
 Routes.propTypes = {
-  location: PropTypes.object,
-  history: PropTypes.object,
+  location: object,
+  history: object
 };

@@ -1,8 +1,8 @@
 import React from 'react';
-import Routes from '../Routes/Routes';
 import { Route } from 'react-router';
 import classNames from 'classnames';
 
+import Routes from '../Routes/Routes';
 import { useCurrentPageState, useMenuState } from '../../hooks';
 import './App.scss';
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { object } from 'prop-types';
+
 import './Card.scss';
 
 const Card = ({
