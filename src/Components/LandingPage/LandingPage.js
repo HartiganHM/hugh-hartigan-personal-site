@@ -2,13 +2,15 @@ import React from 'react';
 import { func, object } from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-import { useCurrentPageState } from '../../hooks';
+import { useStateValue } from '../StateProvider/StateProvider';
+// import { useCurrentPageState } from '../../hooks';
 import './LandingPage.scss';
 
 const pages = ['about', 'projects', 'blogs'];
 
 const LandingPage = ({ history: { push } }) => {
-  const [currentPage, handleChangeCurrentPage] = useCurrentPageState();
+  // const [currentPage, handleChangeCurrentPage] = useCurrentPageState();
+  const [, dispatch] = useStateValue();
 
   return (
     <div className="LandingPage">
@@ -22,7 +24,10 @@ const LandingPage = ({ history: { push } }) => {
             to={`/${page}`}
             onClick={() => {
               push(page);
-              handleChangeCurrentPage(page);
+              dispatch({
+                type: 'CHANGE_CURRENT_PAGE',
+                currentPage: page
+              });
             }}
           >
             {page}

@@ -2,14 +2,12 @@ import React from 'react';
 import { Route } from 'react-router';
 import classNames from 'classnames';
 
+import { useStateValue } from '../StateProvider/StateProvider';
 import Routes from '../Routes/Routes';
-import { useCurrentPageState, useMenuState } from '../../hooks';
 import './App.scss';
 
 const App = () => {
-  const [currentPage] = useCurrentPageState();
-  const [isMenuShown] = useMenuState();
-  console.log({ currentPage, isMenuShown });
+  const [{ currentPage, isMenuShown }] = useStateValue();
 
   const appClasses = classNames({
     App: currentPage === 'home',
