@@ -1,7 +1,7 @@
 @import '../../Styles/variables.scss';
 @import '../../Styles/mixins.scss';
 .About {
-  align-self: stretch;
+  align-self: center;
   display: flex;
   flex-direction: column;
   color: $neutral-dark;
@@ -21,6 +21,7 @@
 .profile-image {
   @include height(50);
   @include width(40);
+  border-radius: 0.25rem;
 }
 .profile-description-container {
   @include padding(2);
