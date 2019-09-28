@@ -24,7 +24,7 @@ const LandingPage = ({ history: { push } }) => {
               push(page);
               dispatch({
                 type: 'CHANGE_CURRENT_PAGE',
-                currentPage: page
+                page
               });
             }}
           >
