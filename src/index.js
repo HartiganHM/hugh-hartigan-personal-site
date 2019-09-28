@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import { App, StateProvider } from './components';
+import { App, StateProvider } from './Components';
 import './index.css';
 
 const initialState = {
@@ -15,7 +15,8 @@ const reducer = (state, action) => {
   case 'CHANGE_CURRENT_PAGE': {
     return {
       ...state,
-      currentPage: action.currentPage
+      currentPage: action.page,
+      isMenuShown: false
     };
   }
   case 'TOGGLE_MENU': {
