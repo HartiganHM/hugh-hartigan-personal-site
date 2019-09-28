@@ -8,6 +8,10 @@
   height: 100vh;
 }
 
+.routes-away {
+  flex-direction: column;
+}
+
 .switch-wrapper.fade-enter {
   @include component-entering;
 }

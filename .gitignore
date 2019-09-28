@@ -19,3 +19,5 @@ yarn-error.log*
 
 # css files
 *.css
+.node-version
+scratchpad.js

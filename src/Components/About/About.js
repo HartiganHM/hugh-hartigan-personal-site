@@ -1,179 +1,159 @@
-import React, { Component } from 'react';
-import Nav from '../Nav/Nav';
-import Loader from '../Loader/Loader';
-import { Document, Page } from 'react-pdf';
+import React, { useState } from 'react';
 import classNames from 'classnames';
+import { Document, Page } from 'react-pdf';
 import is from 'is_js';
-import PropTypes from 'prop-types';
 
+import Loader from '../Loader/Loader';
 import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
 import resume from '../../images/Hugh-Hartigan-Resume.pdf';
-import './About.css';
+import './About.scss';
 
-class About extends Component {
-  getResumeSize = () => {
-    const innerWidth = window.innerWidth;
+const getResumeSize = () => {
+  const innerWidth = window.innerWidth;
 
-    if (innerWidth > 700) {
-      return 640;
-    } else {
-      return window.innerWidth - 60;
-    }
-  };
+  if (innerWidth > 700) {
+    return 640;
+  } else {
+    return window.innerWidth - 60;
+  }
+};
 
-  render() {
-    const {
-      toggleMenu,
-      onRedirect,
-      isMenuShown,
-      isResumeShown,
-      showResume,
-      hideResume,
-      history
-    } = this.props;
-    const { about } = copyContent;
+const About = () => {
+  const [isResumeShown, handleToggleResume] = useState(false);
 
-    const resumeClassNames = classNames({
-      resume: true,
-      desktop: is.desktop()
-    });
+  const { about } = copyContent;
 
-    const navProps = {
-      toggleMenu,
-      isMenuShown,
-      isResumeShown,
-      onRedirect,
-      history
-    };
+  const resumeClassNames = classNames({
+    resume: true,
+    desktop: is.desktop()
+  });
 
-    return (
-      <div className="About">
-        <Nav currentPage={'About'} {...navProps} />
+  return (
+    <div className="About">
+      <div className="info-container">
+        <div className="top-container">
+          <img
+            className="profile-image"
+            src={require('../../images/Hugh-Hartigan.jpg')}
+            alt="Hugh-Hartigan-software-developer"
+          />
+          <div className="profile-description-container">
+            <span className="description-header">{about.header}</span>
 
-        <div className="info-container">
-          <div className="top-container">
-            <img
-              className="profile-image"
-              src={require('../../images/Hugh-Hartigan.jpg')}
-              alt="Hugh-Hartigan-software-developer"
-            />
-            <div className="profile-description-container">
-              <span className="description-header">{about.header}</span>
+            <p className="profile-description">{about.description1}</p>
+            <p className="profile-description">{about.description2}</p>
+            <p className="profile-description">{about.description3}</p>
 
-              <p className="profile-description">{about.description1}</p>
-
-              <p className="profile-description">{about.description2}</p>
-
-              <p className="profile-description">{about.description3}</p>
-
-              <ul className="questions">
-                <li>{about.question1}</li>
-                <li>{about.question2}</li>
-                <li>{about.question3}</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="link-wrapper">
-            <div className="link-box">
-              <a
-                onClick={showResume}
-                rel="noopener noreferrer"
-                className="icon-wrapper"
-              >
-                <svg className="icon" viewBox="0 0 512 512">
-                  <g>
-                    <path d={svgPaths.resume} />
-                  </g>
-                </svg>
-                <span className="icon-text">{about.iconText1}</span>
-              </a>
-              <a
-                href="https://github.com/HartiganHM"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon-wrapper"
-              >
-                <svg className="icon" viewBox="0 0 436.5 426.8">
-                  <g>
-                    <path d={svgPaths.github} />
-                  </g>
-                </svg>
-                <span className="icon-text">{about.iconText2}</span>
-              </a>
-            </div>
-
-            <div className="link-box">
-              <a
-                href="mailto:hartigan.hm@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon-wrapper"
-              >
-                <svg className="icon" viewBox="0 0 512 495.1">
-                  <g>
-                    <path d={svgPaths.email} />
-                  </g>
-                </svg>
-                <span className="icon-text">{about.iconText3}</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/hartiganhm/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon-wrapper"
-              >
-                <svg className="icon" viewBox="0 0 512 512">
-                  <g>
-                    <path d={svgPaths.linkedin} />
-                  </g>
-                </svg>
-                <span className="icon-text">{about.iconText4}</span>
-              </a>
-            </div>
+            <ul className="questions">
+              <li>{about.question1}</li>
+              <li>{about.question2}</li>
+              <li>{about.question3}</li>
+            </ul>
           </div>
         </div>
 
-        {isResumeShown && (
-          <div className="resume-dialog">
-            <a className="download-icon" href={resume} target="_blank">
-              <svg className="download-arrow" viewBox="0 0 444.819 444.819">
+        <div className="link-wrapper">
+          <div className="link-box">
+            <a
+              //TODO: Adjust once `react-pdf` is updated
+              // onClick={() => {
+              //   document.querySelector('.App').scrollTop = 0;
+              //   handleToggleResume(true);
+              // }}
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon-wrapper"
+            >
+              <svg className="icon" viewBox="0 0 512 512">
                 <g>
-                  <path d={svgPaths.download} />
+                  <path d={svgPaths.resume} />
                 </g>
               </svg>
-
-              <span className="download-line" />
+              <span className="icon-text">{about.iconText1}</span>
             </a>
 
-            <div className="close-icon" onClick={hideResume}>
-              <span className="close-icon-line one" />
-              <span className="close-icon-line two" />
-            </div>
-
-            <Document
-              file={resume}
-              className={resumeClassNames}
-              loading={<Loader />}
+            <a
+              href="https://github.com/HartiganHM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon-wrapper"
             >
-              <Page pageNumber={1} width={this.getResumeSize()} />
-            </Document>
+              <svg className="icon" viewBox="0 0 436.5 426.8">
+                <g>
+                  <path d={svgPaths.github} />
+                </g>
+              </svg>
+              <span className="icon-text">{about.iconText2}</span>
+            </a>
           </div>
-        )}
+
+          <div className="link-box">
+            <a
+              href="mailto:hartigan.hm@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon-wrapper"
+            >
+              <svg className="icon" viewBox="0 0 512 495.1">
+                <g>
+                  <path d={svgPaths.email} />
+                </g>
+              </svg>
+              <span className="icon-text">{about.iconText3}</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/hartiganhm/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon-wrapper"
+            >
+              <svg className="icon" viewBox="0 0 512 512">
+                <g>
+                  <path d={svgPaths.linkedin} />
+                </g>
+              </svg>
+              <span className="icon-text">{about.iconText4}</span>
+            </a>
+          </div>
+        </div>
       </div>
-    );
-  }
-}
+
+      {isResumeShown && (
+        <div className="resume-dialog">
+          <a
+            className="download-icon"
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg className="download-arrow" viewBox="0 0 444.819 444.819">
+              <g>
+                <path d={svgPaths.download} />
+              </g>
+            </svg>
+
+            <span className="download-line" />
+          </a>
+
+          <div className="close-icon" onClick={() => handleToggleResume(false)}>
+            <span className="close-icon-line one" />
+            <span className="close-icon-line two" />
+          </div>
+
+          <Document
+            file={resume}
+            className={resumeClassNames}
+            loading={<Loader />}
+          >
+            <Page pageNumber={1} width={getResumeSize()} />
+          </Document>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default About;
-
-About.propTypes = {
-  history: PropTypes.object,
-  toggleMenu: PropTypes.func,
-  onRedirect: PropTypes.func,
-  isMenuShown: PropTypes.bool,
-  isResumeShown: PropTypes.bool,
-  showResume: PropTypes.func,
-  hideResume: PropTypes.func
-};

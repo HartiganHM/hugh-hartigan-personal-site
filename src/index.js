@@ -1,12 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import App from './Components/App/App';
+
+import { App, StateProvider } from './Components';
 import './index.css';
+
+const initialState = {
+  currentPage: '',
+  isMenuShown: false
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+  case 'CHANGE_CURRENT_PAGE': {
+    return {
+      ...state,
+      currentPage: action.page,
+      isMenuShown: false
+    };
+  }
+  case 'TOGGLE_MENU': {
+    return {
+      ...state,
+      isMenuShown: action.isMenuShown
+    };
+  }
+  default:
+    return state;
+  }
+};
 
 const router = (
   <BrowserRouter>
-    <App />
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <App />
+    </StateProvider>
   </BrowserRouter>
 );
 

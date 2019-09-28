@@ -22,6 +22,7 @@
     display: flex;
     .nav-link-home {
       @include button;
+      text-transform: capitalize;
       &:hover {
         @include buttonHover;
         transform: translate(0, -3px);

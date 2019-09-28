@@ -1,94 +1,96 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import './Nav.css';
 
-class Nav extends Component {
-  render() {
-    const {
-      currentPage,
-      toggleMenu,
-      onRedirect,
-      isMenuShown,
-      isResumeShown,
-      history: { push }
-    } = this.props;
+import { useStateValue } from '../StateProvider/StateProvider';
+import './Nav.scss';
 
-    const pages = ['Home', 'About', 'Projects', 'Blogs'];
+const Nav = ({ isResumeShown, history: { push } }) => {
+  const [{ currentPage, isMenuShown }, dispatch] = useStateValue();
 
-    const navMenuClasses = classNames({
-      'nav-menu': true,
-      show: isMenuShown,
-      hide: !isMenuShown
-    });
+  const pages = ['home', 'about', 'projects', 'blogs'];
 
-    const navBar = (
-      <span className="nav-bar">
-        {pages.map((page, index) => {
-          const isActive = page === currentPage;
+  const navMenuClasses = classNames({
+    'nav-menu': true,
+    show: isMenuShown,
+    hide: !isMenuShown
+  });
 
-          if (page === 'Home') {
-            return (
-              <Link
-                key={`nav-link-${index}`}
-                className="nav-link"
-                to="/"
-                onClick={event => onRedirect(event, page, push)}
-              >
-                {page}
-              </Link>
-            );
-          } else {
-            return (
-              <NavLink
-                key={`nav-link-${index}`}
-                className={`nav-link ${isActive ? 'active' : ''}`}
-                onClick={event => onRedirect(event, page, push)}
-                to={`/${page.toLocaleLowerCase()}`}
-                disabled={isActive}
-              >
-                {page}
-              </NavLink>
-            );
+  const navBar = pages.map((page, index) =>
+    page === 'home' ? (
+      <Link
+        key={`nav-link-${index}`}
+        className="nav-link"
+        to="/"
+        onClick={() => {
+          push('/');
+          dispatch({
+            type: 'CHANGE_CURRENT_PAGE',
+            page
+          });
+        }}
+      >
+        {page}
+      </Link>
+    ) : (
+      <NavLink
+        key={`nav-link-${index}`}
+        className={`nav-link ${page === currentPage ? 'active' : ''}`}
+        onClick={() => {
+          push(page);
+          dispatch({
+            type: 'CHANGE_CURRENT_PAGE',
+            page
+          });
+        }}
+        to={`/${page.toLocaleLowerCase()}`}
+        disabled={page === currentPage}
+      >
+        {page}
+      </NavLink>
+    )
+  );
+
+  return (
+    <Fragment>
+      <div className="nav-wrapper">
+        <span className="header-wordmark" />
+        <div className="nav-desktop">
+          {<span className="nav-bar">{navBar}</span>}
+        </div>
+      </div>
+
+      {!isResumeShown && (
+        <div
+          className={`nav-icon ${isMenuShown ? 'close' : ''}`}
+          onClick={() =>
+            dispatch({
+              type: 'TOGGLE_MENU',
+              isMenuShown: !isMenuShown
+            })
           }
-        })}
-      </span>
-    );
-
-    return (
-      <Fragment>
-        <div className="nav-wrapper">
-          <span className="header-wordmark" />
-          <div className="nav-desktop">{navBar}</div>
+        >
+          <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
+          <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
+          <span className={`burger-line ${isMenuShown ? 'remove' : ''}`} />
         </div>
+      )}
 
-        {!isResumeShown && (
-          <div
-            className={`nav-icon ${isMenuShown ? 'close' : ''}`}
-            onClick={toggleMenu}
-          >
-            <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
-            <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
-            <span className={`burger-line ${isMenuShown ? 'remove' : ''}`} />
-          </div>
-        )}
-
-        <div className="nav-mobile">
-          <div className={navMenuClasses}>{navBar}</div>
+      <div className="nav-mobile">
+        <div className={navMenuClasses}>
+          {<span className="nav-bar">{navBar}</span>}
         </div>
-      </Fragment>
-    );
-  }
-}
+      </div>
+    </Fragment>
+  );
+};
 
 export default Nav;
 
 Nav.propTypes = {
   history: PropTypes.object,
   currentPage: PropTypes.string,
-  toggleMenu: PropTypes.func,
   onRedirect: PropTypes.func,
-  isMenuShown: PropTypes.bool,
   isResumeShown: PropTypes.bool
 };

@@ -1,24 +1,44 @@
 import React from 'react';
+import { func, object } from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import './LandingPage.css';
 
-const LandingPage = () => {
+import { useStateValue } from '../StateProvider/StateProvider';
+import './LandingPage.scss';
+
+const pages = ['about', 'projects', 'blogs'];
+
+const LandingPage = ({ history: { push } }) => {
+  const [, dispatch] = useStateValue();
+
   return (
     <div className="LandingPage">
       <span className="wordmark" />
+
       <div className="nav-bar">
-        <NavLink className="nav-link-home" to="/about">
-          About
-        </NavLink>
-        <NavLink className="nav-link-home" to="/projects">
-          Projects
-        </NavLink>
-        <NavLink className="nav-link-home" to="/blogs">
-          Blogs
-        </NavLink>
+        {pages.map(page => (
+          <NavLink
+            key={page}
+            className="nav-link-home"
+            to={`/${page}`}
+            onClick={() => {
+              push(page);
+              dispatch({
+                type: 'CHANGE_CURRENT_PAGE',
+                page
+              });
+            }}
+          >
+            {page}
+          </NavLink>
+        ))}
       </div>
     </div>
   );
 };
 
 export default LandingPage;
+
+LandingPage.propTypes = {
+  onRedirect: func.isRequired,
+  history: object.isRequired
+};
