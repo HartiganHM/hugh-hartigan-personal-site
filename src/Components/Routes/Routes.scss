@@ -3,10 +3,13 @@
 .switch-wrapper {
   @include component-transition;
   display: flex;
-  flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100vh;
+}
+
+.routes-away {
+  flex-direction: column;
 }
 
 .switch-wrapper.fade-enter {

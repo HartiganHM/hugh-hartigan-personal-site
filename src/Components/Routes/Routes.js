@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { object } from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+import { useStateValue } from '../StateProvider/StateProvider';
 import Nav from '../Nav/Nav';
 import LandingPage from '../LandingPage/LandingPage';
 import About from '../About/About';
@@ -14,6 +15,19 @@ const Routes = ({
   history,
   location
 }) => {
+  const [{ currentPage }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    const page = location.pathname.split('/')[1];
+
+    dispatch({
+      type: 'CHANGE_CURRENT_PAGE',
+      page: page === '' ? 'home' : page
+    });
+  }, []);
+
+  const isOnLandingPage = currentPage === '' || currentPage === 'home';
+
   const componentProps = {
     history
   };
@@ -27,8 +41,8 @@ const Routes = ({
         mountOnEnter={true}
         unmountOnExit={true}
       >
-        <div className="switch-wrapper">
-          <Nav history={history} />
+        <div className={`switch-wrapper ${currentPage !== 'home' ? 'routes-away' : ''}`}>
+          {!isOnLandingPage && (<Nav history={history} />)}
 
           <Switch location={location}>
             <Route
