@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { object } from 'prop-types';
 import classNames from 'classnames';
 import { Document, Page } from 'react-pdf';
 import is from 'is_js';
 
-import Nav from '../Nav/Nav';
 import Loader from '../Loader/Loader';
 import copyContent from '../../copy/copyContent';
 import svgPaths from '../../copy/svgPaths';
@@ -21,9 +19,7 @@ const getResumeSize = () => {
   }
 };
 
-const About = ({
-  history
-}) => {
+const About = () => {
   const [isResumeShown, handleToggleResume] = useState(false);
 
   const { about } = copyContent;
@@ -33,15 +29,8 @@ const About = ({
     desktop: is.desktop()
   });
 
-  const navProps = {
-    isResumeShown,
-    history
-  };
-
   return (
     <div className="About">
-      <Nav currentPage={'About'} {...navProps} />
-
       <div className="info-container">
         <div className="top-container">
           <img
@@ -168,7 +157,3 @@ const About = ({
 };
 
 export default About;
-
-About.propTypes = {
-  history: object
-};
