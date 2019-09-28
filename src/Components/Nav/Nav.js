@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -6,14 +6,7 @@ import PropTypes from 'prop-types';
 import { useStateValue } from '../StateProvider/StateProvider';
 import './Nav.scss';
 
-const Nav = ({ isResumeShown, history: { push, location } }) => {
-  useEffect(() => {
-    dispatch({
-      type: 'CHANGE_CURRENT_PAGE',
-      page: location.pathname.split('/')[1]
-    });
-  }, []);
-
+const Nav = ({ isResumeShown, history: { push } }) => {
   const [{ currentPage, isMenuShown }, dispatch] = useStateValue();
 
   const pages = ['home', 'about', 'projects', 'blogs'];
