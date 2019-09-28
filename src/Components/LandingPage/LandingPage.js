@@ -3,13 +3,11 @@ import { func, object } from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import { useStateValue } from '../StateProvider/StateProvider';
-// import { useCurrentPageState } from '../../hooks';
 import './LandingPage.scss';
 
 const pages = ['about', 'projects', 'blogs'];
 
 const LandingPage = ({ history: { push } }) => {
-  // const [currentPage, handleChangeCurrentPage] = useCurrentPageState();
   const [, dispatch] = useStateValue();
 
   return (
