@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -6,7 +6,14 @@ import PropTypes from 'prop-types';
 import { useStateValue } from '../StateProvider/StateProvider';
 import './Nav.scss';
 
-const Nav = ({ isResumeShown, history: { push } }) => {
+const Nav = ({ isResumeShown, history: { push, location } }) => {
+  useEffect(() => {
+    dispatch({
+      type: 'CHANGE_CURRENT_PAGE',
+      page: location.pathname.split('/')[1]
+    });
+  }, []);
+
   const [{ currentPage, isMenuShown }, dispatch] = useStateValue();
 
   const pages = ['home', 'about', 'projects', 'blogs'];
@@ -64,10 +71,12 @@ const Nav = ({ isResumeShown, history: { push } }) => {
       {!isResumeShown && (
         <div
           className={`nav-icon ${isMenuShown ? 'close' : ''}`}
-          onClick={() => dispatch({
-            type: 'TOGGLE_MENU',
-            isMenuShown: !isMenuShown
-          })}
+          onClick={() =>
+            dispatch({
+              type: 'TOGGLE_MENU',
+              isMenuShown: !isMenuShown
+            })
+          }
         >
           <span className={`burger-line ${isMenuShown ? 'close one' : ''}`} />
           <span className={`burger-line ${isMenuShown ? 'close two' : ''}`} />
