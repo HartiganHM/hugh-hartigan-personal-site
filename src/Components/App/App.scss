@@ -2,13 +2,7 @@
 @import '../../styles/variables.scss';
 .App {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
   height: 100vh;
-  width: 100%;
-  margin: auto;
   background-color: $accent-color-light;
   color: $snow;
   font-size: 1rem;
