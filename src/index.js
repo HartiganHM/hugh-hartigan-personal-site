@@ -6,7 +6,7 @@ import { App, StateProvider } from './Components';
 import './index.css';
 
 const initialState = {
-  currentPage: 'home',
+  currentPage: '',
   isMenuShown: false
 };
 
