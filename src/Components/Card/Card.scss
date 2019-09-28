@@ -9,6 +9,7 @@
     align-self: center;
     @include width(156);
     margin-bottom: 20px;
+    border-radius: 0.25rem;
   }
   .blog-image {
     @include width(155.5);
