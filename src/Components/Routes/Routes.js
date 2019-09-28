@@ -3,6 +3,7 @@ import { object } from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+import Nav from '../Nav/Nav';
 import LandingPage from '../LandingPage/LandingPage';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
@@ -27,6 +28,8 @@ const Routes = ({
         unmountOnExit={true}
       >
         <div className="switch-wrapper">
+          <Nav history={history} />
+
           <Switch location={location}>
             <Route
               exact
